@@ -1,13 +1,18 @@
 
 <h1 class="curproject-name"> 交易api接口 </h1> 
 
-# 签名说明
 
+# api接入地址
+
+* 测试环境地址 https://apitest.ccfox.com/
+* 生产环境地址 https://api.ccfox.com/
+
+# 签名说明
 API 请求在通过 internet 传输的过程中极有可能被篡改，为了确保请求未被更改，除公共接口（基础信息，行情数据）外的私有接口均必须使用您的 API Key 做签名认证，以校验参数或参数值在传输途中是否发生了更改。
 
 一个合法的请求由以下几部分组成：
 
-- 方法请求地址：即访问服务器地址 newcoin.io，比如 newcoin.io/api/v1/order。
+- 方法请求地址：即访问服务器地址 api.ccfox.com，比如 https://api.ccfox.com/api/v1/order。
 - API 访问密钥（AccessKeyId）：您申请的 API Key 中的 Access Key。
 - 时间戳（Timestamp）：您发出请求的时间戳。如：1548311559。在查询请求中包含此值有助于防止第三方截取您的请求。校验一分钟以内合法
 - 签名：签名计算得出的值，用于确保签名有效和未被篡改。
