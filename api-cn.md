@@ -1,13 +1,53 @@
+# API简介
+# 合约交易接入说明
+  ## 合约交易接口列表
 
-<h1 class="curproject-name"> 交易api接口 </h1> 
+  | 权限类型 | 接口数据类型   | 请求方法                                 | 类型   | 描述                   | 需要验签 |
+| -------- | -------------- | ---------------------------------------- | ------ | ---------------------- | -------- |
+| 读取     | 基础信息类接口 | /api/v1/future/queryContract             | GET    | 获取所有合约信息       | 否       |
+| 读取     | 基础信息类接口 | /common/queryCurrency             | GET    | 获取币种信息           | 否       |
+| 读取     | 基础信息类接口 | /common/exchange/list             | GET    | 获取所有法币           | 否       |
+| 读取     | 基础信息类接口 | /common/exchange/coins            | GET    | 获取计价货币的价格     | 否       |
+| 读取     | 基础信息类接口 | /api/v1/future/queryContractDeliveryList | GET    | 获取期货交割历史       | 否       |
+| 读取     | 行情类接口     | /futureQuot/queryMarketStat       | GET    | 获取24小时统计         | 否       |
+| 读取     | 行情类接口     | /futureQuot/queryCandlestick      | GET    | 获取K线数据            | 否       |
+| 读取     | 行情类接口     | /futureQuot/querySnapshot         | GET    | 获取单个合约行情快照   | 否       |
+| 读取     | 行情类接口     | /futureQuot/queryIndicatorList    | GET    | 获取所有行情快照       | 否       |
+| 读取     | 行情类接口     | /futureQuot/queryTickTrade        | GET    | 获取逐笔成交           | 否       |
+| 读取     | 用户类接口     | /api/v1/future/queryVarietyMargin        | GET    | 获取用户合约保证金梯度 | 否       |
+| 读取     | 用户类接口     | /api/v1/future/user                      | GET    | 获取用户基本信息       | 是       |
+| 读取     | 用户类接口     | /api/v1/future/margin                    | GET    | 获取用户资产信息       | 是       |
+| 读取     | 用户类接口     | /api/v1/future/position                  | GET    | 获取用户持仓信息       | 是       |
+| 交易     | 交易类接口     | /api/v1/future/order                     | GET    | 合约下单               | 是       |
+| 交易     | 交易类接口     | /api/v1/future/orders                    | GET    | 合约批量下单           | 是       |
+| 交易     | 交易类接口     | /api/v1/future/order                     | DELETE | 合约撤单               | 是       |
+| 交易     | 交易类接口     | /api/v1/future/orders                    | DELETE | 合约批量撤单           | 是       |
+| 交易     | 交易类接口     | /api/v1/future/order/all                 | DELETE | 合约撤消所有订单       | 是       |
+| 交易     | 交易类接口     | /api/v1/future/order                     | GET    | 获取订单信息           | 是       |
+| 交易     | 交易类接口     | /api/v1/future/queryActiveOrder          | GET    | 获取当前订单列表       | 是       |
+| 交易     | 交易类接口     | /api/v1/future/queryLastestHistoryOrders | GET    | 获取历史委托           | 是       |
+| 交易     | 交易类接口     | /api/v1/future/position/isolate          | POST   | 切换仓位模式           | 是       |
+| 交易     | 交易类接口     | /api/v1/future/position/transferMargin   | POST   | 调整保证金率           | 是       |
+| 交易     | 交易类接口     | /api/v1/future/queryForceLower           | GET    | 获取强减队列           | 是       |
+| 交易     | 交易类接口     | /api/v1/future/queryMatch                | GET    | 获取当前成交强减队列   | 是       |
 
 
-# api接入地址
 
-* 测试环境地址 https://apitest.ccfox.com/
-* 生产环境地址 https://api.ccfox.com/
+  ## 访问地址
 
-# 签名说明
+  - 测试环境地址 https://apitest.ccfox.com/
+  - 生产环境地址 https://api.ccfox.com/
+
+  ## 签名认证
+
+  ### 申请创建 API Key
+
+  通过crm系统获取B端 API Key
+  API Key 包括以下两部分
+  - Access Key API 访问密钥
+  - Secret Key 签名认证加密所使用的密钥
+
+  ### 签名说明
 API 请求在通过 internet 传输的过程中极有可能被篡改，为了确保请求未被更改，除公共接口（基础信息，行情数据）外的私有接口均必须使用您的 API Key 做签名认证，以校验参数或参数值在传输途中是否发生了更改。
 
 一个合法的请求由以下几部分组成：
@@ -27,18 +67,13 @@ var headers = {
 };
 ```
 
-### 创建 API Key
-
-您可以在 这里 创建 API Key。
-
-API Key 包括以下两部分
-
-- `Access Key` API 访问密钥
-- `Secret Key` 签名认证加密所使用的密钥
-
 ### 签名步骤
 
-规范要计算签名的请求 因为使用 HMAC 进行签名计算时，使用不同内容计算得到的结果会完全不同。所以在进行签名计算前，请先对请求进行规范化处理。（GET和POST请求不同）
+规范要计算签名的请求 因为使用 HMAC SHA256进行签名计算时，使用不同内容计算得到的结果会完全不同。所以在进行签名计算前，请先对请求进行规范化处理。（GET和POST请求不同）
+
+>  GET请求将参数json化，然后urlencode, 放在url参数后面(?filter=xxxxxxx), data为空字符串
+
+> POST请求将参数json化成字符串(字符串不能有空格)，放在data参数的位置
 
 例：查询某订单详情(GET)
 
@@ -58,24 +93,76 @@ HEX(HMAC_SHA256(apiSecret, 'GET/api/v1/order?filter=%7B%22orderId%22%3A%22115483
 signature = HEX(HMAC_SHA256(secretKey, verb + path + str(expires) + data))
 ```
 
-例：创建订单(POST)
-
-```js
-verb = 'POST'
-path = '/api/v1/order'
-expires = 1518064238
-data = '{"symbol":"XBTM15","price":219.0,"clOrdID":"mm_bitmex_1a/oemUeQ4CAJZgP3fjHsA","orderQty":98}'
-HEX(HMAC_SHA256(apiSecret, 'POST/api/v1/order1518064238{"symbol":"XBTM15","price":219.0,"clOrdID":"mm_bitmex_1a/oemUeQ4CAJZgP3fjHsA","orderQty":98}'))
-//Result is: '1749cd2ccae4aa49048ae09f0b95110cee706e0944e6a14ad0b3a8cb45bd336b'
-signature = HEX(HMAC_SHA256(apiSecret, verb + path + str(expires) + data))
-```
-
 ### 签名失败
 
 - 检查 API Key 是否有效，是否复制正确，是否有绑定 IP 白名单
 - 检查时间戳是否是 UTC 当前时间戳，校验一分钟以内合法
 - 检查参数是否按(verb + path + nonce + data)排序
 - 检查编码utf-8
+
+## 错误码
+
+| 编码 | 注释                                         |
+| ---- | -------------------------------------------- |
+| 0    | 成功                                         |
+| 1001 | 账户不存在                                   |
+| 1002 | 合约不存在                                   |
+| 1003 | 应用标识错误                                 |
+| 1004 | 委托价格不合法                               |
+| 1005 | 委托数量不合法                               |
+| 1006 | 委托数量超过限制                             |
+| 1007 | 保证金可用不足                               |
+| 1008 | 可用数量不足                                 |
+| 1009 | 账户被接管，禁止交易                         |
+| 1010 | 账户被接管，禁止转出资金                     |
+| 1011 | 合约禁止交易                                 |
+| 1012 | 委托方向不合法                               |
+| 1013 | 委托类型不合法                               |
+| 1016 | 委托数量低于最小委托单位                     |
+| 1018 | 委托金额不合法                               |
+| 1019 | 委托不存在                                   |
+| 1020 | 对手方没有订单                               |
+| 1022 | 该笔持仓可平仓数量不足                       |
+| 1023 | 账户被接管，禁止平仓                         |
+| 1027 | 合约已经存在                                 |
+| 1028 | 委托笔数超过限制                             |
+| 1029 | 持仓数量超过限制                             |
+| 1031 | 当前合约存在与本次委托的保证金类型不同的持仓 |
+| 1032 | 初始保证金率错误                             |
+| 1035 | 禁止转入转出保证金                           |
+| 1036 | 委托价格超过限制                             |
+| 1037 | 委托金额超过限制                             |
+| 1042 | 禁止逐仓开仓                                 |
+| 1044 | 市价委托消耗了过多的流动性档位               |
+| 1046 | 当前价格无法成为被动委托，订单将被撤销       |
+
+## 代码实例
+
+  - nodejs
+  - python
+
+
+# ws订阅
+| 权限类型 | 接口数据类型 | topic                     | 类型 | 描述                      | 需要验签 |
+| -------- | ------------ | ------------------------- | ---- | ------------------------- | -------- |
+| 读取     | 推送类接口   | posi                      | SUB  | 获取持仓-推送             | 是       |
+| 读取     | 推送类接口   | kline                     | SUB  | 获取K线-推送              | 否       |
+| 读取     | 推送类接口   | forelower                 | SUB  | 获取减仓队列-推送         | 是       |
+| 读取     | 推送类接口   | hisOrder                  | SUB  | 获取历史委托-推送         | 是       |
+| 读取     | 推送类接口   | coin_price                | SUB  | 获取币种价格-推送         | 否       |
+| 读取     | 推送类接口   | market_stat               | SUB  | 获取市场统计-推送         | 否       |
+| 读取     | 推送类接口   | activeOrder               | SUB  | 获取当前委托-推送         | 是       |
+| 读取     | 推送类接口   | match                     | SUB  | 获取成交-推送             | 是       |
+| 读取     | 推送类接口   | future_all_indicator      | SUB  | 获取全量行情数据-推送     | 否       |
+| 读取     | 推送类接口   | exchange                  | SUB  | 获取法币汇率-推送         | 否       |
+| 读取     | 推送类接口   | realtime                  | SUB  | 获取系统时间-推送         | 否       |
+| 读取     | 推送类接口   | future_snapshot_depth     | SUB  | 获取行情快照买卖档位-推送 | 否       |
+| 读取     | 推送类接口   | future_snapshot_indicator | SUB  | 获取行情快照基础数据-推送 | 否       |
+| 读取     | 推送类接口   | asset                     | SUB  | 获取资产-推送             | 是       |
+| 读取     | 推送类接口   | tick                      | SUB  | 获取逐笔成交-推送         | 是       |
+| 读取     | 推送类接口   | notice                    | SUB  | 获取通知-推送             | 否       |
+
+
 
 ## 示例代码
 
