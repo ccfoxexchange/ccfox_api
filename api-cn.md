@@ -8,7 +8,7 @@
 | 读取     | 基础信息类接口 | /common/queryCurrency             | GET    | 获取币种信息           | 否       |
 | 读取     | 基础信息类接口 | /common/exchange/list             | GET    | 获取所有法币           | 否       |
 | 读取     | 基础信息类接口 | /common/exchange/coins            | GET    | 获取计价货币的价格     | 否       |
-| 读取     | 基础信息类接口 | /api/v1/future/queryContractDeliveryList | GET    | 获取期货交割历史       | 否       |
+| 读取     | 基础信息类接口 | /future/queryContractDeliveryList | GET    | 获取期货交割历史       | 否       |
 | 读取     | 行情类接口     | /futureQuot/queryMarketStat       | GET    | 获取24小时统计         | 否       |
 | 读取     | 行情类接口     | /futureQuot/queryCandlestick      | GET    | 获取K线数据            | 否       |
 | 读取     | 行情类接口     | /futureQuot/querySnapshot         | GET    | 获取单个合约行情快照   | 否       |
@@ -99,6 +99,8 @@ signature = HEX(HMAC_SHA256(secretKey, verb + path + str(expires) + data))
 - 检查时间戳是否是 UTC 当前时间戳，校验一分钟以内合法
 - 检查参数是否按(verb + path + nonce + data)排序
 - 检查编码utf-8
+
+## 频率限制
 
 ## 错误码
 
