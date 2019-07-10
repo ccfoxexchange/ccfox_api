@@ -164,6 +164,105 @@ signature = HEX(HMAC_SHA256(secretKey, verb + path + str(expires) + data))
 | 读取     | 推送类接口   | tick                      | SUB  | 获取逐笔成交-推送         | 是       |
 | 读取     | 推送类接口   | notice                    | SUB  | 获取通知-推送             | 否       |
 
+## ws对接说明
+
+**1.连接信息**
+
+- 接口方式  Socket.io
+
+- 地址  
+  - 测试 wss://futurewstest.ccfox.com   
+  - 生产 wss://futurews.ccfox.com
+
+**2.鉴权**
+
+```json
+{
+"header":{
+	"type":1001
+},
+"body":{
+	"token":"",
+    "apiKey":"",
+    "expires":xx,
+    "signature":""
+}
+```
+
+3.订阅
+
+```json
+[
+    "subscribe",
+    {
+        "header": {
+            "type": 1003
+        },
+        "body": {
+            "topics": [
+                {
+                    "topic": "future_snapshot_indicator",
+                    "params": {
+                        "symbols": [
+                            {
+                                "symbol": 0
+                            }
+                        ]
+                    }
+                },
+                {
+                    "topic": "future_snapshot_depth",
+                    "params": {
+                        "symbols": [
+                            {
+                                "symbol": 0
+                            }
+                        ]
+                    }
+                },
+                {
+                    "topic": "future_all_indicator"
+                },
+                {
+                    "topic": "future_tick",
+                    "params": {
+                        "symbols": [
+                            {
+                                "symbol": 0
+                            }
+                        ]
+                    }
+                },
+                {
+                    "topic": "match"
+                },
+                {
+                    "topic": "future_kline",
+                    "params": {
+                        "symbols": [
+                            {
+                                "symbol": 0,
+                                "ranges": [
+                                    "60000"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "topic": "exchange"
+                },
+                {
+                    "topic": "coin_price"
+                },
+                {
+                    "topic": "notice"
+                }
+            ]
+        }
+    }
+]
+```
 
 
 ## 示例代码
