@@ -341,22 +341,30 @@ signature = HEX(HMAC_SHA256(secretKey, verb + path + str(expires) + data))
 # ws订阅
 | 权限类型 | 接口数据类型 | topic                     | 类型 | 描述                      | 需要验签 |
 | -------- | ------------ | ------------------------- | ---- | ------------------------- | -------- |
-| 读取     | 推送类接口   | posi                      | SUB  | 获取持仓-推送             | 是       |
-| 读取     | 推送类接口   | kline                     | SUB  | 获取K线-推送              | 否       |
-| 读取     | 推送类接口   | forelower                 | SUB  | 获取减仓队列-推送         | 是       |
-| 读取     | 推送类接口   | hisOrder                  | SUB  | 获取历史委托-推送         | 是       |
-| 读取     | 推送类接口   | coin_price                | SUB  | 获取币种价格-推送         | 否       |
-| 读取     | 推送类接口   | market_stat               | SUB  | 获取市场统计-推送         | 否       |
-| 读取     | 推送类接口   | activeOrder               | SUB  | 获取当前委托-推送         | 是       |
+| 读取     | 推送类接口   | match                      | SUB  | 获取持仓-推送             | 是       |
+| 读取     | 推送类接口   | future_kline                     | SUB  | 获取K线-推送              | 否       |
+| 读取     | 推送类接口   | match                 | SUB  | 获取减仓队列-推送         | 是       |
+| 读取     | 推送类接口   | match                  | SUB  | 获取历史委托-推送         | 是       |
+| 读取     | 推送类接口   | exchange                | SUB  | 获取币种价格-推送         | 否       |
+| 读取     | 推送类接口   | future_market_stat               | SUB  | 获取市场统计-推送         | 否       |
+| 读取     | 推送类接口   | match               | SUB  | 获取当前委托-推送         | 是       |
 | 读取     | 推送类接口   | match                     | SUB  | 获取成交-推送             | 是       |
 | 读取     | 推送类接口   | future_all_indicator      | SUB  | 获取全量行情数据-推送     | 否       |
 | 读取     | 推送类接口   | exchange                  | SUB  | 获取法币汇率-推送         | 否       |
 | 读取     | 推送类接口   | realtime                  | SUB  | 获取系统时间-推送         | 否       |
 | 读取     | 推送类接口   | future_snapshot_depth     | SUB  | 获取行情快照买卖档位-推送 | 否       |
 | 读取     | 推送类接口   | future_snapshot_indicator | SUB  | 获取行情快照基础数据-推送 | 否       |
-| 读取     | 推送类接口   | asset                     | SUB  | 获取资产-推送             | 是       |
-| 读取     | 推送类接口   | tick                      | SUB  | 获取逐笔成交-推送         | 是       |
+| 读取     | 推送类接口   | match                     | SUB  | 获取资产-推送             | 是       |
+| 读取     | 推送类接口   | future_tick                      | SUB  | 获取逐笔成交-推送         | 是       |
 | 读取     | 推送类接口   | notice                    | SUB  | 获取通知-推送             | 否       |
+
+**其中 match返回包含多个messagetype**
+3002", "资产消息",
+3004","当前委托",
+3012","持仓",
+"3006","历史委托",
+3010", "当前成交",
+3014","强减对列",
 
 ## ws对接说明
 
@@ -371,12 +379,21 @@ signature = HEX(HMAC_SHA256(secretKey, verb + path + str(expires) + data))
 **2.鉴权**
 
 ```json
+// 子账号
 {
 "header":{
 	"type":1001
 },
 "body":{
-	"token":"",
+	"token":""
+}
+
+//api账号  ，此时signature时的method=GET,path=/realtime
+{
+"header":{
+	"type":1001
+},
+"body":{
     "apiKey":"",
     "expires":xx,
     "signature":""
