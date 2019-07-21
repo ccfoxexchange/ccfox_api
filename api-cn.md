@@ -233,7 +233,7 @@
 
   ### 申请创建 API Key
 
-  通过crm系统获取B端 API Key
+  通过web端页面 创建API Key
   API Key 包括以下两部分
   - Access Key API 访问密钥
   - Secret Key 签名认证加密所使用的密钥
