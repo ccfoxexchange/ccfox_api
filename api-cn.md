@@ -6,19 +6,19 @@
   | 权限类型 | 接口数据类型   | 请求方法                                 | 类型   | 描述                   | 需要验签 |
 | -------- | -------------- | ---------------------------------------- | ------ | ---------------------- | -------- |
 | 读取     | 基础信息类接口 | /api/v1/future/queryContract             | GET    | 获取所有合约信息       | 否       |
-| 读取     | 基础信息类接口 | /common/queryCurrency             | GET    | 获取币种信息           | 否       |
-| 读取     | 基础信息类接口 | /common/exchange/list             | GET    | 获取所有法币           | 否       |
-| 读取     | 基础信息类接口 | /common/exchange/coins            | GET    | 获取计价货币的价格     | 否       |
-| 读取     | 基础信息类接口 | /future/queryContractDeliveryList | GET    | 获取期货交割历史       | 否       |
-| 读取     | 行情类接口     | /futureQuot/queryMarketStat       | GET    | 获取24小时统计         | 否       |
-| 读取     | 行情类接口     | /futureQuot/queryCandlestick      | GET    | 获取K线数据            | 否       |
-| 读取     | 行情类接口     | /futureQuot/querySnapshot         | GET    | 获取单个合约行情快照   | 否       |
-| 读取     | 行情类接口     | /futureQuot/queryIndicatorList    | GET    | 获取所有行情快照       | 否       |
-| 读取     | 行情类接口     | /futureQuot/queryTickTrade        | GET    | 获取逐笔成交           | 否       |
+| 读取     | 基础信息类接口 | /api/v1/common/queryCurrency             | GET    | 获取币种信息           | 否       |
+| 读取     | 基础信息类接口 | /api/v1/common/exchange/list             | GET    | 获取所有法币           | 否       |
+| 读取     | 基础信息类接口 | /api/v1/common/exchange/coins            | GET    | 获取计价货币的价格     | 否       |
+| 读取     | 基础信息类接口 | /api/v1/future/queryContractDeliveryList | GET    | 获取期货交割历史       | 否       |
+| 读取     | 行情类接口     | /api/v1/futureQuot/queryMarketStat       | GET    | 获取24小时统计         | 否       |
+| 读取     | 行情类接口     | /api/v1/futureQuot/queryCandlestick      | GET    | 获取K线数据            | 否       |
+| 读取     | 行情类接口     | /api/v1/futureQuot/querySnapshot         | GET    | 获取单个合约行情快照   | 否       |
+| 读取     | 行情类接口     | /api/v1/futureQuot/queryIndicatorList    | GET    | 获取所有行情快照       | 否       |
+| 读取     | 行情类接口     | /api/v1/futureQuot/queryTickTrade        | GET    | 获取逐笔成交           | 否       |
 | 读取     | 用户类接口     | /api/v1/future/queryVarietyMargin        | GET    | 获取用户合约保证金梯度 | 否       |
-| 读取     | 用户类接口     | /api/v1/future/user                      | GET    | 获取用户基本信息       | 是       |
 | 读取     | 用户类接口     | /api/v1/future/margin                    | GET    | 获取用户资产信息       | 是       |
 | 读取     | 用户类接口     | /api/v1/future/position                  | GET    | 获取用户持仓信息       | 是       |
+| 读取     | 用户类接口     | /api/v1/future/user                      | GET    | 获取用户基本信息       | 是       |
 | 交易     | 交易类接口     | /api/v1/future/order                     | GET    | 合约下单               | 是       |
 | 交易     | 交易类接口     | /api/v1/future/orders                    | GET    | 合约批量下单           | 是       |
 | 交易     | 交易类接口     | /api/v1/future/order                     | DELETE | 合约撤单               | 是       |
@@ -701,9 +701,7 @@ range取值：
 
 **接口描述：**
 
-具体各字段含义，请参考
-    /futureQuot/querySnapshot 接口
-https://yapi.coinidx.io/project/51/interface/api/2763
+具体各字段含义，请参考 2.3 - /futureQuot/querySnapshot 接口
 
 ### 请求参数
 
@@ -849,17 +847,6 @@ https://yapi.coinidx.io/project/51/interface/api/2763
 
 功能 ：查询用户的资产信息（包括 账户 各个币种的 可用余额、冻结金额、保证金等数据）
 
-### 请求参数
-
-**Headers**
-
-| 参数名称     | 参数值           | 是否必须 | 示例 | 备注     |
-| ------------ | ---------------- | -------- | ---- | -------- |
-| Content-Type | application/json | 是       |      |          |
-| signature    |                  | 是       |      | 签名     |
-| apiKey       |                  | 是       |      | apiKey   |
-| apiExpires   |                  | 是       |      | 过期时间 |
-
 ### 返回数据
 
 | 名称                | 类型      | 是否必须 | 默认值 | 备注               | 其他信息          |
@@ -888,17 +875,6 @@ https://yapi.coinidx.io/project/51/interface/api/2763
 **接口描述：**
 
 功能 ：获取用户当前持仓的数据
-
-### 请求参数
-
-**Headers**
-
-| 参数名称     | 参数值           | 是否必须 | 示例 | 备注     |
-| ------------ | ---------------- | -------- | ---- | -------- |
-| Content-Type | application/json | 是       |      |          |
-| signature    |                  | 是       |      | 签名     |
-| apiKey       |                  | 是       |      | apiKey   |
-| apiExpires   |                  | 是       |      | 过期时间 |
 
 ### 返回数据
 
@@ -974,15 +950,6 @@ https://yapi.coinidx.io/project/51/interface/api/2763
 
 ### 请求参数
 
-**Headers**
-
-| 参数名称     | 参数值           | 是否必须 | 示例               | 备注     |
-| ------------ | ---------------- | -------- | ------------------ | -------- |
-| Content-Type | application/json | 是       |                    |          |
-| signature    | String           | 是       | d3d576ghggf8ddd3   | 签名     |
-| apiKey       | String           | 是       | j7sas9ahshbdb9sisi | 认证     |
-| apiExpires   | Long             | 是       | 1548213518         | 过期时间 |
-
 **Body**
 
 | 名称           | 类型    | 是否必须 | 默认值 | 备注                                             | 其他信息   |
@@ -1019,14 +986,6 @@ https://yapi.coinidx.io/project/51/interface/api/2763
 
 ### 请求参数
 
-**Headers**
-
-| 参数名称     | 参数值           | 是否必须 | 示例 | 备注           |
-| ------------ | ---------------- | -------- | ---- | -------------- |
-| Content-Type | application/json | 是       |      |                |
-| signature    |                  | 是       |      | 签名           |
-| apiExpires   |                  | 是       |      | 时间戳，秒级别 |
-| apiKey       |                  | 是       |      | 公钥           |
 
 **Body**
 
@@ -1064,15 +1023,6 @@ https://yapi.coinidx.io/project/51/interface/api/2763
 
 ### 请求参数
 
-**Headers**
-
-| 参数名称     | 参数值           | 是否必须 | 示例               | 备注     |
-| ------------ | ---------------- | -------- | ------------------ | -------- |
-| Content-Type | application/json | 是       |                    |          |
-| signature    | String           | 是       | d3d576ghggf8ddd3   | 签名     |
-| apiKey       | Long             | 是       | j7sas9ahshbdb9sisi | 认证     |
-| apiExpires   | Long             | 是       | 1548213518         | 过期时间 |
-
 **Query**
 
 | 参数名称 | 是否必须 | 示例                                          | 备注                                                         |
@@ -1108,15 +1058,6 @@ https://yapi.coinidx.io/project/51/interface/api/2763
 
 ### 请求参数
 
-**Headers**
-
-| 参数名称     | 参数值           | 是否必须 | 示例 | 备注     |
-| ------------ | ---------------- | -------- | ---- | -------- |
-| Content-Type | application/json | 是       |      |          |
-| signature    |                  | 是       |      | 签名     |
-| apiKey       |                  | 是       |      | apikey   |
-| apiExpires   |                  | 是       |      | 过期时间 |
-
 **Body**
 
 | 名称               | 类型      | 是否必须 | 默认值 | 备注       | 其他信息          |
@@ -1145,17 +1086,6 @@ https://yapi.coinidx.io/project/51/interface/api/2763
 
 功能 ：期货合约 - 撤消 所有未成交的委托单
 
-### 请求参数
-
-**Headers**
-
-| 参数名称     | 参数值                            | 是否必须 | 示例 | 备注     |
-| ------------ | --------------------------------- | -------- | ---- | -------- |
-| Content-Type | application/x-www-form-urlencoded | 是       |      |          |
-| signature    |                                   | 是       |      | 签名     |
-| apiKey       |                                   | 是       |      | apiKey   |
-| apiExpires   |                                   | 是       |      | 过期时间 |
-
 ### 返回数据
 
 | 名称 | 类型   | 是否必须 | 默认值 | 备注               | 其他信息 |
@@ -1177,17 +1107,6 @@ https://yapi.coinidx.io/project/51/interface/api/2763
 **接口描述：**
 
 功能 ：期货合约 - 查询订单的相关信息
-
-### 请求参数
-
-**Headers**
-
-| 参数名称     | 参数值           | 是否必须 | 示例 | 备注       |
-| ------------ | ---------------- | -------- | ---- | ---------- |
-| Content-Type | application/json | 是       |      |            |
-| signature    |                  | 是       |      | 签名       |
-| apiKey       |                  | 是       |      | apiKey     |
-| apiExpires   |                  | 是       |      | apiExpires |
 
 **Query**
 
@@ -1236,17 +1155,6 @@ https://yapi.coinidx.io/project/51/interface/api/2763
 
 功能 ：期货合约 - 查询 当前订单的列表数据
 
-### 请求参数
-
-**Headers**
-
-| 参数名称     | 参数值           | 是否必须 | 示例 | 备注     |
-| ------------ | ---------------- | -------- | ---- | -------- |
-| Content-Type | application/json | 是       |      |          |
-| signature    |                  | 是       |      | 签名     |
-| apiKey       |                  | 是       |      | apiKey   |
-| apiExpires   |                  | 是       |      | 过期时间 |
-
 ### 返回数据
 
 | 名称             | 类型      | 是否必须 | 默认值 | 备注                                                         | 其他信息          |
@@ -1287,17 +1195,6 @@ https://yapi.coinidx.io/project/51/interface/api/2763
 **接口描述：**
 
 功能 ：期货合约 - 查询历史委托的订单数据
-
-### 请求参数
-
-**Headers**
-
-| 参数名称     | 参数值           | 是否必须 | 示例 | 备注     |
-| ------------ | ---------------- | -------- | ---- | -------- |
-| Content-Type | application/json | 是       |      |          |
-| signature    |                  | 是       |      | 签名     |
-| apiKey       |                  | 是       |      | apiKey   |
-| apiExpires   |                  | 是       |      | 过期时间 |
 
 ### 返回数据
 
@@ -1340,14 +1237,6 @@ https://yapi.coinidx.io/project/51/interface/api/2763
 
 功能 ：期货合约 - 已成交的订单切换仓位模式（逐仓 切换 全仓、全仓切换逐仓）
 
-### 请求参数
-
-**Headers**
-
-| 参数名称     | 参数值           | 是否必须 | 示例 | 备注 |
-| ------------ | ---------------- | -------- | ---- | ---- |
-| Content-Type | application/json | 是       |      |      |
-
 **Body**
 
 | 名称           | 类型   | 是否必须 | 默认值 | 备注                     | 其他信息 |
@@ -1376,14 +1265,6 @@ https://yapi.coinidx.io/project/51/interface/api/2763
 **接口描述：**
 
 功能：调整保证金率，即调整杠杆倍数
-
-### 请求参数
-
-**Headers**
-
-| 参数名称     | 参数值           | 是否必须 | 示例 | 备注 |
-| ------------ | ---------------- | -------- | ---- | ---- |
-| Content-Type | application/json | 是       |      |      |
 
 **Body**
 
