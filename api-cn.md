@@ -1,193 +1,3 @@
-* [API简介](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#api简介)
-* [合约交易接入说明](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#合约交易接入说明)
-	* [合约交易接口列表](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#合约交易接口列表)
-	* [访问地址](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#访问地址)
-	* [签名认证](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#签名认证)
-		* [申请创建 API Key](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#申请创建-api-key)
-		* [签名说明](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#签名说明)
-		* [签名步骤](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#签名步骤)
-		* [签名失败](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#签名失败)
-	* [频率限制](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#频率限制)
-	* [错误码](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#错误码)
-	* [代码实例](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#代码实例)
-* [ws订阅](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#ws订阅)
-	* [ws对接说明](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#ws对接说明)
-	* [示例代码](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#示例代码)
-* [交易api接口](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#-交易api接口-)
-* [公共分类](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#公共分类)
-	* [查询合约交割历史](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#查询合约交割历史)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据)
-	* [查询所有货币信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#查询所有货币信息)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-1)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-1)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-1)
-	* [查询用户合约保证金梯度](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#查询用户合约保证金梯度)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-2)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-2)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-2)
-	* [获取所有合约信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#获取所有合约信息)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-3)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-3)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-3)
-	* [获取所有法币](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#获取所有法币)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-4)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-4)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-4)
-	* [获取计价货币的价格](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#获取计价货币的价格)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-5)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-5)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-5)
-* [期货行情](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#期货行情)
-	* [查询24小时统计](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#查询24小时统计)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-6)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-6)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-6)
-	* [获取K线数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#获取k线数据)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-7)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-7)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-7)
-	* [获取单个合约行情快照](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#获取单个合约行情快照)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-8)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-8)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-8)
-	* [获取所有行情快照](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#获取所有行情快照)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-9)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-9)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-9)
-	* [获取逐笔成交](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#获取逐笔成交)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-10)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-10)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-10)
-* [期货推送](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#期货推送)
-	* [持仓-推送](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#持仓-推送)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-11)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-11)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-11)
-	* [K线-推送](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#k线-推送)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-12)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-12)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-12)
-	* [减仓队列-推送](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#减仓队列-推送)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-13)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-13)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-13)
-	* [历史委托-推送](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#历史委托-推送)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-14)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-14)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-14)
-	* [币种价格-推送](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#币种价格-推送)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-15)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-15)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-15)
-	* [市场统计-推送](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#市场统计-推送)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-16)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-16)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-16)
-	* [当前委托-推送](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#当前委托-推送)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-17)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-17)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-17)
-	* [成交-推送](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#成交-推送)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-18)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-18)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-18)
-	* [全量行情数据-推送](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#全量行情数据-推送)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-19)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-19)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-19)
-	* [法币汇率-推送](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#法币汇率-推送)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-20)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-20)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-20)
-	* [系统时间-推送](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#系统时间-推送)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-21)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-21)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-21)
-	* [行情快照买卖档位-推送](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#行情快照买卖档位-推送)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-22)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-22)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-22)
-	* [行情快照基础数据-推送](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#行情快照基础数据-推送)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-23)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-23)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-23)
-	* [资产-推送](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#资产-推送)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-24)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-24)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-24)
-	* [逐笔成交-推送](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#逐笔成交-推送)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-25)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-25)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-25)
-	* [通知-推送](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#通知-推送)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-26)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-26)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-26)
-* [1.交易类接口 order](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#1交易类接口-order)
-	* [1.1 下单接口 Create order](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#11-下单接口-create-order)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-27)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-27)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-27)
-	* [1.12 当前成交查询](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#112-当前成交查询)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-28)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-28)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-28)
-	* [1.2 批量下单接口 Create Orders](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#12-批量下单接口-create-orders)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-29)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-29)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-29)
-	* [1.3 撤单接口 Cancel order](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#13-撤单接口-cancel-order)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-30)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-30)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-30)
-	* [1.4 批量撤单接口 Cancel Orders](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#14-批量撤单接口-cancel-orders)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-31)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-31)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-31)
-	* [1.5 撤消所有订单接口 Cancel all orders](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#15-撤消所有订单接口-cancel-all-orders)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-32)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-32)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-32)
-	* [1.6 获取订单信息接口 Get order Information](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#16-获取订单信息接口-get-order-information)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-33)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-33)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-33)
-	* [1.7 查询当前订单列表 queryActiveOrder](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#17-查询当前订单列表-queryactiveorder)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-34)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-34)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-34)
-	* [1.8 查询历史委托接口 queryLastestHistoryOrders](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#18-查询历史委托接口-querylastesthistoryorders)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-35)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-35)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-35)
-	* [1.9 切换仓位模式接口 Enable isolated margin or cross margin per-position](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#19-切换仓位模式接口-enable-isolated-margin-or-cross-margin-per-position)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-36)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-36)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-36)
-	* [1.10 调整保证金](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#110-调整保证金)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-37)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-37)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-37)
-	* [1.11 强减队列查询](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#111-强减队列查询)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-38)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-38)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-38)
-* [2.用户类接口 user](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#2用户类接口-user)
-	* [2.1 获取用户信息接口 Get User Information](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#21-获取用户信息接口-get-user-information)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-39)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-39)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-39)
-	* [2.2 查询用户资产接口 Get User Assets](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#22-查询用户资产接口-get-user-assets)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-40)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-40)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-40)
-	* [2.3 获取用户仓位信息接口 Get your positions](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#23-获取用户仓位信息接口-get-your-positions)
-		* [基本信息](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#基本信息-41)
-		* [请求参数](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#请求参数-41)
-		* [返回数据](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#返回数据-41)
-	* [字段缩写对照表](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#字段缩写对照表)
 
 # API简介
 # 合约交易接入说明
@@ -244,27 +54,29 @@ API 请求在通过 internet 传输的过程中极有可能被篡改，为了确
 一个合法的请求由以下几部分组成：
 
 - 方法请求地址：即访问服务器地址 api.ccfox.com，比如 https://api.ccfox.com/api/v1/order。
-- API 访问密钥（AccessKeyId）：您申请的 API Key 中的 Access Key。
-- 时间戳（Timestamp）：您发出请求的时间戳。如：1548311559。在查询请求中包含此值有助于防止第三方截取您的请求。校验一分钟以内合法
-- 签名：签名计算得出的值，用于确保签名有效和未被篡改。
+- API访问密钥AccessKey：您申请的 API Key 中的 Access Key。
+- 时间戳expires：您发出请求的时间戳。如：1548311559。在查询请求中包含此值有助于防止第三方截取您的请求。校验一分钟以内合法
+- 签名signature：签名计算得出的值，用于确保签名有效和未被篡改。
+
+> 注意：AccessKey，expires， signature三个参数都在请求头中，另外需要设置`'content-type' : 'application/json'`,参考以下实例(对应各自键值)
 
 ```js
-// 请求头包含
+// 请求头必须包含
 var headers = {
   'content-type' : 'application/json',
   'apiExpires': expires, //UNIX时间戳以秒为单位校验一分钟以内合法
-  'apiKey': apiKey, // API 访问密钥（apiKey）
+  'apiKey': AccessKey, // API 访问密钥（您获取的ApiKey中的AccessKey）
   'signature': signature // 签名
 };
 ```
 
 ### 签名步骤
 
-规范要计算签名的请求 因为使用 HMAC SHA256进行签名计算时，使用不同内容计算得到的结果会完全不同。所以在进行签名计算前，请先对请求进行规范化处理。（GET和POST请求不同）
+因为使用 HMAC SHA256进行签名计算时，使用不同内容计算得到的结果会完全不同。所以在进行签名计算前，请先对请求进行规范化处理。（GET和POST请求不同）
 
->  GET请求将参数json化，然后urlencode, 放在url参数后面(?filter=xxxxxxx), data为空字符串
+>  GET请求将请求参数json化，然后urlencode, 放在url参数后面(?filter=xxxxxxx), data为空字符串
 
-> POST请求将参数json化成字符串(字符串不能有空格)，放在data参数的位置
+> POST请求将请求参数json化成字符串(字符串不能有空格)，放在data参数的位置
 
 例：查询某订单详情(GET)
 
@@ -286,197 +98,12 @@ signature = HEX(HMAC_SHA256(secretKey, verb + path + str(expires) + data))
 
 ### 签名失败
 
-- 检查 API Key 是否有效，是否复制正确，是否有绑定 IP 白名单
+- 检查 APIKey 是否有效,是否复制正确,是否有绑定 IP 白名单
 - 检查时间戳是否是 UTC 当前时间戳，校验一分钟以内合法
-- 检查参数是否按(verb + path + nonce + data)排序
+- 检查参数是否按(verb + path + expires + data)排序
 - 检查编码utf-8
 
-## 频率限制
-
- - 非交易接口 120/min
- - 交易接口   60/s
-
-## 错误码
-
-| 编码 | 注释                                         |
-| ---- | -------------------------------------------- |
-| 0    | 成功                                         |
-| 1001 | 账户不存在                                   |
-| 1002 | 合约不存在                                   |
-| 1003 | 应用标识错误                                 |
-| 1004 | 委托价格不合法                               |
-| 1005 | 委托数量不合法                               |
-| 1006 | 委托数量超过限制                             |
-| 1007 | 保证金可用不足                               |
-| 1008 | 可用数量不足                                 |
-| 1009 | 账户被接管，禁止交易                         |
-| 1010 | 账户被接管，禁止转出资金                     |
-| 1011 | 合约禁止交易                                 |
-| 1012 | 委托方向不合法                               |
-| 1013 | 委托类型不合法                               |
-| 1016 | 委托数量低于最小委托单位                     |
-| 1018 | 委托金额不合法                               |
-| 1019 | 委托不存在                                   |
-| 1020 | 对手方没有订单                               |
-| 1022 | 该笔持仓可平仓数量不足                       |
-| 1023 | 账户被接管，禁止平仓                         |
-| 1027 | 合约已经存在                                 |
-| 1028 | 委托笔数超过限制                             |
-| 1029 | 持仓数量超过限制                             |
-| 1031 | 当前合约存在与本次委托的保证金类型不同的持仓 |
-| 1032 | 初始保证金率错误                             |
-| 1035 | 禁止转入转出保证金                           |
-| 1036 | 委托价格超过限制                             |
-| 1037 | 委托金额超过限制                             |
-| 1042 | 禁止逐仓开仓                                 |
-| 1044 | 市价委托消耗了过多的流动性档位               |
-| 1046 | 当前价格无法成为被动委托，订单将被撤销       |
-
 ## 代码实例
-
-  - nodejs
-  - python
-
-
-# ws订阅
-| 权限类型 | 接口数据类型 | topic                     | 类型 | 描述                      | 需要验签 |
-| -------- | ------------ | ------------------------- | ---- | ------------------------- | -------- |
-| 读取     | 推送类接口   | match                      | SUB  | 获取持仓-推送             | 是       |
-| 读取     | 推送类接口   | future_kline                     | SUB  | 获取K线-推送              | 否       |
-| 读取     | 推送类接口   | match                 | SUB  | 获取减仓队列-推送         | 是       |
-| 读取     | 推送类接口   | match                  | SUB  | 获取历史委托-推送         | 是       |
-| 读取     | 推送类接口   | exchange                | SUB  | 获取币种价格-推送         | 否       |
-| 读取     | 推送类接口   | future_market_stat               | SUB  | 获取市场统计-推送         | 否       |
-| 读取     | 推送类接口   | match               | SUB  | 获取当前委托-推送         | 是       |
-| 读取     | 推送类接口   | match                     | SUB  | 获取成交-推送             | 是       |
-| 读取     | 推送类接口   | future_all_indicator      | SUB  | 获取全量行情数据-推送     | 否       |
-| 读取     | 推送类接口   | exchange                  | SUB  | 获取法币汇率-推送         | 否       |
-| 读取     | 推送类接口   | realtime                  | SUB  | 获取系统时间-推送         | 否       |
-| 读取     | 推送类接口   | future_snapshot_depth     | SUB  | 获取行情快照买卖档位-推送 | 否       |
-| 读取     | 推送类接口   | future_snapshot_indicator | SUB  | 获取行情快照基础数据-推送 | 否       |
-| 读取     | 推送类接口   | match                     | SUB  | 获取资产-推送             | 是       |
-| 读取     | 推送类接口   | future_tick                      | SUB  | 获取逐笔成交-推送         | 是       |
-| 读取     | 推送类接口   | notice                    | SUB  | 获取通知-推送             | 否       |
-
-**其中 match返回包含多个messagetype**
-3002", "资产消息",
-3004","当前委托",
-3012","持仓",
-"3006","历史委托",
-3010", "当前成交",
-3014","强减对列",
-
-## ws对接说明
-
-**1.连接信息**
-
-- 接口方式  Socket.io
-
-- 地址  
-  - 测试 wss://futurewstest.ccfox.com   
-  - 生产 wss://futurews.ccfox.com
-
-**2.鉴权**
-
-```json
-// 子账号
-{
-"header":{
-	"type":1001
-},
-"body":{
-	"token":""
-}
-
-//api账号  ，此时signature时的method=GET,path=/realtime
-{
-"header":{
-	"type":1001
-},
-"body":{
-    "apiKey":"",
-    "expires":xx,
-    "signature":""
-}
-```
-
-3.订阅
-
-```json
-[
-    "subscribe",
-    {
-        "header": {
-            "type": 1003
-        },
-        "body": {
-            "topics": [
-                {
-                    "topic": "future_snapshot_indicator",
-                    "params": {
-                        "symbols": [
-                            {
-                                "symbol": 0
-                            }
-                        ]
-                    }
-                },
-                {
-                    "topic": "future_snapshot_depth",
-                    "params": {
-                        "symbols": [
-                            {
-                                "symbol": 0
-                            }
-                        ]
-                    }
-                },
-                {
-                    "topic": "future_all_indicator"
-                },
-                {
-                    "topic": "future_tick",
-                    "params": {
-                        "symbols": [
-                            {
-                                "symbol": 0
-                            }
-                        ]
-                    }
-                },
-                {
-                    "topic": "match"
-                },
-                {
-                    "topic": "future_kline",
-                    "params": {
-                        "symbols": [
-                            {
-                                "symbol": 0,
-                                "ranges": [
-                                    "60000"
-                                ]
-                            }
-                        ]
-                    }
-                },
-                {
-                    "topic": "exchange"
-                },
-                {
-                    "topic": "coin_price"
-                },
-                {
-                    "topic": "notice"
-                }
-            ]
-        }
-    }
-]
-```
-
-
-## 示例代码
 
 - node.js
 
@@ -557,1524 +184,59 @@ print(generate_signature('chNOOS4KvNXR_Xq4k4c9qsfoKWvnDecLATCRlcBwyKDYnWgO', 'GE
 print(generate_signature('chNOOS4KvNXR_Xq4k4c9qsfoKWvnDecLATCRlcBwyKDYnWgO', 'POST', '/api/v1/instrument', expires, '{"symbol":"XBTM15","price":219.0,"clOrdID":"mm_bitmex_1a/oemUeQ4CAJZgP3fjHsA","orderQty":98}'))
 ```
 
-
- <h1 class="curproject-name"> 交易api接口 </h1> 
-
-
-
-# 公共分类
-
-## 查询合约交割历史
-<a id=查询合约交割历史> </a>
-### 基本信息
-
-**Path：** /future/queryContractDeliveryList
-
-**Method：** GET
-
-**接口描述：**
-
-
-### 请求参数
-**Query**
-
-| 参数名称  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ |
-| type | 是  |   |  1定期，2永续 |
-| pageNum | 否  |   |  当前页，默认：1 |
-| pageSize | 否  |   |  每页条数，默认：10 |
-| contractId | 否  |   |  合约ID |
-| sort | 否  |   |  排序类型，只支持：DESC，ASC |
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> code</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> msg</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> data</span></td><td key=1><span>object</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pageNum</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pageSize</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> size</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> startRow</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> endRow</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-5><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> total</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-6><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pages</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-7><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> list</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-2-7-0><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> applId</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">2 期货</span></td><td key=5></td></tr><tr key=0-2-7-1><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> contractType</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约类型</span></td><td key=5></td></tr><tr key=0-2-7-2><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> contractId</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约ID</span></td><td key=5></td></tr><tr key=0-2-7-3><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> perpetualSettleFrequency</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">结算频率(一天几次)</span></td><td key=5></td></tr><tr key=0-2-7-4><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> symbol</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约名称</span></td><td key=5></td></tr><tr key=0-2-7-5><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> deliveryTime</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">交割时间</span></td><td key=5></td></tr><tr key=0-2-7-6><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> deliveryQty</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">交割数量</span></td><td key=5></td></tr><tr key=0-2-7-7><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> deliveryAmt</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">交割金额</span></td><td key=5></td></tr><tr key=0-2-7-8><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> deliveryPrice</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">交割价格</span></td><td key=5></td></tr><tr key=0-2-7-9><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> fundingRate</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">永续合约资金费率</span></td><td key=5></td></tr><tr key=0-2-8><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> prePage</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-9><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> nextPage</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-10><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> isFirstPage</span></td><td key=1><span>boolean</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-11><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> isLastPage</span></td><td key=1><span>boolean</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-12><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> hasPreviousPage</span></td><td key=1><span>boolean</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-13><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> hasNextPage</span></td><td key=1><span>boolean</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-14><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> navigatePages</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-15><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> navigatepageNums</span></td><td key=1><span>number []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>number</span></p></td></tr><tr key=0-2-16><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> navigateFirstPage</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-17><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> navigateLastPage</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-18><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> firstPage</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-19><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> lastPage</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 查询所有货币信息
-<a id=查询所有货币信息> </a>
-### 基本信息
-
-**Path：** /common/queryCurrency
-
-**Method：** GET
-
-**接口描述：**
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> result</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-0-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> currencyId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">币种ID</span></td><td key=5></td></tr><tr key=0-0-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> symbol</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">币种名称</span></td><td key=5></td></tr><tr key=0-0-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> nameCn</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">币种中文名</span></td><td key=5></td></tr><tr key=0-0-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> symbolDesc</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">币种简介</span></td><td key=5></td></tr><tr key=0-0-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> displayPrecision</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">页面显示位数</span></td><td key=5></td></tr><tr key=0-0-5><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> minWithdrawQuantity</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">最小提现数</span></td><td key=5></td></tr><tr key=0-0-6><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> withdrawFlatFee</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">提现手续费</span></td><td key=5></td></tr><tr key=0-0-7><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> auditThreshold</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">人工审核阈值</span></td><td key=5></td></tr><tr key=0-0-8><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> exeutiveAuditThreshold</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">高管审核阈值</span></td><td key=5></td></tr><tr key=0-0-9><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> forbidWithdraw</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">是否允许提币：0允许、1禁止</span></td><td key=5></td></tr><tr key=0-0-10><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> forbidCreateAddress</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">是否允许生成地址：0允许，1禁止</span></td><td key=5></td></tr><tr key=0-0-11><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> forbidRecharge</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">是否允许充值：0允许，1禁止</span></td><td key=5></td></tr><tr key=0-0-12><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> prefixUrl</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">币种浏览器地址</span></td><td key=5></td></tr><tr key=0-0-13><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> enabled</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">币状态：0启用，1不启用,2删除</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 查询用户合约保证金梯度
-<a id=查询用户合约保证金梯度> </a>
-### 基本信息
-
-**Path：** /future/queryVarietyMargin
-
-**Method：** GET
-
-**接口描述：**
-
-
-### 请求参数
-**Query**
-
-| 参数名称  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ |
-| varietyId | 是  |  Integer |  品种id |
-| contractId | 是  |  Integer |  交易对 |
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> code</span></td><td key=1><span>integer</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">0成功，非0失败</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> msg</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">success、failed</span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> data</span></td><td key=1><span>object []</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-2-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> applId</span></td><td key=1><span>integer</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">应用标识</span></td><td key=5></td></tr><tr key=0-2-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> varietyId</span></td><td key=1><span>integer</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">品种ID</span></td><td key=5></td></tr><tr key=0-2-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> posiQty</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">持仓数量</span></td><td key=5></td></tr><tr key=0-2-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> initRate</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">初始保证金率</span></td><td key=5></td></tr><tr key=0-2-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> maintainRate</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">维持保证金率</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 获取所有合约信息
-<a id=获取所有合约信息> </a>
-### 基本信息
-
-**Path：** /api/v1/future/queryContract
-
-**Method：** GET
-
-**接口描述：**
-<p>注意：不需要签名</p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> result</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-0-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> varietyId</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">品种ID</span></td><td key=5></td></tr><tr key=0-0-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> applId</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">应用标识</span></td><td key=5></td></tr><tr key=0-0-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> underlyingId</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">标的ID</span></td><td key=5></td></tr><tr key=0-0-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> productType</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">product_type=1时，为虚拟币期货</span></td><td key=5></td></tr><tr key=0-0-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> symbol</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">品种名称</span></td><td key=5></td></tr><tr key=0-0-5><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> chainextCid</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">chainext的指数的cid</span></td><td key=5></td></tr><tr key=0-0-6><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> priceTick</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">最小报价单位</span></td><td key=5></td></tr><tr key=0-0-7><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> lotSize</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">最小交易量单位</span></td><td key=5></td></tr><tr key=0-0-8><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> takerFeeRatio</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">Taker手续费率</span></td><td key=5></td></tr><tr key=0-0-9><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> makerFeeRatio</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">Maker手续费率</span></td><td key=5></td></tr><tr key=0-0-10><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> limitMaxLevel</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">限价委托最大成交档位</span></td><td key=5></td></tr><tr key=0-0-11><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> marketMaxLevel</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">市价委托最大成交档位</span></td><td key=5></td></tr><tr key=0-0-12><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> maxNumOrders</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">用户最大挂单笔数</span></td><td key=5></td></tr><tr key=0-0-13><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> priceLimitRate</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">涨跌停率</span></td><td key=5></td></tr><tr key=0-0-14><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> commodityId</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">商品币种ID</span></td><td key=5></td></tr><tr key=0-0-15><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> currencyId</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">货币币种ID</span></td><td key=5></td></tr><tr key=0-0-16><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> contractType</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约类型，1定期，2永续</span></td><td key=5></td></tr><tr key=0-0-17><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> deliveryType</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">交割类型，1现金交割，2实物交割</span></td><td key=5></td></tr><tr key=0-0-18><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> deliveryPeriod</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">交割周期，0永续1日2周3月4季度</span></td><td key=5></td></tr><tr key=0-0-19><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> deliveryFeeRatio</span></td><td key=1><span>null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">交割手续费</span></td><td key=5></td></tr><tr key=0-0-20><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> contractSide</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约方向，1正向，2反向</span></td><td key=5></td></tr><tr key=0-0-21><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> contractUnit</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约单位</span></td><td key=5></td></tr><tr key=0-0-22><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> posiLimit</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">持仓限额</span></td><td key=5></td></tr><tr key=0-0-23><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderLimit</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托限额</span></td><td key=5></td></tr><tr key=0-0-24><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> impactMarginNotional</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">保证金影响额</span></td><td key=5></td></tr><tr key=0-0-25><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> minMaintainRate</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">最小维持保证金率</span></td><td key=5></td></tr><tr key=0-0-26><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> fairBasisInterval</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">结算价基差计算间隔，单位秒'</span></td><td key=5></td></tr><tr key=0-0-27><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> clearPriceInterval</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">结算价计算间隔，单位秒</span></td><td key=5></td></tr><tr key=0-0-28><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> deliveryPriceInterval</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">交割价计算长度，倒推时间，按秒计</span></td><td key=5></td></tr><tr key=0-0-29><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> perpetualPremiumLimit</span></td><td key=1><span>null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">永续合约溢价指数限制范围</span></td><td key=5></td></tr><tr key=0-0-30><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> perpetualFundingfeeLimit</span></td><td key=1><span>null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">永续合约资金费率限制范围比例</span></td><td key=5></td></tr><tr key=0-0-31><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> perpetualSettleFrequency</span></td><td key=1><span>null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">结算频率(一天几次)</span></td><td key=5></td></tr><tr key=0-0-32><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> risklessrateGoods</span></td><td key=1><span>null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">商品货币日利率</span></td><td key=5></td></tr><tr key=0-0-33><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> risklessrateMoney</span></td><td key=1><span>null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">计价货币日利率</span></td><td key=5></td></tr><tr key=0-0-34><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> isAutoList</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">是否自动加挂：0是 1否</span></td><td key=5></td></tr><tr key=0-0-35><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> onceListTime</span></td><td key=1><span>number,null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">一次性上市时间（即只上市一次</span></td><td key=5></td></tr><tr key=0-0-36><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> regularSettlementTime</span></td><td key=1><span>null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">定期结算时间（股指合约结算的相对时间，入库时设置）</span></td><td key=5></td></tr><tr key=0-0-37><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> createTime</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-38><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> enabled</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> futureContractList</span></td><td key=1><span>object []</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-0-39-0><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> contractId</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-1><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> applId</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-2><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> underlyingId</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-3><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> productType</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-4><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> symbol</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-5><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> priceTick</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-6><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> lotSize</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-7><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> takerFeeRatio</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-8><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> makerFeeRatio</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-9><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> limitMaxLevel</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-10><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> marketMaxLevel</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-11><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> maxNumOrders</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-12><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> priceLimitRate</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-13><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> commodityId</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-14><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> currencyId</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-15><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> contractType</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-16><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> deliveryType</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-17><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> deliveryPeriod</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-18><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> deliveryFeeRatio</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-19><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> contractSide</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-20><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> contractUnit</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-21><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> posiLimit</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-22><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> orderLimit</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-23><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> impactMarginNotional</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-24><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> minMaintainRate</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-25><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> fairBasisInterval</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-26><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> clearPriceInterval</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-27><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> deliveryPriceInterval</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-28><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> createTime</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-29><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> varietyId</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-30><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> lastTradeTime</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-31><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> deliveryTime</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-32><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> listPrice</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-33><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> listTime</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-34><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> contractStatus</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-35><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> perpetualPremiumLimit</span></td><td key=1><span>number,null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-36><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> perpetualFundingfeeLimit</span></td><td key=1><span>number,null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-37><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> perpetualSettleFrequency</span></td><td key=1><span>number,null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-38><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> risklessrateGoods</span></td><td key=1><span>number,null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-39><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> risklessrateMoney</span></td><td key=1><span>number,null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-39-40><td key=0><span style="padding-left: 40px"><span style="color: #8c8a8a">├─</span> isAutoList</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 获取所有法币
-<a id=获取所有法币> </a>
-### 基本信息
-
-**Path：** /common/exchange/list
-
-**Method：** GET
-
-**接口描述：**
-<p>貌似现在没用了</p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> result</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-0-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> id</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> name</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> rate</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-0-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> updateTime</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 获取计价货币的价格
-<a id=获取计价货币的价格> </a>
-### 基本信息
-
-**Path：** /common/exchange/coins
-
-**Method：** GET
-
-**接口描述：**
-<p>currencyId: 货币ID<br>
-latest: 当前USD价格</p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> result</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-0-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> currencyId</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">货币ID</span></td><td key=5></td></tr><tr key=0-0-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> latest</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">当前USD价格</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-# 期货行情
-
-## 查询24小时统计
-<a id=查询24小时统计> </a>
-### 基本信息
-
-**Path：** /futureQuot/queryMarketStat
-
-**Method：** GET
-
-**接口描述：**
-
-
-### 请求参数
-**Query**
-
-| 参数名称  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ |
-| currencyId | 是  |   |  货币ID |
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> code</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> msg</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> data</span></td><td key=1><span>object</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> messageType</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> currencyId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">货币ID</span></td><td key=5></td></tr><tr key=0-2-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> total24hTurnover</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">24小时成交额</span></td><td key=5></td></tr><tr key=0-2-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> total7dTurnover</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">7天成交额</span></td><td key=5></td></tr><tr key=0-2-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> total30dTurnover</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">30天成交额</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 获取K线数据
-<a id=获取K线数据> </a>
-### 基本信息
-
-**Path：** /futureQuot/queryCandlestick
-
-**Method：** GET
-
-**接口描述：**
-<p>注意：lines数据结构：List&lt;List&gt;<br>
-如：<br>
-&nbsp; &nbsp; [<br>
-&nbsp; &nbsp; &nbsp; &nbsp; [${时间}, ${开市价格}, ${最高价格}, ${最低价格}, ${闭市价格}, ${成交量}]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;]</p>
-<p>range取值<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">：</span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">1Min = 60000;</span></span></span><br>
-3Min = 180000;<br>
-5Min = 300000;<br>
-15Min = 900000;<br>
-30Min = 1800000;<br>
-1Hour = 3600000;<br>
-2Hour = 7200000;<br>
-4Hour = 14400000;<br>
-6Hour = 21600000;<br>
-12Hour = 43200000;<br>
-1Day = 86400000;<br>
-1Week = 604800000;</p>
-<p><br data-tomark-pass=""><br>
-<br data-tomark-pass=""></p>
-
-
-### 请求参数
-**Query**
-
-| 参数名称  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ |
-| symbol | 是  |   |  合约ID |
-| range | 是  |   |  线类型值 |
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> success</span></td><td key=1><span>boolean</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> data</span></td><td key=1><span>object</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> lines</span></td><td key=1><span>array []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>array</span></p></td></tr>
-               </tbody>
-              </table>
-
-## 获取单个合约行情快照
-<a id=获取单个合约行情快照> </a>
-### 基本信息
-
-**Path：** /futureQuot/querySnapshot
-
-**Method：** GET
-
-**接口描述：**
-<p>注意：<br>
-&nbsp; &nbsp; bids与asks结构：List&lt;List&gt;<br>
-&nbsp; &nbsp;&nbsp; 如<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [${价格}, ${数量}]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</p>
-
-
-### 请求参数
-**Query**
-
-| 参数名称  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ |
-| contractId | 是  |   |  合约ID |
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> contractId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约ID</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> result</span></td><td key=1><span>object</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> mt</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">消息类型：messageType</span></td><td key=5></td></tr><tr key=0-1-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> ai</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">应用ID：applId</span></td><td key=5></td></tr><tr key=0-1-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> ci</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约ID：contractId</span></td><td key=5></td></tr><tr key=0-1-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> sb</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约名称：symbol</span></td><td key=5></td></tr><tr key=0-1-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> td</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">交易日期：tradeDate</span></td><td key=5></td></tr><tr key=0-1-5><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> te</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">交易时间：time</span></td><td key=5></td></tr><tr key=0-1-6><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> lp</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">最新价格：lastPrice</span></td><td key=5></td></tr><tr key=0-1-7><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> mq</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交量：matchQty</span></td><td key=5></td></tr><tr key=0-1-8><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> nt</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交比数：numTrades</span></td><td key=5></td></tr><tr key=0-1-9><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> op</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">开盘价：openPrice</span></td><td key=5></td></tr><tr key=0-1-10><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> ph</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">最高价：priceHigh</span></td><td key=5></td></tr><tr key=0-1-11><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pl</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">最低价：priceLow</span></td><td key=5></td></tr><tr key=0-1-12><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> hph</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">历史最高价：historyPriceHigh</span></td><td key=5></td></tr><tr key=0-1-13><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> hpl</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">历史最低价：historyPriceLow</span></td><td key=5></td></tr><tr key=0-1-14><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> tt</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">当日成交额：totalTurnover</span></td><td key=5></td></tr><tr key=0-1-15><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> tv</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">当日成交量：totalVolume</span></td><td key=5></td></tr><tr key=0-1-16><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> tbv</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">买总委托数：totalBidVol</span></td><td key=5></td></tr><tr key=0-1-17><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> tav</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">卖总委托数：totalAskVol</span></td><td key=5></td></tr><tr key=0-1-18><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pp</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">上一交易日收盘价：prevPrice</span></td><td key=5></td></tr><tr key=0-1-19><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> cp</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">标记价格，结算价：clearPrice</span></td><td key=5></td></tr><tr key=0-1-20><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pv</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">总持仓量：posiVol</span></td><td key=5></td></tr><tr key=0-1-21><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pcr</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">当日涨跌幅度：priceChangeRadio</span></td><td key=5></td></tr><tr key=0-1-22><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pc</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">当日涨跌：priceChange</span></td><td key=5></td></tr><tr key=0-1-23><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> lui</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">行情序号：lastUpdateId</span></td><td key=5></td></tr><tr key=0-1-24><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> cs</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">交易对状态：contractStatus</span></td><td key=5></td></tr><tr key=0-1-25><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> dp</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">交割价格：deliveryPrice</span></td><td key=5></td></tr><tr key=0-1-26><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> fr</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">资金费率：fundingRate</span></td><td key=5></td></tr><tr key=0-1-27><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pfr</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">预测资金费率：predictionFundingRate</span></td><td key=5></td></tr><tr key=0-1-28><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pi</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">溢价指数：premiumIndex</span></td><td key=5></td></tr><tr key=0-1-29><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> ppi</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">预溢价指数：predictionPremiumIndex</span></td><td key=5></td></tr><tr key=0-1-30><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> fb</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合理基差：fairBasis</span></td><td key=5></td></tr><tr key=0-1-31><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> ts</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">交易信号，1=买，2=卖：tradingsignal</span></td><td key=5></td></tr><tr key=0-1-32><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> sl</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">1~100,交易信号强度 ：signalLevel</span></td><td key=5></td></tr><tr key=0-1-33><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> ip</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">标的指数价格：indexPrice</span></td><td key=5></td></tr><tr key=0-1-34><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> bids</span></td><td key=1><span>string []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">买档位</span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>string</span></p></td></tr><tr key=0-1-35><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> asks</span></td><td key=1><span>string []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"> 卖档位</span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>string</span></p></td></tr>
-               </tbody>
-              </table>
-
-## 获取所有行情快照
-<a id=获取所有行情快照> </a>
-### 基本信息
-
-**Path：** /futureQuot/queryIndicatorList
-
-**Method：** GET
-
-**接口描述：**
-<p>具体各字段含义，请参考<br>
-&nbsp; &nbsp; /futureQuot/querySnapshot 接口<br>
-<a href="https://yapi.coinidx.io/project/51/interface/api/2763">https://yapi.coinidx.io/project/51/interface/api/2763</a></p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> </span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> mt</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> ai</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> ci</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> sb</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> td</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-5><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> te</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-6><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> lp</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-7><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> mq</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-8><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> nt</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-9><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> op</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-10><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> ph</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-11><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pl</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-12><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> hph</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-13><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> hpl</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-14><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> tt</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-15><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> tv</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-16><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> tbv</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-17><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> tav</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-18><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pp</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-19><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> cp</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-20><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pv</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-21><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pcr</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-22><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pc</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-23><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> lui</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-24><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> cs</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-25><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> dp</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-26><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> fr</span></td><td key=1><span>null,string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-27><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pfr</span></td><td key=1><span>null,string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-28><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pi</span></td><td key=1><span>null,string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-29><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> ppi</span></td><td key=1><span>null,string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-30><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> fb</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-31><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> ts</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-32><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> sl</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-33><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> ip</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 获取逐笔成交
-<a id=获取逐笔成交> </a>
-### 基本信息
-
-**Path：** /futureQuot/queryTickTrade
-
-**Method：** GET
-
-**接口描述：**
-<p>注意：<br>
-&nbsp;&nbsp;&nbsp;&nbsp;trades的结构为：List&lt;List&gt;<br>
-&nbsp;&nbsp; 如：<br>
-&nbsp; &nbsp; [<br>
-&nbsp; &nbsp; &nbsp; &nbsp; [${时间戳}, ${成交价格}, ${成交数量}, ${方向}]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;]</p>
-
-
-### 请求参数
-**Query**
-
-| 参数名称  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ |
-| contractId | 是  |   |  合约ID |
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> success</span></td><td key=1><span>boolean</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> data</span></td><td key=1><span>object</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> trades</span></td><td key=1><span>array []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>array</span></p></td></tr>
-               </tbody>
-              </table>
-
-# 期货推送
-
-## 持仓-推送
-<a id=持仓-推送> </a>
-### 基本信息
-
-**Path：** /push/posi
-
-**Method：** GET
-
-**接口描述：**
-<p>topic: match<br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"header": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"type": 1003</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">},</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"body": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topics": [{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topic": "</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(24, 24, 24)"><span class="colour" style="color:rgb(24, 24, 24)"><span class="colour" style="color:rgb(24, 24, 24)">match</span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> messageTpe</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">3012</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> lastId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">消息ID</span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> applId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">2</span></td><td key=5></td></tr><tr key=0-3><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> accountId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">账号ID</span></td><td key=5></td></tr><tr key=0-4><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> posis</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">持仓列表</span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-4-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> contractId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约ID</span></td><td key=5></td></tr><tr key=0-4-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> marginType</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">保证金类型，1全仓2逐仓</span></td><td key=5></td></tr><tr key=0-4-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> initMarginRate</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">初始保证率</span></td><td key=5></td></tr><tr key=0-4-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> maintainMarginRate</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">维持保证金</span></td><td key=5></td></tr><tr key=0-4-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> initMargin</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">初始保证金</span></td><td key=5></td></tr><tr key=0-4-5><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> extraMargin</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">额外保证金</span></td><td key=5></td></tr><tr key=0-4-6><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> openAmt</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">开仓金额</span></td><td key=5></td></tr><tr key=0-4-7><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> posiQty</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">持仓量，大于0多头，小于0空头</span></td><td key=5></td></tr><tr key=0-4-8><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> frozenOpenQty</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">开仓委托冻结量</span></td><td key=5></td></tr><tr key=0-4-9><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> frozenCloseQty</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">平仓委托冻结量</span></td><td key=5></td></tr><tr key=0-4-10><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> posiStatus</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">1正常，2等待强平</span></td><td key=5></td></tr><tr key=0-4-11><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> closeProfitLoss</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">已实现盈亏</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## K线-推送
-<a id=K线-推送> </a>
-### 基本信息
-
-**Path：** /push/kline
-
-**Method：** GET
-
-**接口描述：**
-<p>订阅topic:&nbsp;future_kline (<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(121, 121, 121)"><span class="colour" style="color:rgb(121, 121, 121)"><span class="colour" style="color:rgb(121, 121, 121)">k线数据，支持按照1分钟5分钟这种单独订阅，需要订阅所有，就传数组，一定要传。)</span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">{</span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"header": {</span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"type": 1003</span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">},</span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"body": {</span></span></span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topics": [{</span></span></span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topic": "future_kline",</span></span></span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"params": {</span></span></span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"symbols": [{</span></span></span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"symbol": 100,</span></span></span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"ranges": ["60000"]</span></span></span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span><br>
-lines 的数据结构为：List&lt;List&gt;<br>
-如：<br>
-[<br>
-&nbsp; &nbsp; [${时间戳}, ${开市价格}, ${最高价格}, ${最低价格}, ${闭市价格}, ${成交量}]<br>
-]</p>
-<p><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">range取值</span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">：</span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">1Min = 60000;</span></span></span></span></span></span></span><br>
-3Min = 180000;<br>
-5Min = 300000;<br>
-15Min = 900000;<br>
-30Min = 1800000;<br>
-1Hour = 3600000;<br>
-2Hour = 7200000;<br>
-4Hour = 14400000;<br>
-6Hour = 21600000;<br>
-12Hour = 43200000;<br>
-1Day = 86400000;<br>
-1Week = 604800000;</p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> contractId</span></td><td key=1><span>integer</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约ID</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> range</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">类型</span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> lines</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr>
-               </tbody>
-              </table>
-
-## 减仓队列-推送
-<a id=减仓队列-推送> </a>
-### 基本信息
-
-**Path：** /push/forelower
-
-**Method：** GET
-
-**接口描述：**
-<p>topic: match<br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"header": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"type": 1003</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">},</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"body": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topics": [{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topic": "</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(24, 24, 24)"><span class="colour" style="color:rgb(24, 24, 24)"><span class="colour" style="color:rgb(24, 24, 24)">match</span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> messageType</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">3014</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> applId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">2</span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> accountId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">用户ID</span></td><td key=5></td></tr><tr key=0-3><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> ranks</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">减仓对列</span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-3-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> contractId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约ID</span></td><td key=5></td></tr><tr key=0-3-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> rank</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">值</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 历史委托-推送
-<a id=历史委托-推送> </a>
-### 基本信息
-
-**Path：** /push/hisOrder
-
-**Method：** GET
-
-**接口描述：**
-<p>topic: match<br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"header": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"type": 1003</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">},</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"body": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topics": [{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topic": "</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(24, 24, 24)"><span class="colour" style="color:rgb(24, 24, 24)"><span class="colour" style="color:rgb(24, 24, 24)">match</span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> messageType</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">3006</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> lastId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">消息ID</span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> accountId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">账号ID</span></td><td key=5></td></tr><tr key=0-3><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> orders</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托列表</span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-3-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderId</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托号</span></td><td key=5></td></tr><tr key=0-3-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> side</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">买卖方向（1：买，-1：卖）</span></td><td key=5></td></tr><tr key=0-3-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> price</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托价格</span></td><td key=5></td></tr><tr key=0-3-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> quantity</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托数量</span></td><td key=5></td></tr><tr key=0-3-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderType</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托类型</span></td><td key=5></td></tr><tr key=0-3-5><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> timestamp</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托时间</span></td><td key=5></td></tr><tr key=0-3-6><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> contractId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约ID</span></td><td key=5></td></tr><tr key=0-3-7><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> filledCurrency</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交金额</span></td><td key=5></td></tr><tr key=0-3-8><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> filledQuantity</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交数量</span></td><td key=5></td></tr><tr key=0-3-9><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> canceledQuantity</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">撤单数量</span></td><td key=5></td></tr><tr key=0-3-10><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> positionEffect</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">开平标志，1开仓2平仓</span></td><td key=5></td></tr><tr key=0-3-11><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> fcOrderId</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">强平委托号，非空时为强平委托</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 币种价格-推送
-<a id=币种价格-推送> </a>
-### 基本信息
-
-**Path：** /push/coin_price
-
-**Method：** GET
-
-**接口描述：**
-<p>订阅topic:&nbsp; coin_price</p>
-<p><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"header": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"type": 1003</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">},</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"body": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topics": [{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topic": "</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>exchange<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">",</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> </span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> currencyId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">货币ID</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> latest</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">最新价格</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 市场统计-推送
-<a id=市场统计-推送> </a>
-### 基本信息
-
-**Path：** /push/market_stat
-
-**Method：** GET
-
-**接口描述：**
-<p>订阅topic:future_market_stat</p>
-<p><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"header": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"type": 1003</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">},</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"body": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topics": [{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topic": "</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>future_market_stat<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">",</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> messageType</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">消息类型：13</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> currencyId</span></td><td key=1><span>integer</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">币种ID</span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> total24hTurnover</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">24小时成交额</span></td><td key=5></td></tr><tr key=0-3><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> total7dTurnover</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">7日成交额</span></td><td key=5></td></tr><tr key=0-4><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> total30dTurnover</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">30日成交额</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 当前委托-推送
-<a id=当前委托-推送> </a>
-### 基本信息
-
-**Path：** /push/activeOrder
-
-**Method：** GET
-
-**接口描述：**
-<p>topic: match<br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"header": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"type": 1003</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">},</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"body": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topics": [{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topic": "</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(24, 24, 24)"><span class="colour" style="color:rgb(24, 24, 24)"><span class="colour" style="color:rgb(24, 24, 24)">match</span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> messageType</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">消息类型：3004</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> accountId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">账户ID</span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> contractId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约ID</span></td><td key=5></td></tr><tr key=0-3><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> orderId</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托号</span></td><td key=5></td></tr><tr key=0-4><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> clientOrderId</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">客户订单编号</span></td><td key=5></td></tr><tr key=0-5><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> price</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托价格</span></td><td key=5></td></tr><tr key=0-6><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> quantity</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"> 委托数量</span></td><td key=5></td></tr><tr key=0-7><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> leftQuantity</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">剩余数量</span></td><td key=5></td></tr><tr key=0-8><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> side</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">买卖方向（1：买，-1：卖）</span></td><td key=5></td></tr><tr key=0-9><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> placeTimestamp</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托时间</span></td><td key=5></td></tr><tr key=0-10><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> matchAmt</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交金额</span></td><td key=5></td></tr><tr key=0-11><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> orderType</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托类型（1：限价，2：市价）</span></td><td key=5></td></tr><tr key=0-12><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> positionEffect</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">开平标志（1：开仓，2：平仓）</span></td><td key=5></td></tr><tr key=0-13><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> marginType</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">保证金类型（1、全仓，2：逐仓）</span></td><td key=5></td></tr><tr key=0-14><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> initMarginRate</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">初始保保证金率</span></td><td key=5></td></tr><tr key=0-15><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> fcOrderId</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">强平委托号，空时为强平委托</span></td><td key=5></td></tr><tr key=0-16><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> markPrice</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">标记价格</span></td><td key=5></td></tr><tr key=0-17><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> feeRate</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">手续费率</span></td><td key=5></td></tr><tr key=0-18><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> contractUnit</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约单位</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 成交-推送
-<a id=成交-推送> </a>
-### 基本信息
-
-**Path：** /push/match
-
-**Method：** GET
-
-**接口描述：**
-<p>topic: match<br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"header": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"type": 1003</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">},</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"body": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topics": [{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topic": "</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(24, 24, 24)"><span class="colour" style="color:rgb(24, 24, 24)"><span class="colour" style="color:rgb(24, 24, 24)">match</span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> messageType</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">3010</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> lastId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">消息Id</span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> applId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">2</span></td><td key=5></td></tr><tr key=0-3><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> accountId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">账号ID</span></td><td key=5></td></tr><tr key=0-4><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> matchs</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交列表</span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-4-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> applId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">2</span></td><td key=5></td></tr><tr key=0-4-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> contractId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约ID</span></td><td key=5></td></tr><tr key=0-4-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> matchTime</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交时间</span></td><td key=5></td></tr><tr key=0-4-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> matchPrice</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交价格</span></td><td key=5></td></tr><tr key=0-4-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> matchQty</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交数量</span></td><td key=5></td></tr><tr key=0-4-5><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> matchAmt</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交金额</span></td><td key=5></td></tr><tr key=0-4-6><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> execId</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交号</span></td><td key=5></td></tr><tr key=0-4-7><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderId</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托ID</span></td><td key=5></td></tr><tr key=0-4-8><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> fee</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">手续费</span></td><td key=5></td></tr><tr key=0-4-9><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> positionEffect</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">开平标志</span></td><td key=5></td></tr><tr key=0-4-10><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> side</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">买入方向</span></td><td key=5></td></tr><tr key=0-4-11><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> matchType</span></td><td key=1><span>integer</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交类型：0-正常、1-强平、2- 破产强减、3-自动减仓盈利方</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 全量行情数据-推送
-<a id=全量行情数据-推送> </a>
-### 基本信息
-
-**Path：** /push/future_all_indicator
-
-**Method：** GET
-
-**接口描述：**
-<p>订阅topic: &nbsp; future_all_indicator</p>
-<p><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">{</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"header": {</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"type": 1003</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">},</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"body": {</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topics": [{</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topic": "</span></span></span></span></span></span></span></span>future_all_indicator<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">",</span></span></span></span></span></span></span><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span><br data-tomark-pass=""><br>
-<br data-tomark-pass=""><br>
-各字段请参考：<a href="https://yapi.coinidx.io/project/51/wiki">https://yapi.coinidx.io/project/51/wiki</a></p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> </span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> mt</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> ai</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> ci</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> sb</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> td</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-5><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> te</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-6><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> lp</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-7><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> mq</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-8><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> nt</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-9><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> op</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-10><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> ph</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-11><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pl</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-12><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> hph</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-13><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> hpl</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-14><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> tt</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-15><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> tv</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-16><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> tbv</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-17><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> tav</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-18><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pp</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-19><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> cp</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-20><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pv</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-21><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pcr</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-22><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pc</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-23><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> lui</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-24><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> cs</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-25><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> dp</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-26><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> fr</span></td><td key=1><span>null,string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-27><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pfr</span></td><td key=1><span>null,string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-28><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> pi</span></td><td key=1><span>null,string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-29><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> ppi</span></td><td key=1><span>null,string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-30><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> fb</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-31><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> ts</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-32><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> sl</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-33><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> ip</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 法币汇率-推送
-<a id=法币汇率-推送> </a>
-### 基本信息
-
-**Path：** /push/exchange
-
-**Method：** GET
-
-**接口描述：**
-<p>注意：订阅topic名称：&nbsp;exchange</p>
-<p><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">{</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"header": {</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"type": 1003</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">},</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"body": {</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topics": [{</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topic": "</span></span></span></span></span></span></span></span>exchange<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">",</span></span></span></span></span></span></span><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> </span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> id</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">法币Id</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> name</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">法币名称</span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> rate</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">汇率</span></td><td key=5></td></tr><tr key=0-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> updateTime</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">更新时间</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 系统时间-推送
-<a id=系统时间-推送> </a>
-### 基本信息
-
-**Path：** /push/realtime
-
-**Method：** GET
-
-**接口描述：**
-<p>topic：realtime</p>
-<p><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"header": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"type": 1003</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">},</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"body": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topics": [{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topic": "</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>realtime<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> timeSlice</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">微秒</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 行情快照买卖档位-推送
-<a id=行情快照买卖档位-推送> </a>
-### 基本信息
-
-**Path：** /push/future_snapshot_depth
-
-**Method：** GET
-
-**接口描述：**
-<p>订阅topic:&nbsp;future_snapshot_depth</p>
-<p>asks与bids 的数据格式：List&lt;List&gt;<br>
-&nbsp;如：<br>
-&nbsp; &nbsp; [<br>
-&nbsp; &nbsp; &nbsp; &nbsp; [${价格}, ${数量}]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;]</p>
-<p><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"header": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"type": 1003</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">},</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"body": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topics": [{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topic": "</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(24, 24, 24)"><span class="colour" style="color:rgb(24, 24, 24)"><span class="colour" style="color:rgb(24, 24, 24)">future_snapshot_depth</span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">",</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"params": {</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"symbols": [{</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;</span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"symbol": 100</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> contractId</span></td><td key=1><span>integer</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约ID</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> bids</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> asks</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr>
-               </tbody>
-              </table>
-
-## 行情快照基础数据-推送
-<a id=行情快照基础数据-推送> </a>
-### 基本信息
-
-**Path：** /push/future_snapshot_indicator
-
-**Method：** GET
-
-**接口描述：**
-<p>订阅topic:&nbsp;future_snapshot_indicator</p>
-<p>数据格式请参考：<a href="https://yapi.coinidx.io/project/51/wiki">https://yapi.coinidx.io/project/51/wiki</a><br data-tomark-pass=""><br>
-<br data-tomark-pass=""><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"header": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"type": 1003</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">},</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"body": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topics": [{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topic": "</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(24, 24, 24)"><span class="colour" style="color:rgb(24, 24, 24)"><span class="colour" style="color:rgb(24, 24, 24)">future_snapshot_indicator</span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">",</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"params": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"symbols": [{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;</span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"symbol": 100</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> mt</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> ai</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> ci</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-3><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> sb</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-4><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> td</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-5><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> te</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-6><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> lp</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-7><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> mq</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-8><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> nt</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-9><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> op</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-10><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> ph</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-11><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> pl</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-12><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> hph</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-13><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> hpl</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-14><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> tt</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-15><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> tv</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-16><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> tbv</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-17><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> tav</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-18><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> pp</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-19><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> cp</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-20><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> pv</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-21><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> pcr</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-22><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> pc</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-23><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> lui</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-24><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> cs</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-25><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> dp</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-26><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> fr</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-27><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> pfr</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-28><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> pi</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-29><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> ppi</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-30><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> fb</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-31><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> ts</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-32><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> sl</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-33><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> ip</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 资产-推送
-<a id=资产-推送> </a>
-### 基本信息
-
-**Path：** /push/asset
-
-**Method：** GET
-
-**接口描述：**
-<p>topic: match</p>
-<p><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"header": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"type": 1003</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">},</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"body": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topics": [{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topic": "</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(24, 24, 24)"><span class="colour" style="color:rgb(24, 24, 24)"><span class="colour" style="color:rgb(24, 24, 24)">match</span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> messageType</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">3002</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> accountId</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">用户ID</span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> lastId</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">消息ID</span></td><td key=5></td></tr><tr key=0-3><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> currencyId</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">币种I</span></td><td key=5></td></tr><tr key=0-4><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> totalBalance</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">总资产</span></td><td key=5></td></tr><tr key=0-5><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> available</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">可用资产</span></td><td key=5></td></tr><tr key=0-6><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> frozenForTrade</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托冻结保证金和手续费</span></td><td key=5></td></tr><tr key=0-7><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> initMargin</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">仓位已占用保证金</span></td><td key=5></td></tr><tr key=0-8><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> frozenInitMargin</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托冻结保证金，不含手续费</span></td><td key=5></td></tr><tr key=0-9><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> closeProfitLoss</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">累计已实现盈亏</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 逐笔成交-推送
-<a id=逐笔成交-推送> </a>
-### 基本信息
-
-**Path：** /push/tick
-
-**Method：** GET
-
-**接口描述：**
-<p>topic:&nbsp;future_tick</p>
-<p><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">{</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"header": {</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"type": 1003</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">},</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"body": {</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topics": [{</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topic": "</span></span></span></span></span></span></span></span>future_tick<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">",</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"params": {</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"symbols": [{</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"symbol": 100</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span><br>
-注意订阅所有时，不传<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">params</span></span></span></span><br data-tomark-pass=""><br>
-<br data-tomark-pass=""><br>
-trades 数据结构 List<br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp; [</span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp; &nbsp; &nbsp; &nbsp; [${时间戳}, ${成交价格}, ${成交数量}, ${方向}]</span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;]</span></span></span></span></p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> contractId</span></td><td key=1><span>integer</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约ID</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> trades</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr>
-               </tbody>
-              </table>
-
-## 通知-推送
-<a id=通知-推送> </a>
-### 基本信息
-
-**Path：** /push/notice
-
-**Method：** GET
-
-**接口描述：**
-<p>topic: &nbsp; &nbsp;notice</p>
-<p><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"header": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"type": 1003</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">},</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"body": {</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topics": [{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"topic": "</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(24, 24, 24)"><span class="colour" style="color:rgb(24, 24, 24)"><span class="colour" style="color:rgb(24, 24, 24)">notice</span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">"</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></span></span></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}]</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br>
-<span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"><span class="colour" style="color:rgb(85, 85, 85)"></span></span></span></span><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)"><span class="colour" style="color:rgb(0, 0, 0)">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> </span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> title</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">主题</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> contractId</span></td><td key=1><span>integer</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约ID</span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> type</span></td><td key=1><span>integer</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">WARNING(1, "告警"), STRONG_FLAT(2, "强平"), STRONG_SUBTRACT(3, "强减")</span></td><td key=5></td></tr><tr key=0-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> data</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">通知数据</span></td><td key=5></td></tr><tr key=0-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> time</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">时间</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-# 1.交易类接口 order
-
-## 1.1 下单接口 Create order
-<a id=1.1 下单接口 Create order> </a>
-### 基本信息
-
-**Path：** /api/v1/future/order
-
-**Method：** POST
-
-**接口描述：**
-<p>功能：期货合约 - 委托下单（包括空单、多单、平仓单）</p>
-
-
-### 请求参数
-**Headers**
-
-| 参数名称  | 参数值  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ | ------------ |
-| Content-Type  |  application/json | 是  |   |   |
-| signature  |  String | 是  |  d3d576ghggf8ddd3 |  签名 |
-| apiKey  |  String | 是  |  j7sas9ahshbdb9sisi |  认证 |
-| apiExpires  |  Long | 是  |  1548213518 |  过期时间 |
-**Body**
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> contractId</span></td><td key=1><span>integer</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">交易对ID</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> side</span></td><td key=1><span>integer</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约委托方向（买1，卖-1）</span></td><td key=5><p key=3><span style="font-weight: '700'">枚举: </span><span>-1,1</span></p></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> price</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约委托价格（order_type等于3（市价）时非必填 ）</span></td><td key=5></td></tr><tr key=0-3><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> quantity</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约委托数量</span></td><td key=5></td></tr><tr key=0-4><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> orderType</span></td><td key=1><span>integer</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约委托类型（1（限价），3（市价） ）</span></td><td key=5></td></tr><tr key=0-5><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> positionEffect</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">开平标志（开仓1，平仓2）</span></td><td key=5></td></tr><tr key=0-6><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> marginType</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">仓位模式（全仓1，逐仓2）</span></td><td key=5></td></tr><tr key=0-7><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> marginRate</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">保证金率（全仓=0，逐仓>=0）</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> code</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> msg</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 1.12 当前成交查询
-<a id=1.12 当前成交查询> </a>
-### 基本信息
-
-**Path：** /api/v1/future/queryMatch
-
-**Method：** GET
-
-**接口描述：**
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> code</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> msg</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> data</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-2-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> contractId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约ID</span></td><td key=5></td></tr><tr key=0-2-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> matchTime</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交时间</span></td><td key=5></td></tr><tr key=0-2-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> matchPrice</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交价格</span></td><td key=5></td></tr><tr key=0-2-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> matchQty</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交数量</span></td><td key=5></td></tr><tr key=0-2-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> matchAmt</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交金额</span></td><td key=5></td></tr><tr key=0-2-5><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> execId</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交号</span></td><td key=5></td></tr><tr key=0-2-6><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderId</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托ID</span></td><td key=5></td></tr><tr key=0-2-7><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> fee</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">手续费</span></td><td key=5></td></tr><tr key=0-2-8><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> positionEffect</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">开平标志1开仓，2平仓</span></td><td key=5></td></tr><tr key=0-2-9><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> side</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">买卖方向买1，卖-1</span></td><td key=5></td></tr><tr key=0-2-10><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> matchType</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交类型</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 1.2 批量下单接口 Create Orders
-<a id=1.2 批量下单接口 Create Orders> </a>
-### 基本信息
-
-**Path：** /api/v1/future/orders
-
-**Method：** POST
-
-**接口描述：**
-<p>功能：期货合约 - 批量委托下单 （下多笔委托订单）</p>
-
-
-### 请求参数
-**Headers**
-
-| 参数名称  | 参数值  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ | ------------ |
-| Content-Type  |  application/json | 是  |   |   |
-| signature  |   | 是  |   |  签名 |
-| apiExpires  |   | 是  |   |  时间戳，秒级别 |
-| apiKey  |   | 是  |   |  公钥 |
-**Body**
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> orders</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-0-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> side</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">买卖方向，1买-1卖</span></td><td key=5></td></tr><tr key=0-0-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderPrice</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托价格</span></td><td key=5></td></tr><tr key=0-0-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderQty</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托数量</span></td><td key=5></td></tr><tr key=0-0-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderType</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托类型：1（限价），3（市价）</span></td><td key=5></td></tr><tr key=0-0-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> contractId</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约ID</span></td><td key=5></td></tr><tr key=0-0-5><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> positionEffect</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">开平标志，1开仓，2平仓</span></td><td key=5></td></tr><tr key=0-0-6><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> marginType</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">保证金类型，1全仓，2逐仓</span></td><td key=5></td></tr><tr key=0-0-7><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> initRate</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">保证金率，全仓时0，逐仓时>0</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody">
-               </tbody>
-              </table>
-
-## 1.3 撤单接口 Cancel order
-<a id=1.3 撤单接口 Cancel order> </a>
-### 基本信息
-
-**Path：** /api/v1/future/order
-
-**Method：** DELETE
-
-**接口描述：**
-<p>功能 ：期货合约 - 单笔撤消 未成交的委托单</p>
-
-
-### 请求参数
-**Headers**
-
-| 参数名称  | 参数值  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ | ------------ |
-| Content-Type  |  application/json | 是  |   |   |
-| signature  |  String | 是  |  d3d576ghggf8ddd3 |  签名 |
-| apiKey  |  Long | 是  |  j7sas9ahshbdb9sisi |  认证 |
-| apiExpires  |  Long | 是  |  1548213518 |  过期时间 |
-**Query**
-
-| 参数名称  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ |
-| filter | 是  |  %7b%22contractId%22%3a1%2c%22originalOrderId%22%3a%2212345677%22%7d |  UrlEncode 解码后为：{"contractId":1,"originalOrderId":"12345677"}<br/>contractId：合约ID<br/>originalOrderId:原始委托号 |
-**Body**
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody">
-               </tbody>
-              </table>
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> code</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> msg</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 1.4 批量撤单接口 Cancel Orders
-<a id=1.4 批量撤单接口 Cancel Orders> </a>
-### 基本信息
-
-**Path：** /api/v1/future/orders
-
-**Method：** DELETE
-
-**接口描述：**
-<p>功能 ：期货合约 - 批量撤消 多笔未成交的委托单</p>
-
-
-### 请求参数
-**Headers**
-
-| 参数名称  | 参数值  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ | ------------ |
-| Content-Type  |  application/json | 是  |   |   |
-| signature  |   | 是  |   |  签名 |
-| apiKey  |   | 是  |   |  apikey |
-| apiExpires  |   | 是  |   |  过期时间 |
-**Body**
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> cancels</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-0-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> contractId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约ID</span></td><td key=5></td></tr><tr key=0-0-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> originalOrderId</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">原始委托号</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> code</span></td><td key=1><span>integer</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">0:成功，非0：失败</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 1.5 撤消所有订单接口 Cancel all orders
-<a id=1.5 撤消所有订单接口 Cancel all orders> </a>
-### 基本信息
-
-**Path：** /api/v1/future/order/all
-
-**Method：** DELETE
-
-**接口描述：**
-<p>功能 ：期货合约 - 撤消 所有未成交的委托单</p>
-
-
-### 请求参数
-**Headers**
-
-| 参数名称  | 参数值  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ | ------------ |
-| Content-Type  |  application/x-www-form-urlencoded | 是  |   |   |
-| signature  |   | 是  |   |  签名 |
-| apiKey  |   | 是  |   |  apiKey |
-| apiExpires  |   | 是  |   |  过期时间 |
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> code</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> msg</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> data</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 1.6 获取订单信息接口 Get order Information
-<a id=1.6 获取订单信息接口 Get order Information> </a>
-### 基本信息
-
-**Path：** /api/v1/future/order
-
-**Method：** GET
-
-**接口描述：**
-<p>功能 ：期货合约 - 查询订单的相关信息</p>
-
-
-### 请求参数
-**Headers**
-
-| 参数名称  | 参数值  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ | ------------ |
-| Content-Type  |  application/json | 是  |   |   |
-| signature  |   | 是  |   |  签名 |
-| apiKey  |   | 是  |   |  apiKey |
-| apiExpires  |   | 是  |   |  apiExpires |
-**Query**
-
-| 参数名称  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ |
-| filter | 是  |  %7B%22orderId%22%3A%2211548740843018185%22%7D |  {"orderId":"11548740843018185"} urlencode  后等于 %7B%22orderId%22%3A%2211548740843018185%22%7D |
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> code</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> msg</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> data</span></td><td key=1><span>object</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> applId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">应用标识</span></td><td key=5></td></tr><tr key=0-2-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> contractId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">交易对ID</span></td><td key=5></td></tr><tr key=0-2-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> accountId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">账户ID</span></td><td key=5></td></tr><tr key=0-2-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> clOrderId</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">客户订单编号</span></td><td key=5></td></tr><tr key=0-2-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> side</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托方向（1：买，-1：卖）</span></td><td key=5></td></tr><tr key=0-2-5><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderPrice</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托价格</span></td><td key=5></td></tr><tr key=0-2-6><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderQty</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托数量</span></td><td key=5></td></tr><tr key=0-2-7><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderId</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托订单编号</span></td><td key=5></td></tr><tr key=0-2-8><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderTime</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托时间</span></td><td key=5></td></tr><tr key=0-2-9><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderStatus</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托状态（0未申报，1正在申报，2已申报未成交，3部分成交，4全部成交，5部成部撤,6全部撤单，7撤单中，8失效）</span></td><td key=5></td></tr><tr key=0-2-10><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> matchQty</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交数量</span></td><td key=5></td></tr><tr key=0-2-11><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> matchAmt</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交金额</span></td><td key=5></td></tr><tr key=0-2-12><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> cancelQty</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">撤单数量</span></td><td key=5></td></tr><tr key=0-2-13><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> matchTime</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交时间</span></td><td key=5></td></tr><tr key=0-2-14><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderType</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托类型（1：限价，3：市价）</span></td><td key=5></td></tr><tr key=0-2-15><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> timeInForce</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">订单有效时期类型：当日有效、GTC、IOC，默认1， 1, "可成交价格全部成交"；2, "立即成交剩余撤销"</span></td><td key=5></td></tr><tr key=0-2-16><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> positionEffect</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">开平标志（1开仓 2平仓）</span></td><td key=5></td></tr><tr key=0-2-17><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> marginType</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">仓位模式（1、全仓，2：逐仓）</span></td><td key=5></td></tr><tr key=0-2-18><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> fcOrderId</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">强平委托号，非空时为强平委托</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 1.7 查询当前订单列表 queryActiveOrder
-<a id=1.7 查询当前订单列表 queryActiveOrder> </a>
-### 基本信息
-
-**Path：** /api/v1/future/queryActiveOrder
-
-**Method：** GET
-
-**接口描述：**
-<p>功能 ：期货合约 - 查询 当前订单的列表数据</p>
-
-
-### 请求参数
-**Headers**
-
-| 参数名称  | 参数值  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ | ------------ |
-| Content-Type  |  application/json | 是  |   |   |
-| signature  |   | 是  |   |  签名 |
-| apiKey  |   | 是  |   |  apiKey |
-| apiExpires  |   | 是  |   |  过期时间 |
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> code</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> msg</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> data</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-2-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> applId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">应用标识	</span></td><td key=5></td></tr><tr key=0-2-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> contractId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">交易对ID	</span></td><td key=5></td></tr><tr key=0-2-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> accountId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">账户ID	</span></td><td key=5></td></tr><tr key=0-2-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> clOrderId</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">客户订单编号	</span></td><td key=5></td></tr><tr key=0-2-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> side</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托方向（1：买，-1：卖）</span></td><td key=5></td></tr><tr key=0-2-5><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderPrice</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托价格	</span></td><td key=5></td></tr><tr key=0-2-6><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderQty</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托数量	</span></td><td key=5></td></tr><tr key=0-2-7><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderId</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托订单编号	</span></td><td key=5></td></tr><tr key=0-2-8><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderTime</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托时间	</span></td><td key=5></td></tr><tr key=0-2-9><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderStatus</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托状态（0未申报，1正在申报，2已申报未成交，3部分成交，4全部成交，5部成部撤,6全部撤单，7撤单中，8失效）</span></td><td key=5></td></tr><tr key=0-2-10><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> matchQty</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交数量	</span></td><td key=5></td></tr><tr key=0-2-11><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> matchAmt</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交金额	</span></td><td key=5></td></tr><tr key=0-2-12><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> cancelQty</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">撤单数量	</span></td><td key=5></td></tr><tr key=0-2-13><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> matchTime</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交时间	</span></td><td key=5></td></tr><tr key=0-2-14><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderType</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托类型（1：限价，3：市价）</span></td><td key=5></td></tr><tr key=0-2-15><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> timeInForce</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">订单有效时期类型：当日有效、GTC、IOC，默认1， 1, "可成交价格全部成交"；2, "立即成交剩余撤销"</span></td><td key=5></td></tr><tr key=0-2-16><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> positionEffect</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">开平标志（1开仓 2平仓）</span></td><td key=5></td></tr><tr key=0-2-17><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> marginType</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">仓位模式（1、全仓，2：逐仓）</span></td><td key=5></td></tr><tr key=0-2-18><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> fcOrderId</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">强平委托号，非空时为强平委托</span></td><td key=5></td></tr><tr key=0-3><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> type</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 1.8 查询历史委托接口 queryLastestHistoryOrders
-<a id=1.8 查询历史委托接口 queryLastestHistoryOrders> </a>
-### 基本信息
-
-**Path：** /api/v1/future/queryLastestHistoryOrders
-
-**Method：** GET
-
-**接口描述：**
-<p>功能 ：期货合约 - 查询历史委托的订单数据</p>
-
-
-### 请求参数
-**Headers**
-
-| 参数名称  | 参数值  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ | ------------ |
-| Content-Type  |  application/json | 是  |   |   |
-| signature  |   | 是  |   |  签名 |
-| apiKey  |   | 是  |   |  apiKey |
-| apiExpires  |   | 是  |   |  过期时间 |
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> code</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> msg</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> data</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-2-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> applId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">应用标识	</span></td><td key=5></td></tr><tr key=0-2-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> contractId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">交易对ID	</span></td><td key=5></td></tr><tr key=0-2-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> accountId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">账户ID	</span></td><td key=5></td></tr><tr key=0-2-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> clOrderId</span></td><td key=1><span>null</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">客户订单编号	</span></td><td key=5></td></tr><tr key=0-2-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> side</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托方向（1：买，-1：卖）</span></td><td key=5></td></tr><tr key=0-2-5><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderPrice</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托价格</span></td><td key=5></td></tr><tr key=0-2-6><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderQty</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托数量</span></td><td key=5></td></tr><tr key=0-2-7><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderId</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托订单编号</span></td><td key=5></td></tr><tr key=0-2-8><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderTime</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托时间	</span></td><td key=5></td></tr><tr key=0-2-9><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderStatus</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托状态（0未申报，1正在申报，2已申报未成交，3部分成交，4全部成交，5部成部撤,6全部撤单，7撤单中，8失效）</span></td><td key=5></td></tr><tr key=0-2-10><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> matchQty</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交数量	</span></td><td key=5></td></tr><tr key=0-2-11><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> matchAmt</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交金额	</span></td><td key=5></td></tr><tr key=0-2-12><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> cancelQty</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">撤单数量	</span></td><td key=5></td></tr><tr key=0-2-13><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> matchTime</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">成交时间	</span></td><td key=5></td></tr><tr key=0-2-14><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> orderType</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托类型（1：限价，3：市价）	</span></td><td key=5></td></tr><tr key=0-2-15><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> timeInForce</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">订单有效时期类型：当日有效、GTC、IOC，默认1， 1, "可成交价格全部成交"；2, "立即成交剩余撤销"</span></td><td key=5></td></tr><tr key=0-2-16><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> positionEffect</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">开平标志（1开仓 2平仓）</span></td><td key=5></td></tr><tr key=0-2-17><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> marginType</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">仓位模式（1、全仓，2：逐仓）	</span></td><td key=5></td></tr><tr key=0-2-18><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> fcOrderId</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">强平委托号，非空时为强平委托	</span></td><td key=5></td></tr><tr key=0-3><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> type</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 1.9 切换仓位模式接口 Enable isolated margin or cross margin per-position
-<a id=1.9 切换仓位模式接口 Enable isolated margin or cross margin per-position> </a>
-### 基本信息
-
-**Path：** /api/v1/future/position/isolate
-
-**Method：** POST
-
-**接口描述：**
-<p>功能 ：期货合约 - 已成交的订单切换仓位模式（逐仓 切换 全仓、全仓切换逐仓）</p>
-
-
-### 请求参数
-**Headers**
-
-| 参数名称  | 参数值  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ | ------------ |
-| Content-Type  |  application/json | 是  |   |   |
-**Body**
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> contractId</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">交易对ID</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> initMarginRate</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">初始保证金率0<${}<=1</span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> marginType</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">保证金类型，全仓1，逐仓2</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> cod</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> msg</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 1.10 调整保证金
-<a id=1.10 调整保证金> </a>
-### 基本信息
-
-**Path：** /api/v1/future/position/transferMargin
-
-**Method：** POST
-
-**接口描述：**
-<p>功能：调整保证金率，即调整杠杆倍数</p>
-
-
-### 请求参数
-**Headers**
-
-| 参数名称  | 参数值  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ | ------------ |
-| Content-Type  |  application/json | 是  |   |   |
-**Body**
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> contractId</span></td><td key=1><span>integer</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约ID</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> margin</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">保证金（>0 : 增加保证金，-0 ：减少保证金</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> code</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">0:成功，非0：失败</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> msg</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> data</span></td><td key=1><span>object</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 1.11 强减队列查询
-<a id=1.11 强减队列查询> </a>
-### 基本信息
-
-**Path：** /api/v1/future/queryForceLower
-
-**Method：** GET
-
-**接口描述：**
-<p>功能：查询强平、强减的队列信息</p>
-
-
-### 请求参数
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> code</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> msg</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> data</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-2-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> contractId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约ID</span></td><td key=5></td></tr><tr key=0-2-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> rank</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">范围</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-# 2.用户类接口 user
-
-## 2.1 获取用户信息接口 Get User Information
-<a id=2.1 获取用户信息接口 Get User Information> </a>
-### 基本信息
-
-**Path：** /api/v1/future/user
-
-**Method：** GET
-
-**接口描述：**
-<p>功能 ：获取已注册用户的相关信息</p>
-
-
-### 请求参数
-**Headers**
-
-| 参数名称  | 参数值  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ | ------------ |
-| Content-Type  |  application/json | 是  |   |   |
-| signature  |   | 是  |   |  签名 |
-| apiKey  |   | 是  |   |  apiKey |
-| apiExpires  |   | 是  |   |    过期时间 |
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> message_type</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> data</span></td><td key=1><span>object</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> id</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">用户id</span></td><td key=5></td></tr><tr key=0-1-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> username</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">用户名</span></td><td key=5></td></tr><tr key=0-1-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> email</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">用户邮件</span></td><td key=5></td></tr><tr key=0-1-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> enabled</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">用户状态（0：正常，1:锁定，2:注销）</span></td><td key=5></td></tr><tr key=0-1-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> createTime</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">用户注册时间</span></td><td key=5></td></tr><tr key=0-1-5><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> lastLogin</span></td><td key=1><span>null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">用户最近登录时间</span></td><td key=5></td></tr><tr key=0-1-6><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> phone</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">手机号</span></td><td key=5></td></tr><tr key=0-1-7><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> googleCode</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">谷歌验证码</span></td><td key=5></td></tr><tr key=0-1-8><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> tradePassword</span></td><td key=1><span>null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">交易密码</span></td><td key=5></td></tr><tr key=0-1-9><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> loginPassGrade</span></td><td key=1><span>number</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">登录密码等级</span></td><td key=5></td></tr><tr key=0-1-10><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> googleValidate</span></td><td key=1><span>null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">是否开启谷歌验证码：1开启，2关闭</span></td><td key=5></td></tr><tr key=0-1-11><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> avoidFishingCode</span></td><td key=1><span>null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">防钓鱼码</span></td><td key=5></td></tr><tr key=0-1-12><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> tradeSafe</span></td><td key=1><span>null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">1每次输入密码，2每两小时输入一次 3，不输入</span></td><td key=5></td></tr><tr key=0-1-13><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> lastTradeTime</span></td><td key=1><span>null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">上次输入交易密码时间</span></td><td key=5></td></tr><tr key=0-1-14><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> createTimeStart</span></td><td key=1><span>null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1-15><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> createTimeEnd</span></td><td key=1><span>null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1-16><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> certificationGrade</span></td><td key=1><span>null</span></td><td key=2>必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">认证等级</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 2.2 查询用户资产接口 Get User Assets
-<a id=2.2 查询用户资产接口 Get User Assets> </a>
-### 基本信息
-
-**Path：** /api/v1/future/margin
-
-**Method：** GET
-
-**接口描述：**
-<p>功能 ：查询用户的资产信息（包括 账户 各个币种的 可用余额、冻结金额、保证金等数据）</p>
-
-
-### 请求参数
-**Headers**
-
-| 参数名称  | 参数值  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ | ------------ |
-| Content-Type  |  application/json | 是  |   |   |
-| signature  |   | 是  |   |  签名 |
-| apiKey  |   | 是  |   |  apiKey |
-| apiExpires  |   | 是  |   |  过期时间 |
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> code</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> msg</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> data</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-2-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> currencyId</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">货币ID</span></td><td key=5></td></tr><tr key=0-2-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> totalBalance</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">总资产</span></td><td key=5></td></tr><tr key=0-2-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> available</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">可用资产</span></td><td key=5></td></tr><tr key=0-2-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> frozenForTrade</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托冻结资产</span></td><td key=5></td></tr><tr key=0-2-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> initMargin</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">已占用保证金</span></td><td key=5></td></tr><tr key=0-2-5><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> frozenInitMargin</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">委托冻结保证金</span></td><td key=5></td></tr><tr key=0-2-6><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> closeProfitLoss</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">已实现盈亏</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-
-## 2.3 获取用户仓位信息接口 Get your positions
-<a id=2.3 获取用户仓位信息接口 Get your positions> </a>
-### 基本信息
-
-**Path：** /api/v1/future/position
-
-**Method：** GET
-
-**接口描述：**
-<p>功能 ：获取用户当前持仓的数据</p>
-
-
-### 请求参数
-**Headers**
-
-| 参数名称  | 参数值  |  是否必须 | 示例  | 备注  |
-| ------------ | ------------ | ------------ | ------------ | ------------ |
-| Content-Type  |  application/json | 是  |   |   |
-| signature  |   | 是  |   |  签名 |
-| apiKey  |   | 是  |   |  apiKey |
-| apiExpires  |   | 是  |   |  过期时间 |
-
-### 返回数据
-
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> code</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> msg</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5></td></tr><tr key=0-2><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> data</span></td><td key=1><span>object []</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap"></span></td><td key=5><p key=3><span style="font-weight: '700'">item 类型: </span><span>object</span></p></td></tr><tr key=0-2-0><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> contractId</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">合约对ID</span></td><td key=5></td></tr><tr key=0-2-1><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> posiQty</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">开仓数量</span></td><td key=5></td></tr><tr key=0-2-2><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> openAmt</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">开仓金额</span></td><td key=5></td></tr><tr key=0-2-3><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> initMargin</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">初始保证金</span></td><td key=5></td></tr><tr key=0-2-4><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> posiStatus</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">持仓状态</span></td><td key=5></td></tr><tr key=0-2-5><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> marginType</span></td><td key=1><span>number</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">保证金类型</span></td><td key=5></td></tr><tr key=0-2-6><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> closeProfitLoss</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">已实现盈亏</span></td><td key=5></td></tr><tr key=0-2-7><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> initMargiRate</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">初始保证金率</span></td><td key=5></td></tr><tr key=0-2-8><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> maintainMarginRate</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">维持保证金率</span></td><td key=5></td></tr><tr key=0-2-9><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> frozenCloseQty</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">冻结平仓数量</span></td><td key=5></td></tr><tr key=0-2-10><td key=0><span style="padding-left: 20px"><span style="color: #8c8a8a">├─</span> frozenOpenQty</span></td><td key=1><span>string</span></td><td key=2>非必须</td><td key=3></td><td key=4><span style="white-space: pre-wrap">冻结开仓数量</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
-​            
-
-
-
-## 字段缩写对照表    
+# 频率限制
+
+> 接口数据类型在[合约交易接口列表](https://github.com/ccfoxexchange/ccfox_api/blob/master/api-cn.md#合约交易接口列表)有说明
+
+ - 非交易接口 120/min
+ - 交易接口   60/s
+
+# 错误码
+
+| 编码 | 注释                                         |
+| ---- | -------------------------------------------- |
+| 0    | 成功                                         |
+| 1001 | 账户不存在                                   |
+| 1002 | 合约不存在                                   |
+| 1003 | 应用标识错误                                 |
+| 1004 | 委托价格不合法                               |
+| 1005 | 委托数量不合法                               |
+| 1006 | 委托数量超过限制                             |
+| 1007 | 保证金可用不足                               |
+| 1008 | 可用数量不足                                 |
+| 1009 | 账户被接管，禁止交易                         |
+| 1010 | 账户被接管，禁止转出资金                     |
+| 1011 | 合约禁止交易                                 |
+| 1012 | 委托方向不合法                               |
+| 1013 | 委托类型不合法                               |
+| 1016 | 委托数量低于最小委托单位                     |
+| 1018 | 委托金额不合法                               |
+| 1019 | 委托不存在                                   |
+| 1020 | 对手方没有订单                               |
+| 1022 | 该笔持仓可平仓数量不足                       |
+| 1023 | 账户被接管，禁止平仓                         |
+| 1027 | 合约已经存在                                 |
+| 1028 | 委托笔数超过限制                             |
+| 1029 | 持仓数量超过限制                             |
+| 1031 | 当前合约存在与本次委托的保证金类型不同的持仓 |
+| 1032 | 初始保证金率错误                             |
+| 1035 | 禁止转入转出保证金                           |
+| 1036 | 委托价格超过限制                             |
+| 1037 | 委托金额超过限制                             |
+| 1042 | 禁止逐仓开仓                                 |
+| 1044 | 市价委托消耗了过多的流动性档位               |
+| 1046 | 当前价格无法成为被动委托，订单将被撤销       |
+
+
+
+# 字段缩写对照表
+
+> 为防止数据包过大，返回数据键值进行了压缩，参考下面对应关系
 
 ```js
 {
-      contractId: v.ci,
-      result: {
+    contractId: v.ci,
+    result: {
         messageType: v.mt,
         applId: v.ai,
         contractId: v.ci,
@@ -2109,8 +271,1188 @@ trades 数据结构 List<br>
         tradingsignal: v.ts,
         indexPrice: v.ip,
         signalLevel: v.sl
-      }
-
+    }
+}
 ```
 
+# api接口
 
+# 1.基础信息类
+
+
+
+## 1.1 获取所有合约信息
+
+
+
+### 基本信息
+
+**Path：** /api/v1/future/queryContract
+
+**Method：** GET
+
+**接口描述：**
+
+注意：不需要签名
+
+### 请求参数
+
+### 返回数据
+
+| 名称                       | 类型        | 是否必须 | 默认值 | 备注                                                     | 其他信息          |
+| -------------------------- | ----------- | -------- | ------ | -------------------------------------------------------- | ----------------- |
+| result                     | object []   | 非必须   |        |                                                          | item 类型: object |
+| ├─ varietyId               | number      | 必须     |        | 品种ID                                                   |                   |
+| ├─ applId                  | number      | 必须     |        | 应用标识                                                 |                   |
+| ├─ underlyingId            | string      | 必须     |        | 标的ID                                                   |                   |
+| ├─ productType             | number      | 必须     |        | product_type=1时，为虚拟币期货                           |                   |
+| ├─ symbol                  | string      | 必须     |        | 品种名称                                                 |                   |
+| ├─ chainextCid             | number      | 必须     |        | chainext的指数的cid                                      |                   |
+| ├─ priceTick               | number      | 必须     |        | 最小报价单位                                             |                   |
+| ├─ lotSize                 | number      | 必须     |        | 最小交易量单位                                           |                   |
+| ├─ takerFeeRatio           | number      | 必须     |        | Taker手续费率                                            |                   |
+| ├─ makerFeeRatio           | number      | 必须     |        | Maker手续费率                                            |                   |
+| ├─ limitMaxLevel           | number      | 必须     |        | 限价委托最大成交档位                                     |                   |
+| ├─ marketMaxLevel          | number      | 必须     |        | 市价委托最大成交档位                                     |                   |
+| ├─ maxNumOrders            | number      | 必须     |        | 用户最大挂单笔数                                         |                   |
+| ├─ priceLimitRate          | number      | 必须     |        | 涨跌停率                                                 |                   |
+| ├─ commodityId             | number      | 必须     |        | 商品币种ID                                               |                   |
+| ├─ currencyId              | number      | 必须     |        | 货币币种ID                                               |                   |
+| ├─ contractType            | number      | 必须     |        | 合约类型，1定期，2永续                                   |                   |
+| ├─ deliveryType            | number      | 必须     |        | 交割类型，1现金交割，2实物交割                           |                   |
+| ├─ deliveryPeriod          | number      | 必须     |        | 交割周期，0永续1日2周3月4季度                            |                   |
+| ├─ deliveryFeeRatio        | null        | 必须     |        | 交割手续费                                               |                   |
+| ├─ contractSide            | number      | 必须     |        | 合约方向，1正向，2反向                                   |                   |
+| ├─ contractUnit            | number      | 必须     |        | 合约单位                                                 |                   |
+| ├─ posiLimit               | number      | 必须     |        | 持仓限额                                                 |                   |
+| ├─ orderLimit              | number      | 必须     |        | 委托限额                                                 |                   |
+| ├─impactMarginNotional     | number      | 必须     |        | 保证金影响额                                             |                   |
+| ├─ minMaintainRate         | number      | 必须     |        | 最小维持保证金率                                         |                   |
+| ├─ fairBasisInterval       | number      | 必须     |        | 结算价基差计算间隔，单位秒'                              |                   |
+| ├─ clearPriceInterval      | number      | 必须     |        | 结算价计算间隔，单位秒                                   |                   |
+| ├─deliveryPriceInterval    | number      | 必须     |        | 交割价计算长度，倒推时间，按秒计                         |                   |
+| ├─perpetualPremiumLimit    | null        | 必须     |        | 永续合约溢价指数限制范围                                 |                   |
+| ├─perpetualFundingfeeLimit | null        | 必须     |        | 永续合约资金费率限制范围比例                             |                   |
+| ├─perpetualSettleFrequency | null        | 必须     |        | 结算频率(一天几次)                                       |                   |
+| ├─risklessrateGoods        | null        | 必须     |        | 商品货币日利率                                           |                   |
+| ├─risklessrateMoney        | null        | 必须     |        | 计价货币日利率                                           |                   |
+| ├─ isAutoList              | number      | 必须     |        | 是否自动加挂：0是 1否                                    |                   |
+| ├─ onceListTime            | number,null | 必须     |        | 一次性上市时间（即只上市一次）                           |                   |
+| ├─regularSettlementTime    | null        | 必须     |        | 定期结算时间（股指合约结算的相对时间，入库时设置）       |                   |
+| ├─ createTime              | number      | 必须     |        | 创建时间                                                 |                   |
+| ├─ enabled                 | number      | 必须     |        |                                                          |                   |
+| ├─futureContractList       | object []   | 必须     |        | 合约列表                                                 | item 类型: object |
+| ├─ contractId              | number      | 必须     |        | 合约ID                                                   |                   |
+| ├─ applId                  | number      | 必须     |        | 应用ID, 1：现货，2：期货                                 |                   |
+| ├─ underlyingId            | string      | 必须     |        | 标的ID                                                   |                   |
+| ├─ productType             | number      | 必须     |        | product_type=1时，为虚拟币期货                           |                   |
+| ├─ symbol                  | string      | 必须     |        | 品种名称                                                 |                   |
+| ├─ priceTick               | number      | 必须     |        | 最小报价单位                                             |                   |
+| ├─ lotSize                 | number      | 必须     |        | 最小交易量单位                                           |                   |
+| ├─ takerFeeRatio           | number      | 必须     |        | Taker手续费率                                            |                   |
+| ├─makerFeeRatio            | number      | 必须     |        | Maker手续费率                                            |                   |
+| ├─ limitMaxLevel           | number      | 必须     |        | 限价委托最大成交档位                                     |                   |
+| ├─marketMaxLevel           | number      | 必须     |        | 市价委托最大成交档位                                     |                   |
+| ├─maxNumOrders             | number      | 必须     |        | 用户最大挂单笔数                                         |                   |
+| ├─ priceLimitRate          | number      | 必须     |        | 涨跌停率                                                 |                   |
+| ├─ commodityId             | number      | 必须     |        | 商品币种ID                                               |                   |
+| ├─ currencyId              | number      | 必须     |        | 货币币种ID                                               |                   |
+| ├─ contractType            | number      | 必须     |        | 合约类型，1定期，2永续                                   |                   |
+| ├─ deliveryType            | number      | 必须     |        | 交割类型，1现金交割，2实物交割                           |                   |
+| ├─ deliveryPeriod          | number      | 必须     |        | 交割周期，0永续1日2周3月4季度                            |                   |
+| ├─deliveryFeeRatio         | number      | 必须     |        | 交割手续费                                               |                   |
+| ├─ contractSide            | number      | 必须     |        | 合约方向，1正向，2反向                                   |                   |
+| ├─ contractUnit            | number      | 必须     |        | 合约单位                                                 |                   |
+| ├─ posiLimit               | number      | 必须     |        | 持仓限额                                                 |                   |
+| ├─ orderLimit              | number      | 必须     |        | 委托限额                                                 |                   |
+| ├─impactMarginNotional     | number      | 必须     |        | 保证金影响额                                             |                   |
+| ├─minMaintainRate          | number      | 必须     |        | 最小维持保证金率                                         |                   |
+| ├─fairBasisInterval        | number      | 必须     |        | 结算价基差计算间隔                                       |                   |
+| ├─clearPriceInterval       | number      | 必须     |        | 结算价计算间隔                                           |                   |
+| ├─deliveryPriceInterval    | number      | 必须     |        | 交割价计算间隔                                           |                   |
+| ├─ createTime              | number      | 必须     |        | 创建时间                                                 |                   |
+| ├─ varietyId               | number      | 必须     |        | 品种ID，标的ID                                           |                   |
+| ├─ lastTradeTime           | number      | 必须     |        | 最后交易时间                                             |                   |
+| ├─ deliveryTime            | number      | 必须     |        | 最后交割时间                                             |                   |
+| ├─ listPrice               | number      | 必须     |        | 挂牌价格                                                 |                   |
+| ├─ listTime                | number      | 必须     |        | 上市时间                                                 |                   |
+| ├─contractStatus           | number      | 必须     |        | 交易对状态:1集合竞价,2连续交易,3交易暂停,4已摘牌,5未上市 |                   |
+| ├─perpetualPremiumLimit    | number,null | 必须     |        | 永续合约溢价指数限制范围                                 |                   |
+| ├─perpetualFundingfeeLimit | number,null | 必须     |        | 永续合约资金费率限制范围比例                             |                   |
+| ├─perpetualSettleFrequency | number,null | 必须     |        | 结算频率(一天几次)                                       |                   |
+| ├─risklessrateGoods        | number,null | 必须     |        | 商品货币日利率                                           |                   |
+| ├─risklessrateMoney        | number,null | 必须     |        | 计价货币日利率                                           |                   |
+| ├─ isAutoList              | number      | 必须     |        | 是否自动加挂：0是，1否                                   |                   |
+
+## 1.2 查询所有货币信息
+
+
+
+### 基本信息
+
+**Path：** /common/queryCurrency
+
+**Method：** GET
+
+**接口描述：**
+
+### 请求参数
+
+### 返回数据
+
+| 名称                     | 类型      | 是否必须 | 默认值 | 备注                           | 其他信息          |
+| ------------------------ | --------- | -------- | ------ | ------------------------------ | ----------------- |
+| result                   | object [] | 非必须   |        |                                | item 类型: object |
+| ├─ currencyId            | number    | 非必须   |        | 币种ID                         |                   |
+| ├─ symbol                | string    | 非必须   |        | 币种名称                       |                   |
+| ├─ nameCn                | string    | 非必须   |        | 币种中文名                     |                   |
+| ├─ symbolDesc            | string    | 非必须   |        | 币种简介                       |                   |
+| ├─ displayPrecision      | number    | 非必须   |        | 页面显示位数                   |                   |
+| ├─minWithdrawQuantity    | number    | 非必须   |        | 最小提现数                     |                   |
+| ├─ withdrawFlatFee       | number    | 非必须   |        | 提现手续费                     |                   |
+| ├─ auditThreshold        | number    | 非必须   |        | 人工审核阈值                   |                   |
+| ├─exeutiveAuditThreshold | number    | 非必须   |        | 高管审核阈值                   |                   |
+| ├─ forbidWithdraw        | number    | 非必须   |        | 是否允许提币：0允许、1禁止     |                   |
+| ├─forbidCreateAddress    | number    | 非必须   |        | 是否允许生成地址：0允许，1禁止 |                   |
+| ├─ forbidRecharge        | number    | 非必须   |        | 是否允许充值：0允许，1禁止     |                   |
+| ├─ prefixUrl             | string    | 非必须   |        | 币种浏览器地址                 |                   |
+| ├─ enabled               | number    | 非必须   |        | 币状态：0启用，1不启用,2删除   |                   |
+
+## 1.3 获取所有法币
+
+
+
+### 基本信息
+
+**Path：** /common/exchange/list
+
+**Method：** GET
+
+**接口描述：**
+
+### 请求参数
+
+### 返回数据
+
+| 名称          | 类型      | 是否必须 | 默认值 | 备注                | 其他信息          |
+| ------------- | --------- | -------- | ------ | ------------------- | ----------------- |
+| result        | object [] | 非必须   |        |                     | item 类型: object |
+| ├─ id         | number    | 非必须   |        | 法币ID              |                   |
+| ├─ name       | string    | 非必须   |        | 法币名称            |                   |
+| ├─ rate       | number    | 非必须   |        | 当前相对于USD的汇率 |                   |
+| ├─ updateTime | string    | 非必须   |        | 更新时间            |                   |
+
+## 1.4 获取计价货币的价格
+
+
+
+### 基本信息
+
+**Path：** /common/exchange/coins
+
+**Method：** GET
+
+**接口描述：**
+
+currencyId: 货币ID
+latest: 当前USD价格
+
+### 请求参数
+
+### 返回数据
+
+| 名称          | 类型      | 是否必须 | 默认值 | 备注        | 其他信息          |
+| ------------- | --------- | -------- | ------ | ----------- | ----------------- |
+| result        | object [] | 非必须   |        |             | item 类型: object |
+| ├─ currencyId | number    | 必须     |        | 货币ID      |                   |
+| ├─ latest     | number    | 必须     |        | 当前USD价格 |                   |
+
+## 1.5 查询合约交割历史
+
+
+
+### 基本信息
+
+**Path：** /future/queryContractDeliveryList
+
+**Method：** GET
+
+**接口描述：**
+
+### 请求参数
+
+**Query**
+
+| 参数名称   | 是否必须 | 示例 | 备注                        |
+| ---------- | -------- | ---- | --------------------------- |
+| type       | 是       |      | 1定期，2永续                |
+| pageNum    | 否       |      | 当前页，默认：1             |
+| pageSize   | 否       |      | 每页条数，默认：10          |
+| contractId | 否       |      | 合约ID                      |
+| sort       | 否       |      | 排序类型，只支持：DESC，ASC |
+
+### 返回数据
+
+| 名称                       | 类型      | 是否必须 | 默认值 | 备注                                 | 其他信息          |
+| -------------------------- | --------- | -------- | ------ | ------------------------------------ | ----------------- |
+| code                       | number    | 非必须   |        | 0：成功，非0：失败                   |                   |
+| msg                        | string    | 非必须   |        | 请求回复msg                          |                   |
+| data                       | object    | 非必须   |        |                                      |                   |
+| ├─ pageNum                 | number    | 非必须   |        | 当前页                               |                   |
+| ├─ pageSize                | number    | 非必须   |        | 每页的数量                           |                   |
+| ├─ size                    | number    | 非必须   |        | 当前的数量                           |                   |
+| ├─ startRow                | number    | 非必须   |        | 当前页面第一个元素在数据库中的行号   |                   |
+| ├─ endRow                  | number    | 非必须   |        | 当前页面最后一个元素在数据库中的行号 |                   |
+| ├─ total                   | number    | 非必须   |        | 总记录数                             |                   |
+| ├─ pages                   | number    | 非必须   |        | 总页数                               |                   |
+| ├─ list                    | object [] | 非必须   |        | 结果集                               | item 类型: object |
+| ├─ applId                  | number    | 必须     |        | 2 期货                               |                   |
+| ├─ contractType            | number    | 必须     |        | 合约类型                             |                   |
+| ├─ contractId              | number    | 必须     |        | 合约ID                               |                   |
+| ├─perpetualSettleFrequency | number    | 必须     |        | 结算频率(一天几次)                   |                   |
+| ├─ symbol                  | string    | 必须     |        | 合约名称                             |                   |
+| ├─ deliveryTime            | number    | 必须     |        | 交割时间                             |                   |
+| ├─ deliveryQty             | number    | 必须     |        | 交割数量                             |                   |
+| ├─ deliveryAmt             | number    | 必须     |        | 交割金额                             |                   |
+| ├─ deliveryPrice           | number    | 必须     |        | 交割价格                             |                   |
+| ├─ fundingRate             | number    | 必须     |        | 永续合约资金费率                     |                   |
+| ├─ prePage                 | number    | 非必须   |        | 前一页                               |                   |
+| ├─ nextPage                | number    | 非必须   |        | 下一页                               |                   |
+| ├─ isFirstPage             | boolean   | 非必须   |        | 是否为第一页                         |                   |
+| ├─ isLastPage              | boolean   | 非必须   |        | 是否为最后一页                       |                   |
+| ├─ hasPreviousPage         | boolean   | 非必须   |        | 是否有前一页                         |                   |
+| ├─ hasNextPage             | boolean   | 非必须   |        | 是否有下一页                         |                   |
+| ├─ navigatePages           | number    | 非必须   |        | 导航页码数                           |                   |
+| ├─ navigatepageNums        | number [] | 非必须   |        | 所有导航页号                         | item 类型: number |
+| ├─ navigateFirstPage       | number    | 非必须   |        | 导航条上的第一页                     |                   |
+| ├─ navigateLastPage        | number    | 非必须   |        | 导航条上的最后一页                   |                   |
+| ├─ firstPage               | number    | 非必须   |        | 第一页                               |                   |
+| ├─ lastPage                | number    | 非必须   |        | 最后一页                             |                   |
+
+# 2.行情类
+
+
+
+## 2.1 查询24小时统计
+
+
+
+### 基本信息
+
+**Path：** /futureQuot/queryMarketStat
+
+**Method：** GET
+
+**接口描述：**
+
+### 请求参数
+
+**Query**
+
+| 参数名称   | 是否必须 | 示例 | 备注   |
+| ---------- | -------- | ---- | ------ |
+| currencyId | 是       |      | 货币ID |
+
+### 返回数据
+
+| 名称                | 类型   | 是否必须 | 默认值 | 备注         | 其他信息 |
+| ------------------- | ------ | -------- | ------ | ------------ | -------- |
+| code                | number | 非必须   |        |              |          |
+| msg                 | string | 非必须   |        |              |          |
+| data                | object | 非必须   |        |              |          |
+| ├─ messageType      | string | 非必须   |        |              |          |
+| ├─ currencyId       | number | 非必须   |        | 货币ID       |          |
+| ├─ total24hTurnover | string | 非必须   |        | 24小时成交额 |          |
+| ├─ total7dTurnover  | string | 非必须   |        | 7天成交额    |          |
+| ├─ total30dTurnover | string | 非必须   |        | 30天成交额   |          |
+
+## 2.2 获取K线数据
+
+
+
+### 基本信息
+
+**Path：** /futureQuot/queryCandlestick
+
+**Method：** GET
+
+**接口描述：**
+
+注意：lines数据结构：List<List>
+如：
+    [
+        [${时间}, ${开市价格}, ${最高价格}, ${最低价格}, ${闭市价格}, ${成交量}]
+    ]
+
+range取值：
+1Min = 60000;
+3Min = 180000;
+5Min = 300000;
+15Min = 900000;
+30Min = 1800000;
+1Hour = 3600000;
+2Hour = 7200000;
+4Hour = 14400000;
+6Hour = 21600000;
+12Hour = 43200000;
+1Day = 86400000;
+1Week = 604800000;
+
+
+
+
+
+### 请求参数
+
+**Query**
+
+| 参数名称 | 是否必须 | 示例 | 备注     |
+| -------- | -------- | ---- | -------- |
+| symbol   | 是       |      | 合约ID   |
+| range    | 是       |      | 线类型值 |
+
+### 返回数据
+
+| 名称     | 类型     | 是否必须 | 默认值 | 备注 | 其他信息         |
+| -------- | -------- | -------- | ------ | ---- | ---------------- |
+| success  | boolean  | 非必须   |        |      |                  |
+| data     | object   | 非必须   |        |      |                  |
+| ├─ lines | array [] | 非必须   |        |      | item 类型: array |
+
+## 2.3 获取单个合约行情快照
+
+
+
+### 基本信息
+
+**Path：** /futureQuot/querySnapshot
+
+**Method：** GET
+
+**接口描述：**
+
+注意：
+    bids与asks结构：List<List>
+     如
+        [
+            [${价格}, ${数量}]
+        ]
+
+### 请求参数
+
+**Query**
+
+| 参数名称   | 是否必须 | 示例 | 备注   |
+| ---------- | -------- | ---- | ------ |
+| contractId | 是       |      | 合约ID |
+
+### 返回数据
+
+| 名称       | 类型      | 是否必须 | 默认值 | 备注                                | 其他信息          |
+| ---------- | --------- | -------- | ------ | ----------------------------------- | ----------------- |
+| contractId | number    | 非必须   |        | 合约ID                              |                   |
+| result     | object    | 非必须   |        |                                     |                   |
+| ├─ mt      | number    | 非必须   |        | 消息类型：messageType               |                   |
+| ├─ ai      | number    | 非必须   |        | 应用ID：applId                      |                   |
+| ├─ ci      | number    | 非必须   |        | 合约ID：contractId                  |                   |
+| ├─ sb      | string    | 非必须   |        | 合约名称：symbol                    |                   |
+| ├─ td      | number    | 非必须   |        | 交易日期：tradeDate                 |                   |
+| ├─ te      | number    | 非必须   |        | 交易时间：time                      |                   |
+| ├─ lp      | string    | 非必须   |        | 最新价格：lastPrice                 |                   |
+| ├─ mq      | string    | 非必须   |        | 成交量：matchQty                    |                   |
+| ├─ nt      | number    | 非必须   |        | 成交比数：numTrades                 |                   |
+| ├─ op      | string    | 非必须   |        | 开盘价：openPrice                   |                   |
+| ├─ ph      | string    | 非必须   |        | 最高价：priceHigh                   |                   |
+| ├─ pl      | string    | 非必须   |        | 最低价：priceLow                    |                   |
+| ├─ hph     | string    | 非必须   |        | 历史最高价：historyPriceHigh        |                   |
+| ├─ hpl     | string    | 非必须   |        | 历史最低价：historyPriceLow         |                   |
+| ├─ tt      | string    | 非必须   |        | 当日成交额：totalTurnover           |                   |
+| ├─ tv      | string    | 非必须   |        | 当日成交量：totalVolume             |                   |
+| ├─ tbv     | string    | 非必须   |        | 买总委托数：totalBidVol             |                   |
+| ├─ tav     | string    | 非必须   |        | 卖总委托数：totalAskVol             |                   |
+| ├─ pp      | string    | 非必须   |        | 上一交易日收盘价：prevPrice         |                   |
+| ├─ cp      | string    | 非必须   |        | 标记价格，结算价：clearPrice        |                   |
+| ├─ pv      | string    | 非必须   |        | 总持仓量：posiVol                   |                   |
+| ├─ pcr     | string    | 非必须   |        | 当日涨跌幅度：priceChangeRadio      |                   |
+| ├─ pc      | string    | 非必须   |        | 当日涨跌：priceChange               |                   |
+| ├─ lui     | number    | 非必须   |        | 行情序号：lastUpdateId              |                   |
+| ├─ cs      | number    | 非必须   |        | 交易对状态：contractStatus          |                   |
+| ├─ dp      | string    | 非必须   |        | 交割价格：deliveryPrice             |                   |
+| ├─ fr      | null      | 非必须   |        | 资金费率：fundingRate               |                   |
+| ├─ pfr     | null      | 非必须   |        | 预测资金费率：predictionFundingRate |                   |
+| ├─ pi      | null      | 非必须   |        | 溢价指数：premiumIndex              |                   |
+| ├─ ppi     | null      | 非必须   |        | 预溢价指数：predictionPremiumIndex  |                   |
+| ├─ fb      | string    | 非必须   |        | 合理基差：fairBasis                 |                   |
+| ├─ ts      | number    | 非必须   |        | 交易信号，1=买，2=卖：tradingsignal |                   |
+| ├─ sl      | number    | 非必须   |        | 1~100,交易信号强度 ：signalLevel    |                   |
+| ├─ ip      | string    | 非必须   |        | 标的指数价格：indexPrice            |                   |
+| ├─ bids    | string [] | 非必须   |        | 买档位                              | item 类型: string |
+| ├─ asks    | string [] | 非必须   |        | 卖档位                              | item 类型: string |
+
+## 2.4 获取所有行情快照
+
+
+
+### 基本信息
+
+**Path：** /futureQuot/queryIndicatorList
+
+**Method：** GET
+
+**接口描述：**
+
+具体各字段含义，请参考
+    /futureQuot/querySnapshot 接口
+https://yapi.coinidx.io/project/51/interface/api/2763
+
+### 请求参数
+
+### 返回数据
+
+| 名称   | 类型        | 是否必须 | 默认值 | 备注 | 其他信息          |
+| ------ | ----------- | -------- | ------ | ---- | ----------------- |
+|        | object []   | 非必须   |        |      | item 类型: object |
+| ├─ mt  | number      | 必须     |        |      |                   |
+| ├─ ai  | number      | 必须     |        |      |                   |
+| ├─ ci  | number      | 必须     |        |      |                   |
+| ├─ sb  | string      | 必须     |        |      |                   |
+| ├─ td  | number      | 必须     |        |      |                   |
+| ├─ te  | number      | 必须     |        |      |                   |
+| ├─ lp  | string      | 必须     |        |      |                   |
+| ├─ mq  | string      | 必须     |        |      |                   |
+| ├─ nt  | number      | 必须     |        |      |                   |
+| ├─ op  | string      | 必须     |        |      |                   |
+| ├─ ph  | string      | 必须     |        |      |                   |
+| ├─ pl  | string      | 必须     |        |      |                   |
+| ├─ hph | string      | 必须     |        |      |                   |
+| ├─ hpl | string      | 必须     |        |      |                   |
+| ├─ tt  | string      | 必须     |        |      |                   |
+| ├─ tv  | string      | 必须     |        |      |                   |
+| ├─ tbv | string      | 必须     |        |      |                   |
+| ├─ tav | string      | 必须     |        |      |                   |
+| ├─ pp  | string      | 必须     |        |      |                   |
+| ├─ cp  | string      | 必须     |        |      |                   |
+| ├─ pv  | string      | 必须     |        |      |                   |
+| ├─ pcr | string      | 必须     |        |      |                   |
+| ├─ pc  | string      | 必须     |        |      |                   |
+| ├─ lui | number      | 必须     |        |      |                   |
+| ├─ cs  | number      | 必须     |        |      |                   |
+| ├─ dp  | string      | 必须     |        |      |                   |
+| ├─ fr  | null,string | 必须     |        |      |                   |
+| ├─ pfr | null,string | 必须     |        |      |                   |
+| ├─ pi  | null,string | 必须     |        |      |                   |
+| ├─ ppi | null,string | 必须     |        |      |                   |
+| ├─ fb  | string      | 必须     |        |      |                   |
+| ├─ ts  | number      | 必须     |        |      |                   |
+| ├─ sl  | number      | 必须     |        |      |                   |
+| ├─ ip  | string      | 必须     |        |      |                   |
+
+## 2.5 获取逐笔成交
+
+
+
+### 基本信息
+
+**Path：** /futureQuot/queryTickTrade
+
+**Method：** GET
+
+**接口描述：**
+
+注意：
+    trades的结构为：List<List>
+   如：
+    [
+        [${时间戳}, ${成交价格}, ${成交数量}, ${方向}]
+    ]
+
+### 请求参数
+
+**Query**
+
+| 参数名称   | 是否必须 | 示例 | 备注   |
+| ---------- | -------- | ---- | ------ |
+| contractId | 是       |      | 合约ID |
+
+### 返回数据
+
+| 名称      | 类型     | 是否必须 | 默认值 | 备注         | 其他信息         |
+| --------- | -------- | -------- | ------ | ------------ | ---------------- |
+| success   | boolean  | 非必须   |        |              |                  |
+| data      | object   | 非必须   |        | 数据集合     |                  |
+| ├─ trades | array [] | 非必须   |        | 最近50笔成交 | item 类型: array |
+
+# 3.用户类
+
+
+
+## 3.1 获取用户基本信息
+
+
+
+### 基本信息
+
+**Path：** /api/v1/future/user
+
+**Method：** GET
+
+**接口描述：**
+
+功能 ：获取已注册用户的相关信息
+
+### 请求参数
+
+**Headers**
+
+| 参数名称     | 参数值           | 是否必须 | 示例 | 备注     |
+| ------------ | ---------------- | -------- | ---- | -------- |
+| Content-Type | application/json | 是       |      |          |
+| signature    |                  | 是       |      | 签名     |
+| apiKey       |                  | 是       |      | apiKey   |
+| apiExpires   |                  | 是       |      | 过期时间 |
+
+### 返回数据
+
+| 名称                 | 类型   | 是否必须 | 默认值 | 备注                                       | 其他信息 |
+| -------------------- | ------ | -------- | ------ | ------------------------------------------ | -------- |
+| message_type         | number | 必须     |        |                                            |          |
+| data                 | object | 必须     |        |                                            |          |
+| ├─ id                | number | 必须     |        | 用户id                                     |          |
+| ├─ username          | string | 必须     |        | 用户名                                     |          |
+| ├─ email             | string | 必须     |        | 用户邮件                                   |          |
+| ├─ enabled           | number | 必须     |        | 用户状态（0：正常，1:锁定，2:注销）        |          |
+| ├─ createTime        | string | 必须     |        | 用户注册时间                               |          |
+| ├─ lastLogin         | null   | 必须     |        | 用户最近登录时间                           |          |
+| ├─ phone             | string | 必须     |        | 手机号                                     |          |
+| ├─ googleCode        | string | 必须     |        | 谷歌验证码                                 |          |
+| ├─ tradePassword     | null   | 必须     |        | 交易密码                                   |          |
+| ├─ loginPassGrade    | number | 必须     |        | 登录密码等级                               |          |
+| ├─ googleValidate    | null   | 必须     |        | 是否开启谷歌验证码：1开启，2关闭           |          |
+| ├─avoidFishingCode   | null   | 必须     |        | 防钓鱼码                                   |          |
+| ├─ tradeSafe         | null   | 必须     |        | 1每次输入密码，2每两小时输入一次 3，不输入 |          |
+| ├─ lastTradeTime     | null   | 必须     |        | 上次输入交易密码时间                       |          |
+| ├─ createTimeStart   | null   | 必须     |        |                                            |          |
+| ├─ createTimeEnd     | null   | 必须     |        |                                            |          |
+| ├─certificationGrade | null   | 必须     |        | 认证等级                                   |          |
+
+## 3.2 获取用户资产信息
+
+
+
+### 基本信息
+
+**Path：** /api/v1/future/margin
+
+**Method：** GET
+
+**接口描述：**
+
+功能 ：查询用户的资产信息（包括 账户 各个币种的 可用余额、冻结金额、保证金等数据）
+
+### 请求参数
+
+**Headers**
+
+| 参数名称     | 参数值           | 是否必须 | 示例 | 备注     |
+| ------------ | ---------------- | -------- | ---- | -------- |
+| Content-Type | application/json | 是       |      |          |
+| signature    |                  | 是       |      | 签名     |
+| apiKey       |                  | 是       |      | apiKey   |
+| apiExpires   |                  | 是       |      | 过期时间 |
+
+### 返回数据
+
+| 名称                | 类型      | 是否必须 | 默认值 | 备注               | 其他信息          |
+| ------------------- | --------- | -------- | ------ | ------------------ | ----------------- |
+| code                | number    | 非必须   |        | 0：成功，非0：失败 |                   |
+| msg                 | string    | 非必须   |        | 消息msg            |                   |
+| data                | object [] | 非必须   |        | 数据集合           | item 类型: object |
+| ├─ currencyId       | string    | 非必须   |        | 货币ID             |                   |
+| ├─ totalBalance     | string    | 非必须   |        | 总资产             |                   |
+| ├─ available        | string    | 非必须   |        | 可用资产           |                   |
+| ├─ frozenForTrade   | string    | 非必须   |        | 委托冻结资产       |                   |
+| ├─ initMargin       | string    | 非必须   |        | 已占用保证金       |                   |
+| ├─ frozenInitMargin | string    | 非必须   |        | 委托冻结保证金     |                   |
+| ├─ closeProfitLoss  | string    | 非必须   |        | 已实现盈亏         |                   |
+
+## 3.3 获取用户持仓信息
+
+
+
+### 基本信息
+
+**Path：** /api/v1/future/position
+
+**Method：** GET
+
+**接口描述：**
+
+功能 ：获取用户当前持仓的数据
+
+### 请求参数
+
+**Headers**
+
+| 参数名称     | 参数值           | 是否必须 | 示例 | 备注     |
+| ------------ | ---------------- | -------- | ---- | -------- |
+| Content-Type | application/json | 是       |      |          |
+| signature    |                  | 是       |      | 签名     |
+| apiKey       |                  | 是       |      | apiKey   |
+| apiExpires   |                  | 是       |      | 过期时间 |
+
+### 返回数据
+
+| 名称                  | 类型      | 是否必须 | 默认值 | 备注               | 其他信息          |
+| --------------------- | --------- | -------- | ------ | ------------------ | ----------------- |
+| code                  | number    | 非必须   |        | 0：成功，非0：失败 |                   |
+| msg                   | number    | 非必须   |        | 消息msg            |                   |
+| data                  | object [] | 非必须   |        | 数据集合           | item 类型: object |
+| ├─ contractId         | number    | 非必须   |        | 合约对ID           |                   |
+| ├─ posiQty            | string    | 非必须   |        | 开仓数量           |                   |
+| ├─ openAmt            | string    | 非必须   |        | 开仓金额           |                   |
+| ├─ initMargin         | string    | 非必须   |        | 初始保证金         |                   |
+| ├─ posiStatus         | number    | 非必须   |        | 持仓状态           |                   |
+| ├─ marginType         | number    | 非必须   |        | 保证金类型         |                   |
+| ├─ closeProfitLoss    | string    | 非必须   |        | 已实现盈亏         |                   |
+| ├─ initMargiRate      | string    | 非必须   |        | 初始保证金率       |                   |
+| ├─ maintainMarginRate | string    | 非必须   |        | 维持保证金率       |                   |
+| ├─ frozenCloseQty     | string    | 非必须   |        | 冻结平仓数量       |                   |
+| ├─ frozenOpenQty      | string    | 非必须   |        | 冻结开仓数量       |                   |
+
+## 3.4 获取用户合约保证金梯度
+
+
+
+### 基本信息
+
+**Path：** /future/queryVarietyMargin
+
+**Method：** GET
+
+**接口描述：**
+
+### 请求参数
+
+**Query**
+
+| 参数名称   | 是否必须 | 示例    | 备注   |
+| ---------- | -------- | ------- | ------ |
+| varietyId  | 是       | Integer | 品种id |
+| contractId | 是       | Integer | 交易对 |
+
+### 返回数据
+
+| 名称            | 类型      | 是否必须 | 默认值 | 备注               | 其他信息          |
+| --------------- | --------- | -------- | ------ | ------------------ | ----------------- |
+| code            | integer   | 必须     |        | 0：成功，非：0失败 |                   |
+| msg             | string    | 必须     |        | 消息msg            |                   |
+| data            | object [] | 必须     |        | 数据集合           | item 类型: object |
+| ├─ applId       | integer   | 必须     |        | 应用标识           |                   |
+| ├─ varietyId    | integer   | 必须     |        | 品种ID             |                   |
+| ├─ contractId   | integer   | 非必须   |        | 合约ID             |                   |
+| ├─ posiQty      | string    | 必须     |        | 持仓数量           |                   |
+| ├─ initRate     | string    | 必须     |        | 初始保证金率       |                   |
+| ├─ maintainRate | string    | 必须     |        | 维持保证金率       |                   |
+
+# 4.交易类
+
+
+
+## 4.1 合约下单
+
+
+
+### 基本信息
+
+**Path：** /api/v1/future/order
+
+**Method：** POST
+
+**接口描述：**
+
+功能：期货合约 - 委托下单（包括空单、多单、平仓单）
+
+### 请求参数
+
+**Headers**
+
+| 参数名称     | 参数值           | 是否必须 | 示例               | 备注     |
+| ------------ | ---------------- | -------- | ------------------ | -------- |
+| Content-Type | application/json | 是       |                    |          |
+| signature    | String           | 是       | d3d576ghggf8ddd3   | 签名     |
+| apiKey       | String           | 是       | j7sas9ahshbdb9sisi | 认证     |
+| apiExpires   | Long             | 是       | 1548213518         | 过期时间 |
+
+**Body**
+
+| 名称           | 类型    | 是否必须 | 默认值 | 备注                                             | 其他信息   |
+| -------------- | ------- | -------- | ------ | ------------------------------------------------ | ---------- |
+| contractId     | integer | 必须     |        | 交易对ID                                         |            |
+| side           | integer | 必须     |        | 合约委托方向（买1，卖-1）                        | 枚举: -1,1 |
+| price          | string  | 非必须   |        | 合约委托价格（order_type等于3（市价）时非必填 ） |            |
+| quantity       | string  | 必须     |        | 合约委托数量                                     |            |
+| orderType      | integer | 必须     |        | 合约委托类型（1（限价），3（市价） ）            |            |
+| positionEffect | number  | 必须     |        | 开平标志（开仓1，平仓2）                         |            |
+| marginType     | number  | 必须     |        | 仓位模式（全仓1，逐仓2）                         |            |
+| marginRate     | string  | 必须     |        | 保证金率（全仓=0，逐仓>=0）                      |            |
+
+### 返回数据
+
+| 名称 | 类型   | 是否必须 | 默认值 | 备注               | 其他信息 |
+| ---- | ------ | -------- | ------ | ------------------ | -------- |
+| code | number | 非必须   |        | 0：成功，非0：失败 |          |
+| msg  | string | 非必须   |        | 消息msg            |          |
+
+## 4.2 合约批量下单
+
+
+
+### 基本信息
+
+**Path：** /api/v1/future/orders
+
+**Method：** POST
+
+**接口描述：**
+
+功能：期货合约 - 批量委托下单 （下多笔委托订单）
+
+### 请求参数
+
+**Headers**
+
+| 参数名称     | 参数值           | 是否必须 | 示例 | 备注           |
+| ------------ | ---------------- | -------- | ---- | -------------- |
+| Content-Type | application/json | 是       |      |                |
+| signature    |                  | 是       |      | 签名           |
+| apiExpires   |                  | 是       |      | 时间戳，秒级别 |
+| apiKey       |                  | 是       |      | 公钥           |
+
+**Body**
+
+| 名称             | 类型      | 是否必须 | 默认值 | 备注                           | 其他信息          |
+| ---------------- | --------- | -------- | ------ | ------------------------------ | ----------------- |
+| orders           | object [] | 非必须   |        |                                | item 类型: object |
+| ├─ side          | number    | 必须     |        | 买卖方向，1买-1卖              |                   |
+| ├─ orderPrice    | string    | 非必须   |        | 委托价格                       |                   |
+| ├─ orderQty      | string    | 必须     |        | 委托数量                       |                   |
+| ├─ orderType     | number    | 必须     |        | 委托类型：1（限价），3（市价） |                   |
+| ├─ contractId    | number    | 必须     |        | 合约ID                         |                   |
+| ├─positionEffect | number    | 必须     |        | 开平标志，1开仓，2平仓         |                   |
+| ├─ marginType    | number    | 必须     |        | 保证金类型，1全仓，2逐仓       |                   |
+| ├─ initRate      | string    | 非必须   |        | 保证金率，全仓时0，逐仓时>0    |                   |
+
+### 返回数据
+
+| 名称 | 类型 | 是否必须 | 默认值 | 备注 | 其他信息 |
+| ---- | ---- | -------- | ------ | ---- | -------- |
+|      |      |          |        |      |          |
+
+## 4.3 合约撤单
+
+
+
+### 基本信息
+
+**Path：** /api/v1/future/order
+
+**Method：** DELETE
+
+**接口描述：**
+
+功能 ：期货合约 - 单笔撤消 未成交的委托单
+
+### 请求参数
+
+**Headers**
+
+| 参数名称     | 参数值           | 是否必须 | 示例               | 备注     |
+| ------------ | ---------------- | -------- | ------------------ | -------- |
+| Content-Type | application/json | 是       |                    |          |
+| signature    | String           | 是       | d3d576ghggf8ddd3   | 签名     |
+| apiKey       | Long             | 是       | j7sas9ahshbdb9sisi | 认证     |
+| apiExpires   | Long             | 是       | 1548213518         | 过期时间 |
+
+**Query**
+
+| 参数名称 | 是否必须 | 示例                                          | 备注                                                         |
+| -------- | -------- | --------------------------------------------- | ------------------------------------------------------------ |
+| filter   | 是       | {"contractId":1,"originalOrderId":"12345677"} | UrlEncode 解码后为：{"contractId":1,"originalOrderId":"12345677"} contractId：合约ID originalOrderId:原始委托号 |
+
+**Body**
+
+| 名称 | 类型 | 是否必须 | 默认值 | 备注 | 其他信息 |
+| ---- | ---- | -------- | ------ | ---- | -------- |
+|      |      |          |        |      |          |
+
+### 返回数据
+
+| 名称 | 类型   | 是否必须 | 默认值 | 备注               | 其他信息 |
+| ---- | ------ | -------- | ------ | ------------------ | -------- |
+| code | number | 非必须   |        | 0：成功，非0：失败 |          |
+| msg  | string | 非必须   |        | 消息msg            |          |
+
+## 4.4 合约批量撤单
+
+
+
+### 基本信息
+
+**Path：** /api/v1/future/orders
+
+**Method：** DELETE
+
+**接口描述：**
+
+功能 ：期货合约 - 批量撤消 多笔未成交的委托单
+
+### 请求参数
+
+**Headers**
+
+| 参数名称     | 参数值           | 是否必须 | 示例 | 备注     |
+| ------------ | ---------------- | -------- | ---- | -------- |
+| Content-Type | application/json | 是       |      |          |
+| signature    |                  | 是       |      | 签名     |
+| apiKey       |                  | 是       |      | apikey   |
+| apiExpires   |                  | 是       |      | 过期时间 |
+
+**Body**
+
+| 名称               | 类型      | 是否必须 | 默认值 | 备注       | 其他信息          |
+| ------------------ | --------- | -------- | ------ | ---------- | ----------------- |
+| cancels            | object [] | 非必须   |        |            | item 类型: object |
+| ├─ contractId      | number    | 非必须   |        | 合约ID     |                   |
+| ├─ originalOrderId | string    | 非必须   |        | 原始委托号 |                   |
+
+### 返回数据
+
+| 名称 | 类型    | 是否必须 | 默认值 | 备注              | 其他信息 |
+| ---- | ------- | -------- | ------ | ----------------- | -------- |
+| code | integer | 非必须   |        | 0:成功，非0：失败 |          |
+
+## 4.5 合约撤消所有订单
+
+
+
+### 基本信息
+
+**Path：** /api/v1/future/order/all
+
+**Method：** DELETE
+
+**接口描述：**
+
+功能 ：期货合约 - 撤消 所有未成交的委托单
+
+### 请求参数
+
+**Headers**
+
+| 参数名称     | 参数值                            | 是否必须 | 示例 | 备注     |
+| ------------ | --------------------------------- | -------- | ---- | -------- |
+| Content-Type | application/x-www-form-urlencoded | 是       |      |          |
+| signature    |                                   | 是       |      | 签名     |
+| apiKey       |                                   | 是       |      | apiKey   |
+| apiExpires   |                                   | 是       |      | 过期时间 |
+
+### 返回数据
+
+| 名称 | 类型   | 是否必须 | 默认值 | 备注               | 其他信息 |
+| ---- | ------ | -------- | ------ | ------------------ | -------- |
+| code | number | 非必须   |        | 0：成功，非0：失败 |          |
+| msg  | string | 非必须   |        | 消息msg            |          |
+| data | string | 非必须   |        | 数据集合           |          |
+
+## 4.6 获取订单信息
+
+
+
+### 基本信息
+
+**Path：** /api/v1/future/order
+
+**Method：** GET
+
+**接口描述：**
+
+功能 ：期货合约 - 查询订单的相关信息
+
+### 请求参数
+
+**Headers**
+
+| 参数名称     | 参数值           | 是否必须 | 示例 | 备注       |
+| ------------ | ---------------- | -------- | ---- | ---------- |
+| Content-Type | application/json | 是       |      |            |
+| signature    |                  | 是       |      | 签名       |
+| apiKey       |                  | 是       |      | apiKey     |
+| apiExpires   |                  | 是       |      | apiExpires |
+
+**Query**
+
+| 参数名称 | 是否必须 | 示例                            | 备注                                                         |
+| -------- | -------- | ------------------------------- | ------------------------------------------------------------ |
+| filter   | 是       | {"orderId":"11548740843018185"} | {"orderId":"11548740843018185"} urlencode  后等于 {"orderId":"11548740843018185"} |
+
+### 返回数据
+
+| 名称             | 类型   | 是否必须 | 默认值 | 备注                                                         | 其他信息 |
+| ---------------- | ------ | -------- | ------ | ------------------------------------------------------------ | -------- |
+| code             | number | 非必须   |        | 0：成功，非0：失败                                           |          |
+| msg              | string | 非必须   |        | 消息msg                                                      |          |
+| data             | object | 非必须   |        | 数据集合                                                     |          |
+| ├─applId         | number | 非必须   |        | 应用标识                                                     |          |
+| ├─contractId     | number | 非必须   |        | 交易对ID                                                     |          |
+| ├─accountId      | number | 非必须   |        | 账户ID                                                       |          |
+| ├─clOrderId      | string | 非必须   |        | 客户订单编号                                                 |          |
+| ├─ side          | number | 非必须   |        | 委托方向（1：买，-1：卖）                                    |          |
+| ├─orderPrice     | string | 非必须   |        | 委托价格                                                     |          |
+| ├─orderQty       | string | 非必须   |        | 委托数量                                                     |          |
+| ├─orderId        | string | 非必须   |        | 委托订单编号                                                 |          |
+| ├─orderTime      | number | 非必须   |        | 委托时间                                                     |          |
+| ├─orderStatus    | number | 非必须   |        | 委托状态（0未申报，1正在申报，2已申报未成交，3部分成交，4全部成交，5部成部撤,6全部撤单，7撤单中，8失效） |          |
+| ├─matchQty       | string | 非必须   |        | 成交数量                                                     |          |
+| ├─matchAmt       | string | 非必须   |        | 成交金额                                                     |          |
+| ├─cancelQty      | string | 非必须   |        | 撤单数量                                                     |          |
+| ├─matchTime      | number | 非必须   |        | 成交时间                                                     |          |
+| ├─orderType      | number | 非必须   |        | 委托类型（1：限价，3：市价）                                 |          |
+| ├─timeInForce    | number | 非必须   |        | 订单有效时期类型：当日有效、GTC、IOC，默认1， 1, "可成交价格全部成交"；2, "立即成交剩余撤销" |          |
+| ├─positionEffect | number | 非必须   |        | 开平标志（1开仓 2平仓）                                      |          |
+| ├─marginType     | number | 非必须   |        | 仓位模式（1、全仓，2：逐仓）                                 |          |
+| ├─fcOrderId      | string | 非必须   |        | 强平委托号，非空时为强平委托                                 |          |
+
+## 4.7 获取当前订单列表
+
+
+
+### 基本信息
+
+**Path：** /api/v1/future/queryActiveOrder
+
+**Method：** GET
+
+**接口描述：**
+
+功能 ：期货合约 - 查询 当前订单的列表数据
+
+### 请求参数
+
+**Headers**
+
+| 参数名称     | 参数值           | 是否必须 | 示例 | 备注     |
+| ------------ | ---------------- | -------- | ---- | -------- |
+| Content-Type | application/json | 是       |      |          |
+| signature    |                  | 是       |      | 签名     |
+| apiKey       |                  | 是       |      | apiKey   |
+| apiExpires   |                  | 是       |      | 过期时间 |
+
+### 返回数据
+
+| 名称             | 类型      | 是否必须 | 默认值 | 备注                                                         | 其他信息          |
+| ---------------- | --------- | -------- | ------ | ------------------------------------------------------------ | ----------------- |
+| code             | number    | 非必须   |        | 0：成功，非0：失败                                           |                   |
+| msg              | string    | 非必须   |        | 消息msg                                                      |                   |
+| data             | object [] | 非必须   |        | 数据集合                                                     | item 类型: object |
+| ├─applId         | number    | 非必须   |        | 应用标识                                                     |                   |
+| ├─contractId     | number    | 非必须   |        | 交易对ID                                                     |                   |
+| ├─accountId      | number    | 非必须   |        | 账户ID                                                       |                   |
+| ├─clOrderId      | string    | 非必须   |        | 客户订单编号                                                 |                   |
+| ├─ side          | number    | 非必须   |        | 委托方向（1：买，-1：卖）                                    |                   |
+| ├─orderPrice     | string    | 非必须   |        | 委托价格                                                     |                   |
+| ├─orderQty       | string    | 非必须   |        | 委托数量                                                     |                   |
+| ├─orderId        | string    | 非必须   |        | 委托订单编号                                                 |                   |
+| ├─orderTime      | number    | 非必须   |        | 委托时间                                                     |                   |
+| ├─orderStatus    | number    | 非必须   |        | 委托状态（0未申报，1正在申报，2已申报未成交，3部分成交，4全部成交，5部成部撤,6全部撤单，7撤单中，8失效） |                   |
+| ├─matchQty       | string    | 非必须   |        | 成交数量                                                     |                   |
+| ├─matchAmt       | string    | 非必须   |        | 成交金额                                                     |                   |
+| ├─cancelQty      | string    | 非必须   |        | 撤单数量                                                     |                   |
+| ├─matchTime      | number    | 非必须   |        | 成交时间                                                     |                   |
+| ├─orderType      | number    | 非必须   |        | 委托类型（1：限价，3：市价）                                 |                   |
+| ├─timeInForce    | number    | 非必须   |        | 订单有效时期类型：当日有效、GTC、IOC，默认1， 1, "可成交价格全部成交"；2, "立即成交剩余撤销" |                   |
+| ├─positionEffect | number    | 非必须   |        | 开平标志（1开仓 2平仓）                                      |                   |
+| ├─marginType     | number    | 非必须   |        | 仓位模式（1、全仓，2：逐仓）                                 |                   |
+| ├─fcOrderId      | string    | 非必须   |        | 强平委托号，非空时为强平委托                                 |                   |
+
+## 4.8 获取历史委托
+
+
+
+### 基本信息
+
+**Path：** /api/v1/future/queryLastestHistoryOrders
+
+**Method：** GET
+
+**接口描述：**
+
+功能 ：期货合约 - 查询历史委托的订单数据
+
+### 请求参数
+
+**Headers**
+
+| 参数名称     | 参数值           | 是否必须 | 示例 | 备注     |
+| ------------ | ---------------- | -------- | ---- | -------- |
+| Content-Type | application/json | 是       |      |          |
+| signature    |                  | 是       |      | 签名     |
+| apiKey       |                  | 是       |      | apiKey   |
+| apiExpires   |                  | 是       |      | 过期时间 |
+
+### 返回数据
+
+| 名称             | 类型      | 是否必须 | 默认值 | 备注                                                         | 其他信息          |
+| ---------------- | --------- | -------- | ------ | ------------------------------------------------------------ | ----------------- |
+| code             | number    | 非必须   |        | 0：成功，非0：失败                                           |                   |
+| msg              | string    | 非必须   |        | 消息msg                                                      |                   |
+| data             | object [] | 非必须   |        | 数据集合                                                     | item 类型: object |
+| ├─applId         | number    | 非必须   |        | 应用标识                                                     |                   |
+| ├─contractId     | number    | 非必须   |        | 交易对ID                                                     |                   |
+| ├─accountId      | number    | 非必须   |        | 账户ID                                                       |                   |
+| ├─clOrderId      | null      | 非必须   |        | 客户订单编号                                                 |                   |
+| ├─ side          | number    | 非必须   |        | 委托方向（1：买，-1：卖）                                    |                   |
+| ├─orderPrice     | string    | 非必须   |        | 委托价格                                                     |                   |
+| ├─orderQty       | string    | 非必须   |        | 委托数量                                                     |                   |
+| ├─orderId        | string    | 非必须   |        | 委托订单编号                                                 |                   |
+| ├─orderTime      | number    | 非必须   |        | 委托时间                                                     |                   |
+| ├─orderStatus    | number    | 非必须   |        | 委托状态（0未申报，1正在申报，2已申报未成交，3部分成交，4全部成交，5部成部撤,6全部撤单，7撤单中，8失效） |                   |
+| ├─matchQty       | string    | 非必须   |        | 成交数量                                                     |                   |
+| ├─matchAmt       | string    | 非必须   |        | 成交金额                                                     |                   |
+| ├─cancelQty      | string    | 非必须   |        | 撤单数量                                                     |                   |
+| ├─matchTime      | number    | 非必须   |        | 成交时间                                                     |                   |
+| ├─orderType      | number    | 非必须   |        | 委托类型（1：限价，3：市价）                                 |                   |
+| ├─timeInForce    | number    | 非必须   |        | 订单有效时期类型：当日有效、GTC、IOC，默认1， 1, "可成交价格全部成交"；2, "立即成交剩余撤销" |                   |
+| ├─positionEffect | number    | 非必须   |        | 开平标志（1开仓 2平仓）                                      |                   |
+| ├─marginType     | number    | 非必须   |        | 仓位模式（1、全仓，2：逐仓）                                 |                   |
+| ├─fcOrderId      | string    | 非必须   |        | 强平委托号，非空时为强平委托                                 |                   |
+
+## 4.9 切换仓位模式
+
+
+
+### 基本信息
+
+**Path：** /api/v1/future/position/isolate
+
+**Method：** POST
+
+**接口描述：**
+
+功能 ：期货合约 - 已成交的订单切换仓位模式（逐仓 切换 全仓、全仓切换逐仓）
+
+### 请求参数
+
+**Headers**
+
+| 参数名称     | 参数值           | 是否必须 | 示例 | 备注 |
+| ------------ | ---------------- | -------- | ---- | ---- |
+| Content-Type | application/json | 是       |      |      |
+
+**Body**
+
+| 名称           | 类型   | 是否必须 | 默认值 | 备注                     | 其他信息 |
+| -------------- | ------ | -------- | ------ | ------------------------ | -------- |
+| contractId     | string | 必须     |        | 交易对ID                 |          |
+| initMarginRate | string | 非必须   |        | 初始保证金率0<${}<=1     |          |
+| marginType     | string | 必须     |        | 保证金类型，全仓1，逐仓2 |          |
+
+### 返回数据
+
+| 名称 | 类型   | 是否必须 | 默认值 | 备注               | 其他信息 |
+| ---- | ------ | -------- | ------ | ------------------ | -------- |
+| code | number | 非必须   |        | 0：成功，非0：失败 |          |
+| msg  | string | 非必须   |        | 消息msg            |          |
+
+## 4.10 调整保证金率
+
+
+
+### 基本信息
+
+**Path：** /api/v1/future/position/transferMargin
+
+**Method：** POST
+
+**接口描述：**
+
+功能：调整保证金率，即调整杠杆倍数
+
+### 请求参数
+
+**Headers**
+
+| 参数名称     | 参数值           | 是否必须 | 示例 | 备注 |
+| ------------ | ---------------- | -------- | ---- | ---- |
+| Content-Type | application/json | 是       |      |      |
+
+**Body**
+
+| 名称       | 类型    | 是否必须 | 默认值 | 备注                                       | 其他信息 |
+| ---------- | ------- | -------- | ------ | ------------------------------------------ | -------- |
+| contractId | integer | 非必须   |        | 合约ID                                     |          |
+| margin     | string  | 非必须   |        | 保证金（>0 : 增加保证金，-0 ：减少保证金） |          |
+
+### 返回数据
+
+| 名称 | 类型   | 是否必须 | 默认值 | 备注              | 其他信息 |
+| ---- | ------ | -------- | ------ | ----------------- | -------- |
+| code | number | 非必须   |        | 0:成功，非0：失败 |          |
+| msg  | string | 非必须   |        | 消息msg           |          |
+| data | object | 非必须   |        |                   |          |
+
+## 4.11 获取强减队列
+
+
+
+### 基本信息
+
+**Path：** /api/v1/future/queryForceLower
+
+**Method：** GET
+
+**接口描述：**
+
+### 请求参数
+
+### 返回数据
+
+| 名称          | 类型      | 是否必须 | 默认值 | 备注                           | 其他信息          |
+| ------------- | --------- | -------- | ------ | ------------------------------ | ----------------- |
+| code          | number    | 非必须   |        | 0：成功，非0：失败             |                   |
+| msg           | string    | 非必须   |        | 消息msg                        |                   |
+| data          | object [] | 非必须   |        | 数据集合                       | item 类型: object |
+| ├─ contractId | number    | 非必须   |        | 合约ID                         |                   |
+| ├─ rank       | number    | 非必须   |        | 强减排名，值越小强减可能性越大 |                   |
+
+## 4.12 获取当前成交
+
+
+
+### 基本信息
+
+**Path：** /api/v1/future/queryMatch
+
+**Method：** GET
+
+**接口描述：**
+
+### 请求参数
+
+### 返回数据
+
+| 名称              | 类型      | 是否必须 | 默认值 | 备注                 | 其他信息          |
+| ----------------- | --------- | -------- | ------ | -------------------- | ----------------- |
+| code              | integer   | 非必须   |        | 0：成交，非0：失败   |                   |
+| msg               | null      | 非必须   |        | 消息msg              |                   |
+| data              | object [] | 非必须   |        | 数据集合             | item 类型: object |
+| ├─ contractId     | number    | 非必须   |        | 合约ID               |                   |
+| ├─ matchTime      | number    | 非必须   |        | 成交时间             |                   |
+| ├─ matchPrice     | null      | 非必须   |        | 成交价格             |                   |
+| ├─ matchQty       | null      | 非必须   |        | 成交数量             |                   |
+| ├─ matchAmt       | null      | 非必须   |        | 成交金额             |                   |
+| ├─ execId         | null      | 非必须   |        | 成交号               |                   |
+| ├─ orderId        | null      | 非必须   |        | 委托ID               |                   |
+| ├─ fee            | null      | 非必须   |        | 手续费               |                   |
+| ├─ positionEffect | number    | 非必须   |        | 开平标志1开仓，2平仓 |                   |
+| ├─ side           | number    | 非必须   |        | 买卖方向买1，卖-1    |                   |
+| ├─ matchType      | number    | 非必须   |        | 成交类型             |                   |
