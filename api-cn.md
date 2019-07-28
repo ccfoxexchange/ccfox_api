@@ -295,8 +295,6 @@ print(generate_signature('chNOOS4KvNXR_Xq4k4c9qsfoKWvnDecLATCRlcBwyKDYnWgO', 'PO
 
 注意：不需要签名
 
-### 请求参数
-
 ### 返回数据
 
 | 名称                       | 类型        | 是否必须 | 默认值 | 备注                                                     | 其他信息          |
@@ -321,7 +319,7 @@ print(generate_signature('chNOOS4KvNXR_Xq4k4c9qsfoKWvnDecLATCRlcBwyKDYnWgO', 'PO
 | ├─ contractType            | number      | 必须     |        | 合约类型，1定期，2永续                                   |                   |
 | ├─ deliveryType            | number      | 必须     |        | 交割类型，1现金交割，2实物交割                           |                   |
 | ├─ deliveryPeriod          | number      | 必须     |        | 交割周期，0永续1日2周3月4季度                            |                   |
-| ├─ deliveryFeeRatio        | null        | 必须     |        | 交割手续费                                               |                   |
+| ├─ deliveryFeeRatio        | number      | 必须     |        | 交割手续费                                               |                   |
 | ├─ contractSide            | number      | 必须     |        | 合约方向，1正向，2反向                                   |                   |
 | ├─ contractUnit            | number      | 必须     |        | 合约单位                                                 |                   |
 | ├─ posiLimit               | number      | 必须     |        | 持仓限额                                                 |                   |
@@ -331,16 +329,16 @@ print(generate_signature('chNOOS4KvNXR_Xq4k4c9qsfoKWvnDecLATCRlcBwyKDYnWgO', 'PO
 | ├─ fairBasisInterval       | number      | 必须     |        | 结算价基差计算间隔，单位秒'                              |                   |
 | ├─ clearPriceInterval      | number      | 必须     |        | 结算价计算间隔，单位秒                                   |                   |
 | ├─deliveryPriceInterval    | number      | 必须     |        | 交割价计算长度，倒推时间，按秒计                         |                   |
-| ├─perpetualPremiumLimit    | null        | 必须     |        | 永续合约溢价指数限制范围                                 |                   |
-| ├─perpetualFundingfeeLimit | null        | 必须     |        | 永续合约资金费率限制范围比例                             |                   |
-| ├─perpetualSettleFrequency | null        | 必须     |        | 结算频率(一天几次)                                       |                   |
-| ├─risklessrateGoods        | null        | 必须     |        | 商品货币日利率                                           |                   |
-| ├─risklessrateMoney        | null        | 必须     |        | 计价货币日利率                                           |                   |
+| ├─perpetualPremiumLimit    | number      | 必须     |        | 永续合约溢价指数限制范围                                 |                   |
+| ├─perpetualFundingfeeLimit | number      | 必须     |        | 永续合约资金费率限制范围比例                             |                   |
+| ├─perpetualSettleFrequency | number      | 必须     |        | 结算频率(一天几次)                                       |                   |
+| ├─risklessrateGoods        | number      | 必须     |        | 商品货币日利率                                           |                   |
+| ├─risklessrateMoney        | number      | 必须     |        | 计价货币日利率                                           |                   |
 | ├─ isAutoList              | number      | 必须     |        | 是否自动加挂：0是 1否                                    |                   |
-| ├─ onceListTime            | number,null | 必须     |        | 一次性上市时间（即只上市一次）                           |                   |
-| ├─regularSettlementTime    | null        | 必须     |        | 定期结算时间（股指合约结算的相对时间，入库时设置）       |                   |
+| ├─ onceListTime            | number      | 必须     |        | 一次性上市时间（即只上市一次）                           |                   |
+| ├─regularSettlementTime    | number      | 必须     |        | 定期结算时间（股指合约结算的相对时间，入库时设置）       |                   |
 | ├─ createTime              | number      | 必须     |        | 创建时间                                                 |                   |
-| ├─ enabled                 | number      | 必须     |        |                                                          |                   |
+| ├─ enabled                 | number      | 必须     |        | 是否可用，0：可用，1：不可用                             |                   |
 | ├─futureContractList       | object []   | 必须     |        | 合约列表                                                 | item 类型: object |
 | ├─ contractId              | number      | 必须     |        | 合约ID                                                   |                   |
 | ├─ applId                  | number      | 必须     |        | 应用ID, 1：现货，2：期货                                 |                   |
@@ -371,7 +369,7 @@ print(generate_signature('chNOOS4KvNXR_Xq4k4c9qsfoKWvnDecLATCRlcBwyKDYnWgO', 'PO
 | ├─clearPriceInterval       | number      | 必须     |        | 结算价计算间隔                                           |                   |
 | ├─deliveryPriceInterval    | number      | 必须     |        | 交割价计算间隔                                           |                   |
 | ├─ createTime              | number      | 必须     |        | 创建时间                                                 |                   |
-| ├─ varietyId               | number      | 必须     |        | 品种ID，标的ID                                           |                   |
+| ├─ varietyId               | integer     | 必须     |        | 品种ID，标的ID                                           |                   |
 | ├─ lastTradeTime           | number      | 必须     |        | 最后交易时间                                             |                   |
 | ├─ deliveryTime            | number      | 必须     |        | 最后交割时间                                             |                   |
 | ├─ listPrice               | number      | 必须     |        | 挂牌价格                                                 |                   |
@@ -390,7 +388,7 @@ print(generate_signature('chNOOS4KvNXR_Xq4k4c9qsfoKWvnDecLATCRlcBwyKDYnWgO', 'PO
 
 ### 基本信息
 
-**Path：** /common/queryCurrency
+**Path：** /api/v1/common/queryCurrency
 
 **Method：** GET
 
@@ -424,7 +422,7 @@ print(generate_signature('chNOOS4KvNXR_Xq4k4c9qsfoKWvnDecLATCRlcBwyKDYnWgO', 'PO
 
 ### 基本信息
 
-**Path：** /common/exchange/list
+**Path：** /api/v1/common/exchange/list
 
 **Method：** GET
 
@@ -448,7 +446,7 @@ print(generate_signature('chNOOS4KvNXR_Xq4k4c9qsfoKWvnDecLATCRlcBwyKDYnWgO', 'PO
 
 ### 基本信息
 
-**Path：** /common/exchange/coins
+**Path：** /api/v1/common/exchange/coins
 
 **Method：** GET
 
@@ -473,7 +471,7 @@ latest: 当前USD价格
 
 ### 基本信息
 
-**Path：** /future/queryContractDeliveryList
+**Path：** /api/v1/future/queryContractDeliveryList
 
 **Method：** GET
 
@@ -539,7 +537,7 @@ latest: 当前USD价格
 
 ### 基本信息
 
-**Path：** /futureQuot/queryMarketStat
+**Path：** /api/v1/futureQuot/queryMarketStat
 
 **Method：** GET
 
@@ -572,7 +570,7 @@ latest: 当前USD价格
 
 ### 基本信息
 
-**Path：** /futureQuot/queryCandlestick
+**Path：** /api/v1/futureQuot/queryCandlestick
 
 **Method：** GET
 
@@ -625,7 +623,7 @@ range取值：
 
 ### 基本信息
 
-**Path：** /futureQuot/querySnapshot
+**Path：** /api/v1/futureQuot/querySnapshot
 
 **Method：** GET
 
@@ -678,10 +676,10 @@ range取值：
 | ├─ lui     | number    | 非必须   |        | 行情序号：lastUpdateId              |                   |
 | ├─ cs      | number    | 非必须   |        | 交易对状态：contractStatus          |                   |
 | ├─ dp      | string    | 非必须   |        | 交割价格：deliveryPrice             |                   |
-| ├─ fr      | null      | 非必须   |        | 资金费率：fundingRate               |                   |
-| ├─ pfr     | null      | 非必须   |        | 预测资金费率：predictionFundingRate |                   |
-| ├─ pi      | null      | 非必须   |        | 溢价指数：premiumIndex              |                   |
-| ├─ ppi     | null      | 非必须   |        | 预溢价指数：predictionPremiumIndex  |                   |
+| ├─ fr      | string    | 非必须   |        | 资金费率：fundingRate               |                   |
+| ├─ pfr     | string    | 非必须   |        | 预测资金费率：predictionFundingRate |                   |
+| ├─ pi      | string    | 非必须   |        | 溢价指数：premiumIndex              |                   |
+| ├─ ppi     | string    | 非必须   |        | 预溢价指数：predictionPremiumIndex  |                   |
 | ├─ fb      | string    | 非必须   |        | 合理基差：fairBasis                 |                   |
 | ├─ ts      | number    | 非必须   |        | 交易信号，1=买，2=卖：tradingsignal |                   |
 | ├─ sl      | number    | 非必须   |        | 1~100,交易信号强度 ：signalLevel    |                   |
@@ -695,7 +693,7 @@ range取值：
 
 ### 基本信息
 
-**Path：** /futureQuot/queryIndicatorList
+**Path：** /api/v1/futureQuot/queryIndicatorList
 
 **Method：** GET
 
@@ -707,43 +705,43 @@ range取值：
 
 ### 返回数据
 
-| 名称   | 类型        | 是否必须 | 默认值 | 备注 | 其他信息          |
-| ------ | ----------- | -------- | ------ | ---- | ----------------- |
-|        | object []   | 非必须   |        |      | item 类型: object |
-| ├─ mt  | number      | 必须     |        |      |                   |
-| ├─ ai  | number      | 必须     |        |      |                   |
-| ├─ ci  | number      | 必须     |        |      |                   |
-| ├─ sb  | string      | 必须     |        |      |                   |
-| ├─ td  | number      | 必须     |        |      |                   |
-| ├─ te  | number      | 必须     |        |      |                   |
-| ├─ lp  | string      | 必须     |        |      |                   |
-| ├─ mq  | string      | 必须     |        |      |                   |
-| ├─ nt  | number      | 必须     |        |      |                   |
-| ├─ op  | string      | 必须     |        |      |                   |
-| ├─ ph  | string      | 必须     |        |      |                   |
-| ├─ pl  | string      | 必须     |        |      |                   |
-| ├─ hph | string      | 必须     |        |      |                   |
-| ├─ hpl | string      | 必须     |        |      |                   |
-| ├─ tt  | string      | 必须     |        |      |                   |
-| ├─ tv  | string      | 必须     |        |      |                   |
-| ├─ tbv | string      | 必须     |        |      |                   |
-| ├─ tav | string      | 必须     |        |      |                   |
-| ├─ pp  | string      | 必须     |        |      |                   |
-| ├─ cp  | string      | 必须     |        |      |                   |
-| ├─ pv  | string      | 必须     |        |      |                   |
-| ├─ pcr | string      | 必须     |        |      |                   |
-| ├─ pc  | string      | 必须     |        |      |                   |
-| ├─ lui | number      | 必须     |        |      |                   |
-| ├─ cs  | number      | 必须     |        |      |                   |
-| ├─ dp  | string      | 必须     |        |      |                   |
-| ├─ fr  | null,string | 必须     |        |      |                   |
-| ├─ pfr | null,string | 必须     |        |      |                   |
-| ├─ pi  | null,string | 必须     |        |      |                   |
-| ├─ ppi | null,string | 必须     |        |      |                   |
-| ├─ fb  | string      | 必须     |        |      |                   |
-| ├─ ts  | number      | 必须     |        |      |                   |
-| ├─ sl  | number      | 必须     |        |      |                   |
-| ├─ ip  | string      | 必须     |        |      |                   |
+| 名称   | 类型      | 是否必须 | 默认值 | 备注 | 其他信息          |
+| ------ | --------- | -------- | ------ | ---- | ----------------- |
+|        | object [] | 非必须   |        |      | item 类型: object |
+| ├─ mt  | number    | 必须     |        |      |                   |
+| ├─ ai  | number    | 必须     |        |      |                   |
+| ├─ ci  | number    | 必须     |        |      |                   |
+| ├─ sb  | string    | 必须     |        |      |                   |
+| ├─ td  | number    | 必须     |        |      |                   |
+| ├─ te  | number    | 必须     |        |      |                   |
+| ├─ lp  | string    | 必须     |        |      |                   |
+| ├─ mq  | string    | 必须     |        |      |                   |
+| ├─ nt  | number    | 必须     |        |      |                   |
+| ├─ op  | string    | 必须     |        |      |                   |
+| ├─ ph  | string    | 必须     |        |      |                   |
+| ├─ pl  | string    | 必须     |        |      |                   |
+| ├─ hph | string    | 必须     |        |      |                   |
+| ├─ hpl | string    | 必须     |        |      |                   |
+| ├─ tt  | string    | 必须     |        |      |                   |
+| ├─ tv  | string    | 必须     |        |      |                   |
+| ├─ tbv | string    | 必须     |        |      |                   |
+| ├─ tav | string    | 必须     |        |      |                   |
+| ├─ pp  | string    | 必须     |        |      |                   |
+| ├─ cp  | string    | 必须     |        |      |                   |
+| ├─ pv  | string    | 必须     |        |      |                   |
+| ├─ pcr | string    | 必须     |        |      |                   |
+| ├─ pc  | string    | 必须     |        |      |                   |
+| ├─ lui | number    | 必须     |        |      |                   |
+| ├─ cs  | number    | 必须     |        |      |                   |
+| ├─ dp  | string    | 必须     |        |      |                   |
+| ├─ fr  | string    | 必须     |        |      |                   |
+| ├─ pfr | string    | 必须     |        |      |                   |
+| ├─ pi  | string    | 必须     |        |      |                   |
+| ├─ ppi | string    | 必须     |        |      |                   |
+| ├─ fb  | string    | 必须     |        |      |                   |
+| ├─ ts  | number    | 必须     |        |      |                   |
+| ├─ sl  | number    | 必须     |        |      |                   |
+| ├─ ip  | string    | 必须     |        |      |                   |
 
 ## 2.5 获取逐笔成交
 
@@ -751,7 +749,7 @@ range取值：
 
 ### 基本信息
 
-**Path：** /futureQuot/queryTickTrade
+**Path：** /api/v1/futureQuot/queryTickTrade
 
 **Method：** GET
 
@@ -802,12 +800,12 @@ range取值：
 
 **Headers**
 
-| 参数名称     | 参数值           | 是否必须 | 示例 | 备注     |
-| ------------ | ---------------- | -------- | ---- | -------- |
-| Content-Type | application/json | 是       |      |          |
-| signature    |                  | 是       |      | 签名     |
-| apiKey       |                  | 是       |      | apiKey   |
-| apiExpires   |                  | 是       |      | 过期时间 |
+| 参数名称     | 参数值           | 是否必须 | 示例 | 备注   |
+| ------------ | ---------------- | -------- | ---- | ------ |
+| Content-Type | application/json | 是       |      |        |
+| signature    |                  | 是       |      | 签名   |
+| apiKey       |                  | 是       |      | 公钥   |
+| apiExpires   |                  | 是       |      | 时间戳 |
 
 ### 返回数据
 
@@ -901,7 +899,7 @@ range取值：
 
 ### 基本信息
 
-**Path：** /future/queryVarietyMargin
+**Path：** /api/v1/future/queryVarietyMargin
 
 **Method：** GET
 
@@ -1003,9 +1001,11 @@ range取值：
 
 ### 返回数据
 
-| 名称 | 类型 | 是否必须 | 默认值 | 备注 | 其他信息 |
-| ---- | ---- | -------- | ------ | ---- | -------- |
-|      |      |          |        |      |          |
+| 名称 | 类型   | 是否必须 | 默认值 | 备注               | 其他信息 |
+| ---- | ------ | -------- | ------ | ------------------ | -------- |
+| code | number | 非必须   |        | 0：成功，非0：失败 |          |
+| msg  | string | 非必须   |        | 消息msg            |          |
+| data | string | 非必须   |        |                    |          |
 
 ## 4.3 合约撤单
 
@@ -1271,7 +1271,7 @@ range取值：
 | 名称       | 类型    | 是否必须 | 默认值 | 备注                                       | 其他信息 |
 | ---------- | ------- | -------- | ------ | ------------------------------------------ | -------- |
 | contractId | integer | 非必须   |        | 合约ID                                     |          |
-| margin     | string  | 非必须   |        | 保证金（>0 : 增加保证金，-0 ：减少保证金） |          |
+| margin     | string  | 非必须   |        | 保证金（>0 : 增加保证金，<0 ：减少保证金） |          |
 
 ### 返回数据
 
@@ -1290,10 +1290,6 @@ range取值：
 **Path：** /api/v1/future/queryForceLower
 
 **Method：** GET
-
-**接口描述：**
-
-### 请求参数
 
 ### 返回数据
 
@@ -1315,25 +1311,21 @@ range取值：
 
 **Method：** GET
 
-**接口描述：**
-
-### 请求参数
-
 ### 返回数据
 
 | 名称              | 类型      | 是否必须 | 默认值 | 备注                 | 其他信息          |
 | ----------------- | --------- | -------- | ------ | -------------------- | ----------------- |
 | code              | integer   | 非必须   |        | 0：成交，非0：失败   |                   |
-| msg               | null      | 非必须   |        | 消息msg              |                   |
+| msg               | string    | 非必须   |        | 消息msg              |                   |
 | data              | object [] | 非必须   |        | 数据集合             | item 类型: object |
 | ├─ contractId     | number    | 非必须   |        | 合约ID               |                   |
 | ├─ matchTime      | number    | 非必须   |        | 成交时间             |                   |
-| ├─ matchPrice     | null      | 非必须   |        | 成交价格             |                   |
-| ├─ matchQty       | null      | 非必须   |        | 成交数量             |                   |
-| ├─ matchAmt       | null      | 非必须   |        | 成交金额             |                   |
-| ├─ execId         | null      | 非必须   |        | 成交号               |                   |
-| ├─ orderId        | null      | 非必须   |        | 委托ID               |                   |
-| ├─ fee            | null      | 非必须   |        | 手续费               |                   |
+| ├─ matchPrice     | string    | 非必须   |        | 成交价格             |                   |
+| ├─ matchQty       | string    | 非必须   |        | 成交数量             |                   |
+| ├─ matchAmt       | string    | 非必须   |        | 成交金额             |                   |
+| ├─ execId         | string    | 非必须   |        | 成交号               |                   |
+| ├─ orderId        | string    | 非必须   |        | 委托ID               |                   |
+| ├─ fee            | string    | 非必须   |        | 手续费               |                   |
 | ├─ positionEffect | number    | 非必须   |        | 开平标志1开仓，2平仓 |                   |
 | ├─ side           | number    | 非必须   |        | 买卖方向买1，卖-1    |                   |
 | ├─ matchType      | number    | 非必须   |        | 成交类型             |                   |
