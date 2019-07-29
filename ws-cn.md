@@ -51,7 +51,7 @@
 	"token":""  // 同ccfox官网方式，需要登录拿到token
 }
 
-//api账号
+// api账号
 {
 "header":{
 	"type":1001
@@ -59,7 +59,7 @@
 "body":{
     "apiKey": AccessKey, // 获取方式同restful
     "expires": expires, // 获取方式同restful
-    "signature":"" // 签名方式同restful , 其中method="GET"，path="GET/realtime"
+    "signature": signature // 签名方式同restful , 其中method="GET"，path="GET/realtime"
 }
 ```
 
@@ -67,7 +67,25 @@
 
 > 根据是否需要鉴权之后来进行业务top的订阅，下面式是订阅的标准格式，在相关ws接口说明里有详细的说明
 
+```
+// 鉴权订阅格式
+[
+    "auth",
+    {
+        "header": {
+            "type": 1001
+        },
+        "body": {
+            "apiKey": "AccessKey",
+            "expires": "expires",
+            "signature": "signature"
+        }
+    }
+]
+```
+
 ```json
+// 普通订阅格式
 [
     "subscribe",
     {
