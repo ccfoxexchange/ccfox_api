@@ -41,34 +41,23 @@
 
 > 需要使用socket.io对接，按照ws订阅表里面的是否需要验签来决定是否订阅下面鉴权，鉴权分为两种，第一种同ccfox官网方式，需要登录拿到token后进行订阅，第二种为纯api对接方式(一般建议使用第二种)
 
-```json
+```js
 // 子账号
-{
-"header":{
-	"type":1001
-},
-"body":{
-	"token":""  // 同ccfox官网方式，需要登录拿到token
-}
+[
+    "auth",
+    {
+        "header": {
+            "type": 1001
+        },
+        "body": {
+            "token": "token" 
+        }
+    }
+]
+//token 同ccfox官网方式，需要登录拿到token
+
 
 // api账号
-{
-"header":{
-	"type":1001
-},
-"body":{
-    "apiKey": AccessKey, // 获取方式同restful
-    "expires": expires, // 获取方式同restful
-    "signature": signature // 签名方式同restful , 其中method="GET"，path="GET/realtime"
-}
-```
-
-3.订阅
-
-> 根据是否需要鉴权之后来进行业务top的订阅，下面式是订阅的标准格式，在相关ws接口说明里有详细的说明
-
-```
-// 鉴权订阅格式
 [
     "auth",
     {
@@ -82,10 +71,18 @@
         }
     }
 ]
+
+// AccessKey, // 获取方式同restful
+// expires": expires, // 获取方式同restful
+// signature // 签名方式同restful , 其中method="GET"，path="GET/realtime"
+
 ```
 
-```json
-// 普通订阅格式
+3.订阅
+
+> 根据是否需要鉴权之后来进行业务top的订阅，下面式是订阅的标准格式，在相关ws接口说明里有详细的说明
+
+```js
 [
     "subscribe",
     {
