@@ -1,21 +1,19 @@
-/***
-     * HmacSha256签名,进行base64编码
-     * @param signStr
-     * @param secretKey
-     * @return
+    /***
+     * HmacSha256签名,转换成字符串
+     *
+     * @param message  "verb + path + expires + data"
+     * @param apiKey 秘钥
+     * @return String
      */
-    public static String getHmacHash(String signStr, String secretKey) {
+    public static String getHmacHashForSignature(String apiKey, String message) throws Exception {
         String hash;
-        try {
-            Mac sha256_HMAC = Mac.getInstance("HmacSHA256");
-            SecretKeySpec secret_key = new SecretKeySpec(secretKey.getBytes(StandardCharsets.UTF_8), "HmacSHA256");
-            sha256_HMAC.init(secret_key);
-            hash = Base64.encodeBase64String(sha256_HMAC.doFinal(signStr.getBytes(StandardCharsets.UTF_8)));
-        } catch (Exception e) {
-            return "";
-        }
+        Mac hmacSHA256 = Mac.getInstance("HmacSHA256");
+        SecretKeySpec apiKeySpec = new SecretKeySpec(apiKey.getBytes(StandardCharsets.UTF_8), "HmacSHA256");
+        hmacSHA256.init(apiKeySpec);
+        hash = byteArrayToHexString(hmacSHA256.doFinal(message.getBytes(StandardCharsets.UTF_8)));
         return hash;
     }
+
 
 /**
      * 检查签名，如合法，则返回userApiKeyPo
