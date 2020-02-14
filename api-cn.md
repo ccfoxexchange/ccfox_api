@@ -1082,9 +1082,9 @@ range取值：
 
 | 名称               | 类型      | 是否必须 | 默认值 | 备注       | 其他信息          |
 | ------------------ | --------- | -------- | ------ | ---------- | ----------------- |
-| cancels            | object [] | 非必须   |        |            | item 类型: object |
-| ├─ contractId      | number    | 非必须   |        | 合约ID     |                   |
-| ├─ originalOrderId | string    | 非必须   |        | 原始委托号 |                   |
+| cancels            | object [] | 必须   |        |            | item 类型: object |
+| ├─ contractId      | number    | 必须   |        | 合约ID     |                   |
+| ├─ originalOrderId | string    | 必须   |        | 原始委托号 |                   |
 
 ### 返回数据
 
