@@ -1,4 +1,1 @@
-# ccfox_api
-ccfox open api 
-
-欢迎与我们取得联系！
+# 本项目不再维护，请访问https://github.com/ccfox-com/cloud-api
