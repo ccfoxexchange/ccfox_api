@@ -1085,6 +1085,7 @@ range取值：
 | cancels            | object [] | 必须   |        |            | item 类型: object |
 | ├─ contractId      | number    | 必须   |        | 合约ID     |                   |
 | ├─ originalOrderId | string    | 必须   |        | 原始委托号 |                   |
+| ├─ clientOrderId   | string    | 非必须   |        | 客户端委托号，不传服务端会生成 |                   |
 
 ### 返回数据
 
