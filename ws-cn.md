@@ -201,7 +201,7 @@
 | ├─ posiQty           | string    | 非必须   |        | 持仓量，大于0多头，小于0空头 |                   |
 | ├─ frozenOpenQty     | string    | 非必须   |        | 开仓委托冻结量               |                   |
 | ├─ frozenCloseQty    | string    | 非必须   |        | 平仓委托冻结量               |                   |
-| ├─ posiStatus        | number    | 非必须   |        | 1正常，2等待强平             |                   |
+| ├─ posiStatus        | number    | 非必须   |        | 持仓状态：0正常1禁止平仓2交割             |                   |
 | ├─ closeProfitLoss   | string    | 非必须   |        | 已实现盈亏                   |                   |
 
 ## 5.2 获取K线-推送
