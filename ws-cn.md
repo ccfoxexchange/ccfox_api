@@ -203,6 +203,9 @@
 | ├─ frozenCloseQty    | string    | 非必须   |        | 平仓委托冻结量               |                   |
 | ├─ posiStatus        | number    | 非必须   |        | 持仓状态：0正常1禁止平仓2交割             |                   |
 | ├─ closeProfitLoss   | string    | 非必须   |        | 已实现盈亏                   |                   |
+| ├─ contractUnit      | string    | 非必须   |        | 合约单位                   |                   |
+| ├─ posiSide          | number    | 非必须   |        | 持仓方向0对冲1多头-1空头                   |                   |
+
 
 ## 5.2 获取K线-推送
 
