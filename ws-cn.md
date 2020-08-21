@@ -36,8 +36,8 @@
 - 接口方式  Socket.io
 
 - 地址  
-  - 测试 wss://futurewstest.ccfox.com   
-  - 生产 wss://futurews.ccfox.com
+  - 测试 wss://futurewstest.ccfox.com   如：wss://futurewstest.ccfox.com/socket.io/?EIO=3&transport=websocket
+  - 生产 wss://futurews.ccfox.com       如：wss://futurews.ccfox.com/socket.io/?EIO=3&transport=websocket
 
 **2.鉴权**
 
