@@ -35,7 +35,7 @@
 
   ## Access URL
 
-  - Test https://apitest.ccfox.com/
+  - Test https://api-test.ccfox.com/
   - Production  https://api.ccfox.com/
 
   ## Signature Verification
