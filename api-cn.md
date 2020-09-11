@@ -35,7 +35,7 @@
 
   ## 访问地址
 
-  - 测试环境地址 https://apitest.ccfox.com/
+  - 测试环境地址 https://api-test.ccfox.com/
   - 生产环境地址 https://api.ccfox.com/
 
   ## 签名认证
