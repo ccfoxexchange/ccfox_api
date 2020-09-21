@@ -19,8 +19,8 @@
 | 读取     | 用户类接口     | /api/v1/future/margin                    | GET    | 获取用户资产信息       | 是       |
 | 读取     | 用户类接口     | /api/v1/future/position                  | GET    | 获取用户持仓信息       | 是       |
 | 读取     | 用户类接口     | /api/v1/future/user                      | GET    | 获取用户基本信息       | 是       |
-| 交易     | 交易类接口     | /api/v1/future/order                     | GET    | 合约下单               | 是       |
-| 交易     | 交易类接口     | /api/v1/future/orders                    | GET    | 合约批量下单           | 是       |
+| 交易     | 交易类接口     | /api/v1/future/order                     | POST   | 合约下单               | 是       |
+| 交易     | 交易类接口     | /api/v1/future/orders                    | POST   | 合约批量下单           | 是       |
 | 交易     | 交易类接口     | /api/v1/future/order                     | DELETE | 合约撤单               | 是       |
 | 交易     | 交易类接口     | /api/v1/future/orders                    | DELETE | 合约批量撤单           | 是       |
 | 交易     | 交易类接口     | /api/v1/future/order/all                 | DELETE | 合约撤消所有订单       | 是       |
