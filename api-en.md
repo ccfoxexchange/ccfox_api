@@ -19,8 +19,8 @@
 | read     | User Interface     | /api/v1/future/margin                    | GET    | get user margin info                | Yes       |
 | read     | User Interface     | /api/v1/future/position                  | GET    | get user position info              | Yes       |
 | read     | User Interface     | /api/v1/future/user                      | GET    | get user basic info                 | Yes       |
-| trade     | Trading Interface     | /api/v1/future/order                     | GET    | make order                      | Yes       |
-| trade     | Trading Interface     | /api/v1/future/orders                    | GET    | make amount of orders           | Yes       |
+| trade     | Trading Interface     | /api/v1/future/order                     | POST   | place order                     | Yes       |
+| trade     | Trading Interface     | /api/v1/future/orders                    | POST   | place batch orders              | Yes       |
 | trade     | Trading Interface     | /api/v1/future/order                     | DELETE | cancel order                    | Yes       |
 | trade     | Trading Interface     | /api/v1/future/orders                    | DELETE | cancel amount of orders         | Yes       |
 | trade     | Trading Interface     | /api/v1/future/order/all                 | DELETE | cancel all the orders           | Yes       |
