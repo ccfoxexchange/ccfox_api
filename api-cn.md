@@ -27,8 +27,8 @@
 | 交易     | 交易类接口     | /api/v1/future/order                     | GET    | 获取订单信息           | 是       |
 | 交易     | 交易类接口     | /api/v1/future/queryActiveOrder          | GET    | 获取当前订单列表       | 是       |
 | 交易     | 交易类接口     | /api/v1/future/queryLastestHistoryOrders | GET    | 获取历史委托           | 是       |
-| 交易     | 交易类接口     | /api/v1/future/position/isolate          | POST   | 切换仓位模式           | 是       |
-| 交易     | 交易类接口     | /api/v1/future/position/transferMargin   | POST   | 调整保证金率           | 是       |
+| 交易     | 交易类接口     | /api/v1/future/position/isolate          | POST   | 切换仓位模式及调整保证金率 | 是       |
+| 交易     | 交易类接口     | /api/v1/future/position/transferMargin   | POST   | 调整保证金             | 是       |
 | 交易     | 交易类接口     | /api/v1/future/queryForceLower           | GET    | 获取强减队列           | 是       |
 | 交易     | 交易类接口     | /api/v1/future/queryMatch                | GET    | 获取当前成交强减队列   | 是       |
 | 交易     | 交易类接口     | /api/v1/future/position/adjustModel      | POST   | 调整持仓模式           | 是       |
@@ -1274,7 +1274,7 @@ range取值：
 | ├─ delta_price       | null      | 非必须   |        | 标记价与委托价之差                                           |                   |
 | ├─ frozen_price      | null      | 非必须   |        | 资金计算价格       
 
-## 4.9 切换仓位模式
+## 4.9 切换仓位模式及调整保证金率
 
 
 
@@ -1286,7 +1286,7 @@ range取值：
 
 **接口描述：**
 
-功能 ：期货合约 - 已成交的订单切换仓位模式（逐仓 切换 全仓、全仓切换逐仓）
+功能 ：期货合约 - 已成交的订单切换仓位模式（逐仓 切换 全仓、全仓切换逐仓），或者调整初始保证金率
 
 **Body**
 
@@ -1304,7 +1304,7 @@ range取值：
 | code | number | 非必须   |        | 0：成功，非0：失败 |          |
 | msg  | string | 非必须   |        | 消息msg            |          |
 
-## 4.10 调整保证金率
+## 4.10 调整保证金
 
 
 
@@ -1316,7 +1316,7 @@ range取值：
 
 **接口描述：**
 
-功能：调整保证金率，即调整杠杆倍数
+功能：调整保证金的数量
 
 **Body**
 
