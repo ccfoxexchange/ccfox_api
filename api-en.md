@@ -27,7 +27,7 @@
 | trade     | Trading Interface     | /api/v1/future/order                     | GET    | get order info                  | Yes       |
 | trade     | Trading Interface     | /api/v1/future/queryActiveOrder          | GET    | get latest order list           | Yes       |
 | trade     | Trading Interface     | /api/v1/future/queryLastestHistoryOrders | GET    | get historical order            | Yes       |
-| trade     | Trading Interface     | /api/v1/future/position/isolate          | POST   | switch position mode            | Yes       |
+| trade     | Trading Interface     | /api/v1/future/position/isolate          | POST   | switch position mode or adjust initial margin rate | Yes       |
 | trade     | Trading Interface     | /api/v1/future/position/transferMargin   | POST   | adjust margin                   | Yes       |
 | trade     | Trading Interface     | /api/v1/future/queryForceLower           | GET    | get forced-deleverage list      | Yes       |
 | trade     | Trading Interface     | /api/v1/future/queryMatch                | GET    | get matched deleverage list     | Yes       |
@@ -1274,7 +1274,7 @@ purpose ：future contract - enquire current order book list
 | ├─ delta_price       | null      | No   |        | difference between order price and mark price                    |                   |
 | ├─ frozen_price      | null      | No   |        | frozen price   
 
-## 4.9 switch position mode
+## 4.9 switch position mode or adjust initial margin rate
 
 
 
@@ -1286,7 +1286,7 @@ purpose ：future contract - enquire current order book list
 
 **API Description：**
 
-purpose ：future - switch placed order postion mode（isolated to cross、cross to isolated）
+purpose ：future - switch placed order postion mode（isolated to cross、cross to isolated）or adjust initial margin rate
 
 **Body**
 
@@ -1316,7 +1316,7 @@ purpose ：future - switch placed order postion mode（isolated to cross、cross
 
 **API Description：**
 
-Purpost：adjust the margin rate, also means to adjust leverage
+purpose：adjust the margin amount
 
 **Body**
 
