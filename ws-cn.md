@@ -84,7 +84,7 @@
 
 > 根据是否需要鉴权之后来进行业务top的订阅，下面式是订阅的标准格式，在相关ws接口说明里有详细的说明
 
-```js
+```json
 [
     "subscribe",
     {
@@ -170,7 +170,7 @@
 订阅topic: match
 消息订阅格式如下所示：
 
-```
+```json
 {
     "header": {
         "type": 1003
@@ -219,7 +219,7 @@
 订阅topic: future_kline
 消息订阅格式如下所示：
 
-```
+```json
 {
     "header": {
         "type": 1003
@@ -229,9 +229,10 @@
             "topic": "future_kline",
             "params": {
                 "symbols": [{
-                "symbol": 100,
-                "ranges": ["60000"]
-            }]
+                    "symbol": 100,
+                    "ranges": ["60000"]
+                }]
+            }
         }]
     }
 }
@@ -278,7 +279,8 @@
 
 消息topic: match
 消息订阅格式如下所示：
-```
+
+```json
 {
     "header": {
         "type": 1003
@@ -311,7 +313,8 @@
 消息topic: match
 注意：数据集合列表中，最多50笔最近委托数据记录
 消息订阅格式如下所示：
-```
+
+```json
 {
     "header": {
         "type": 1003
@@ -356,7 +359,7 @@
 订阅topic:  coin_price
 消息订阅格式，如下所示：
 
-```
+```json
 {
     "header": {
         "type": 1003
@@ -388,7 +391,7 @@
 订阅topic：future_market_stat
 消息订阅格式，如下所示：
 
-```
+```json
 {
     "header": {
         "type": 1003
@@ -420,7 +423,7 @@
 消息topic: match
 消息订阅格式，如下所示：
 
-```
+```json
 {
     "header": {
         "type": 1003
@@ -468,7 +471,8 @@
 消息topic: match
 注意：数据集合列表中，最多10笔最近成交数据记录
 消息订阅格式，如下所示：
-```
+
+```json
 {
     "header": {
         "type": 1003
@@ -511,7 +515,8 @@
 
 订阅topic:   future_all_indicator
 消息订阅格式，如下所示：
-```
+
+```json
 {
     "header": {
         "type": 1003
@@ -573,7 +578,7 @@
 注意：订阅topic名称： exchange
 数据订阅格式，如下所示：
 
-```
+```json
 {
     "header": {
         "type": 1003
@@ -605,7 +610,7 @@
 数据topic：realtime
 数据订阅格式，如下所示：
 
-```
+```json
 {
     "header": {
         "type": 1003
@@ -633,7 +638,7 @@
 订阅topic: future_snapshot_depth
 数据订阅格式，如下所示：
 
-```
+```json
 {
     "header": {
         "type": 1003
@@ -676,7 +681,7 @@ asks与bids 的数据格式：List<List>
 订阅topic: future_snapshot_indicator
 数据订阅格式，如下所示：
 
-```
+```json
 {
     "header": {
         "type": 1003
@@ -745,7 +750,7 @@ asks与bids 的数据格式：List<List>
 数据topic: match
 数据订阅格式，如下所示：
 
-```
+```json
 {
     "header": {
         "type": 1003
@@ -780,7 +785,7 @@ asks与bids 的数据格式：List<List>
 数据topic: future_tick
 数据订阅格式，如下所示：
 
-```
+```json
 {
     "header": {
         "type": 1003
@@ -790,8 +795,9 @@ asks与bids 的数据格式：List<List>
             "topic": "future_tick",
             "params": {
                 "symbols": [{
-                "symbol": 100
-            }]
+                    "symbol": 100
+                }]
+            }
         }]
     }
 }
@@ -819,7 +825,7 @@ asks与bids 的数据格式：List<List>
 `topic：notice`
 订阅格式，如下所示：
 
-```
+```json
 {
     "header": {
         "type": 1003
