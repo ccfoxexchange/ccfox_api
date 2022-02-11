@@ -170,15 +170,16 @@
 订阅topic: match
 消息订阅格式如下所示：
 
-```{
-"header": {
-"type": 1003
-},
-"body": {
-    "topics": [{
-        "topic": "match"
-    }]
-}
+```
+{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [{
+            "topic": "match"
+        }]
+    }
 }
 ```
 
@@ -218,21 +219,21 @@
 订阅topic: future_kline
 消息订阅格式如下所示：
 
-```{
-"header": {
-"type": 1003
-},
-"body": {
-    "topics": [{
-        "topic": "future_kline",
-        "params": {
-            "symbols": [{
-            "symbol": 100,
-            "ranges": ["60000"]
+```
+{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [{
+            "topic": "future_kline",
+            "params": {
+                "symbols": [{
+                "symbol": 100,
+                "ranges": ["60000"]
+            }]
         }]
     }
-    }]
-}
 }
 ```
 
@@ -277,15 +278,16 @@
 
 消息topic: match
 消息订阅格式如下所示：
-```{
-"header": {
-"type": 1003
-},
-"body": {
-    "topics": [{
-        "topic": "match"
-    }]
-}
+```
+{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [{
+            "topic": "match"
+        }]
+    }
 }
 ```
 
@@ -309,15 +311,16 @@
 消息topic: match
 注意：数据集合列表中，最多50笔最近委托数据记录
 消息订阅格式如下所示：
-```{
-"header": {
-"type": 1003
-},
-"body": {
-    "topics": [{
-        "topic": "match"
-    }]
-}
+```
+{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [{
+            "topic": "match"
+        }]
+    }
 }
 ```
 
@@ -353,15 +356,16 @@
 订阅topic:  coin_price
 消息订阅格式，如下所示：
 
-```{
-"header": {
-"type": 1003
-},
-"body": {
-    "topics": [{
-        "topic": "exchange",
-    }]
-}
+```
+{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [{
+            "topic": "exchange",
+        }]
+    }
 }
 ```
 
@@ -384,15 +388,16 @@
 订阅topic：future_market_stat
 消息订阅格式，如下所示：
 
-```{
-"header": {
-"type": 1003
-},
-"body": {
-    "topics": [{
-        "topic": "future_market_stat",
-    }]
-}
+```
+{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [{
+            "topic": "future_market_stat",
+        }]
+    }
 }
 ```
 
@@ -415,15 +420,16 @@
 消息topic: match
 消息订阅格式，如下所示：
 
-```{
-"header": {
-"type": 1003
-},
-"body": {
-    "topics": [{
-        "topic": "match"
-    }]
-}
+```
+{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [{
+            "topic": "match"
+        }]
+    }
 }
 ```
 
@@ -462,15 +468,16 @@
 消息topic: match
 注意：数据集合列表中，最多10笔最近成交数据记录
 消息订阅格式，如下所示：
-```{
-"header": {
-"type": 1003
-},
-"body": {
-    "topics": [{
-        "topic": "match"
-    }]
-}
+```
+{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [{
+            "topic": "match"
+        }]
+    }
 }
 ```
 
@@ -504,15 +511,16 @@
 
 订阅topic:   future_all_indicator
 消息订阅格式，如下所示：
-```{
-"header": {
-"type": 1003
-},
-"body": {
-    "topics": [{
-        "topic": "future_all_indicator",
-    }]
-}
+```
+{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [{
+            "topic": "future_all_indicator",
+        }]
+    }
 }
 ```
 
@@ -565,15 +573,16 @@
 注意：订阅topic名称： exchange
 数据订阅格式，如下所示：
 
-```{
-"header": {
-"type": 1003
-},
-"body": {
-    "topics": [{
-        "topic": "exchange",
-    }]
-}
+```
+{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [{
+            "topic": "exchange",
+        }]
+    }
 }
 ```
 
@@ -596,16 +605,16 @@
 数据topic：realtime
 数据订阅格式，如下所示：
 
-```{
-"header": {
-"type": 1003
-},
-"body": {
-    "topics": [{
-        "topic": "realtime"
+```
+{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [{
+            "topic": "realtime"
+        }]
     }
-    }]
-}
 }
 ```
 
@@ -624,19 +633,21 @@
 订阅topic: future_snapshot_depth
 数据订阅格式，如下所示：
 
-```{
-"header": {
-"type": 1003
-},
-"body": {
-    "topics": [{
-        "topic": "future_snapshot_depth",
-        "params": {
-            "symbols": [{
-                "symbol": 100
+```
+{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [{
+            "topic": "future_snapshot_depth",
+            "params": {
+                "symbols": [{
+                    "symbol": 100
+                }]
+            }
         }]
-    }]
-}
+    }
 }
 ```
 
@@ -665,19 +676,21 @@ asks与bids 的数据格式：List<List>
 订阅topic: future_snapshot_indicator
 数据订阅格式，如下所示：
 
-```{
-"header": {
-"type": 1003
-},
-"body": {
-    "topics": [{
-        "topic": "future_snapshot_indicator",
-        "params": {
-            "symbols": [{
-                "symbol": 100
+```
+{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [{
+            "topic": "future_snapshot_indicator",
+            "params": {
+                "symbols": [{
+                    "symbol": 100
+                }]
+            }
         }]
-    }]
-}
+    }
 }
 ```
 
@@ -732,15 +745,16 @@ asks与bids 的数据格式：List<List>
 数据topic: match
 数据订阅格式，如下所示：
 
-```{
-"header": {
-"type": 1003
-},
-"body": {
-    "topics": [{
-        "topic": "match"
-    }]
-}
+```
+{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [{
+            "topic": "match"
+        }]
+    }
 }
 ```
 
@@ -766,20 +780,20 @@ asks与bids 的数据格式：List<List>
 数据topic: future_tick
 数据订阅格式，如下所示：
 
-```{
-"header": {
-"type": 1003
-},
-"body": {
-    "topics": [{
-        "topic": "future_tick",
-        "params": {
-            "symbols": [{
-            "symbol": 100
+```
+{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [{
+            "topic": "future_tick",
+            "params": {
+                "symbols": [{
+                "symbol": 100
+            }]
         }]
     }
-    }]
-}
 }
 ```
 
@@ -805,15 +819,16 @@ asks与bids 的数据格式：List<List>
 `topic：notice`
 订阅格式，如下所示：
 
-```{
-"header": {
-"type": 1003
-},
-"body": {
-    "topics": [{
-        "topic": "notice"
-    }]
-}
+```
+{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [{
+            "topic": "notice"
+        }]
+    }
 }
 ```
 
